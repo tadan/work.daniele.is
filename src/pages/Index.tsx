@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Github, ExternalLink, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,20 +12,45 @@ const projects = [
     image: "/lovable-uploads/d8131e9b-fecb-42f0-b46b-bdd4589231f8.png",
     link: "#",
     github: "#",
-    videoUrl: "https://transitionview-pitch.com", // Replace with actual video URL
+    videoUrl: "https://transitionview-pitch.com",
   },
-  // Add more projects as needed
+  {
+    title: "The Future of Breakfast with Arla",
+    description: "A vending machine prototype for healthy breakfasts targeting teenagers",
+    longDescription: `The 'Future of Breakfast' project was a collaborative effort with the Area Innovation Team, which has been working with Another Tomorrow since last summer. During a hackathon held in the summer, the winning idea was further developed in the fall. This concept involved creating a vending machine prototype designed to serve healthy breakfasts to teenagers at reasonable prices. The first test was run at Fryshuset in October 2023, collecting almost a hundred responses.`,
+    role: `My responsibilities involved researching and exploring all the technical aspects of the prototypes. Once approved by the client, Daniele constructed the vending machine prototype and developed its digital counterpart in Figma. On the test day, the prototype was equipped with tracking analytics, enabling us to collect an extensive dataset about user interactions. This was complemented by qualitative data gathered from interviews.`,
+    year: "2023",
+    images: [
+      "/lovable-uploads/43157a96-e053-4c75-9618-2b3ca6503f4e.png",
+      "/lovable-uploads/a90c27c0-d51d-4b01-b7ee-acc92378aabb.png",
+      "/lovable-uploads/15d70303-40c9-4aa2-8c9c-abe3ef9ec6cd.png"
+    ],
+    image: "/lovable-uploads/a90c27c0-d51d-4b01-b7ee-acc92378aabb.png",
+    link: "#",
+    github: "#",
+  },
 ];
 
 const Index = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const closeProject = () => setSelectedProject(null);
+  const closeProject = () => {
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = (projectImages: string[]) => {
+    setCurrentImageIndex((prev) => (prev + 1) % projectImages.length);
+  };
+
+  const prevImage = (projectImages: string[]) => {
+    setCurrentImageIndex((prev) => (prev - 1 + projectImages.length) % projectImages.length);
+  };
 
   return (
     <div className="min-h-screen w-full">
-      {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center px-4">
         <div className="max-w-4xl mx-auto text-center animate-in">
           <p className="text-sm uppercase tracking-wider mb-4">Portfolio</p>
@@ -39,7 +63,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -82,7 +105,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Project Details Modal */}
       {selectedProject !== null && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50" onClick={closeProject}>
           <div className="bg-background max-w-4xl w-full rounded-lg p-6 overflow-y-auto max-h-[90vh]" onClick={e => e.stopPropagation()}>
@@ -94,11 +116,45 @@ const Index = () => {
               <Button variant="ghost" size="sm" onClick={closeProject}>×</Button>
             </div>
             
-            <img 
-              src={projects[selectedProject].image} 
-              alt={projects[selectedProject].title}
-              className="w-full rounded-lg mb-6 object-cover"
-            />
+            {'images' in projects[selectedProject] ? (
+              <div className="relative mb-6">
+                <img 
+                  src={projects[selectedProject].images[currentImageIndex]} 
+                  alt={`${projects[selectedProject].title} - Image ${currentImageIndex + 1}`}
+                  className="w-full rounded-lg object-cover"
+                />
+                {projects[selectedProject].images.length > 1 && (
+                  <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        prevImage(projects[selectedProject].images);
+                      }}
+                    >
+                      Previous
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        nextImage(projects[selectedProject].images);
+                      }}
+                    >
+                      Next
+                    </Button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <img 
+                src={projects[selectedProject].image} 
+                alt={projects[selectedProject].title}
+                className="w-full rounded-lg mb-6 object-cover"
+              />
+            )}
 
             <div className="space-y-6">
               <div>
