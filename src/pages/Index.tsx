@@ -42,6 +42,15 @@ const projects = [
     image: "/lovable-uploads/87652519-d152-411b-a621-4a1d56fc71e6.png",
     link: "#",
     github: "#",
+  },
+  {
+    title: "Postnord SWAN Dashboard",
+    description: "A dashboard tool that saved over 1,000,000 failed deliveries for PostNord Sweden",
+    longDescription: `Swan Dashboard is a product installed in all PostNord terminals in Sweden. It is a tool for the delivery team targeting specific KPIs. Born as a prototype before COVID, it has been evolving in accordance with requests from Customer Experience at PostNord. Since its launch into production, PostNord has saved more than 1,000,000 failed deliveries within the range 2020-2022.`,
+    role: `Front End Developer and Designer of the application based on React/Redux. Design system, wireframes and mockups built in Figma. Remote user testing to evaluate and iterate the app features.`,
+    year: "2020–2022",
+    link: "#",
+    github: "#"
   }
 ];
 
