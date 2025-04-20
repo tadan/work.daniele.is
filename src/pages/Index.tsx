@@ -19,7 +19,7 @@ const projects = [
     description: "A vending machine prototype for healthy breakfasts targeting teenagers",
     longDescription: `The 'Future of Breakfast' project was a collaborative effort with the Area Innovation Team, which has been working with Another Tomorrow since last summer. During a hackathon held in the summer, the winning idea was further developed in the fall. This concept involved creating a vending machine prototype designed to serve healthy breakfasts to teenagers at reasonable prices. The first test was run at Fryshuset in October 2023, collecting almost a hundred responses.`,
     role: `My responsibilities involved researching and exploring all the technical aspects of the prototypes. Once approved by the client, Daniele constructed the vending machine prototype and developed its digital counterpart in Figma. On the test day, the prototype was equipped with tracking analytics, enabling us to collect an extensive dataset about user interactions. This was complemented by qualitative data gathered from interviews.`,
-    year: "2023",
+    year: "2024",
     images: [
       "/lovable-uploads/43157a96-e053-4c75-9618-2b3ca6503f4e.png",
       "/lovable-uploads/a90c27c0-d51d-4b01-b7ee-acc92378aabb.png",
@@ -29,6 +29,20 @@ const projects = [
     link: "#",
     github: "#",
   },
+  {
+    title: "Prototyping Sustainable Logistics with DFDS",
+    description: "Redefining sustainable logistics routes for Denmark's largest logistics company",
+    longDescription: `DFDS, standing as Denmark's largest logistics company, embarked on project to redefine sustainable logistics for their clients. The goal was to create a comprehensive model of logistic routes that incorporated a myriad of sustainable requirements, meeting the rising demand for eco-friendly transportation solutions.`,
+    role: `My role was to bring clarity and interaction to the sustainable logistics model through proficient prototyping using Figma. I was tasked with translating the complex requirements and data into intuitive, user-friendly prototypes, showcasing the viability of sustainable routes.`,
+    year: "2023",
+    images: [
+      "/lovable-uploads/87652519-d152-411b-a621-4a1d56fc71e6.png",
+      "/lovable-uploads/a35d15e2-1374-4635-8e73-a20e9a7fc89e.png"
+    ],
+    image: "/lovable-uploads/87652519-d152-411b-a621-4a1d56fc71e6.png",
+    link: "#",
+    github: "#",
+  }
 ];
 
 const Index = () => {
