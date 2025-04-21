@@ -1,4 +1,3 @@
-
 export type Project = {
   title: string;
   description: string;
@@ -54,13 +53,17 @@ export const projects: Project[] = [
     github: "#",
   },
   {
-    title: "Postnord SWAN Dashboard",
-    description: "A dashboard tool that saved over 1,000,000 failed deliveries for PostNord Sweden",
-    longDescription: `Swan Dashboard is a product installed in all PostNord terminals in Sweden. It is a tool for the delivery team towards specific KPIs. Born as a prototype before COVID, it has been evolving in accordance with request from Customer Experience at PostNord. Since its launched into production, PostNord has saved more than 1.000.000 of failed deliveries within the range 2020-2022.`,
-    role: `Front End Developer and Designer of the application based on React/Redux. Design system, wireframes and mockups built in Figma. Remote user testing to evaluate and iterate the app features.`,
-    year: "2020–2022",
-    image: "/lovable-uploads/2e635239-c6ce-4168-ac58-609fd397e61d.png",
+    title: "PostNord Last Mile Dashboard",
+    description: "A monitoring dashboard for Sweden's national postal service terminal managers",
+    longDescription: `The Last Mile Dashboard, developed for Sweden's national postal service, is a web application that enables terminal managers at PostNord to monitor the activities of specific couriers during their shifts. This complex application began as a prototype in spring 2020 and was launched in Sweden in December 2020. The development process involved a team of three technologists and two project managers, who collaborated closely with the client's stakeholders and, later, IT architects.`,
+    role: `I served as the Front End Developer and Designer for the application, which was built using React and Node.js. My responsibilities included creating the design system, wireframes, and mockups in Figma.`,
+    year: "2020",
+    images: [
+      "/lovable-uploads/813e7db6-beb6-411d-8ecf-9f4c3bd54be4.png",
+      "/lovable-uploads/631f779f-a34e-4e71-bd49-e5feaffa617f.png"
+    ],
+    image: "/lovable-uploads/813e7db6-beb6-411d-8ecf-9f4c3bd54be4.png",
     link: "#",
     github: "#"
   }
-]
+];
