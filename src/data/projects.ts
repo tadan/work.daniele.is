@@ -13,6 +13,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Atlas Copco Smart Portal",
+    description: "First unified B2B e-commerce platform for industrial tools",
+    longDescription: `The Atlas Copco Smart Portal was the company's first unified B2B e-commerce platform dedicated to industrial tools, serving as a progressive web app storefront built with Angular and powered by Intershop Commerce Suite. This agile-driven project brought together client, business, design, and development teams to deliver a first-class digital experience for Atlas Copco's industrial customers.`,
+    role: `I was responsible for front-end development and led the front-end team in their daily tasks, working closely with the design team and business owner to ensure a seamless and user-centric implementation.`,
+    year: "2020",
+    image: "/lovable-uploads/f55b0014-566e-4de4-aceb-ee807cc694ef.png",
+    link: "https://www.atlascopco.com/en-uk/itba/products",
+    github: "https://github.com/intershop/intershop-pwa"
+  },
+  {
     title: "TransitionView",
     description: "A scientific innovation for companies transitioning to net-zero emissions",
     longDescription: `TransitionView represents a scientific innovation, born out of a collaborative effort between Another Tomorrow, esteemed professors, and climate scientists. Launched in 2023, this tool is currently undergoing trials by various Swedish companies as they navigate their transition towards net-zero emissions.`,
