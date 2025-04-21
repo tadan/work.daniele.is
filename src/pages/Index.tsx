@@ -3,35 +3,42 @@ import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectModal from "@/components/ProjectModal";
 import { projects } from "@/data/projects";
+import MainNav from "@/components/MainNav";
+import ProjectFilter from "@/components/ProjectFilter";
 
 const Index = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedFilter, setSelectedFilter] = useState("all");
 
   const closeProject = () => {
     setSelectedProject(null);
     setCurrentImageIndex(0);
   };
 
+  const filteredProjects = projects.filter((project) => {
+    if (selectedFilter === "all") return true;
+    // Add more filter conditions based on your project data
+    return true;
+  });
+
   return (
     <div className="min-h-screen w-full">
-      <section className="relative h-screen flex items-center justify-center px-4">
+      <MainNav />
+      <section className="relative mb-20 flex items-center justify-center px-4">
         <div className="max-w-4xl mx-auto text-center animate-in">
-          <p className="text-sm uppercase tracking-wider mb-4">Portfolio</p>
           <h1 className="text-6xl md:text-7xl font-bold mb-6 text-balance">
-            Designer & Technologist
+            A technologist and designer working with IRL and digital experiences.
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            based in Stockholm
-          </p>
         </div>
       </section>
 
       <section className="py-20 px-4">
+        <ProjectFilter selected={selectedFilter} onSelect={setSelectedFilter} />
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <ProjectCard
                 key={project.title}
                 project={project}
@@ -47,6 +54,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
       {selectedProject !== null && (
         <ProjectModal
           project={projects[selectedProject]}
