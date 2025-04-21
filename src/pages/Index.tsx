@@ -19,8 +19,10 @@ const Index = () => {
 
   const filteredProjects = projects.filter((project) => {
     if (selectedFilter === "all") return true;
-    // Add more filter conditions based on your project data
-    return true;
+    if (!project.tags) return false;
+    return project.tags.some(tag => 
+      tag.toLowerCase().includes(selectedFilter.toLowerCase())
+    );
   });
 
   return (

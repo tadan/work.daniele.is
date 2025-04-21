@@ -9,6 +9,7 @@ export type Project = {
   link: string;
   github: string;
   videoUrl?: string;
+  tags?: string[];
 };
 
 export const projects: Project[] = [
@@ -85,5 +86,17 @@ export const projects: Project[] = [
     image: "/lovable-uploads/2e635239-c6ce-4168-ac58-609fd397e61d.png",
     link: "#",
     github: "#"
-  }
+  },
+  {
+    title: "Electrolux Scorecard",
+    description: "An internal dashboard providing real-time overview of critical KPIs",
+    longDescription: `An internal dashboard developed in collaboration with Fjord for Electrolux, the Electrolux Scorecard provides a real-time overview of the company's most critical KPIs. The web-based platform enables stakeholders to interactively explore and monitor the organization's performance, drawing live data directly from Electrolux's Qlik-managed data lake. This empowers decision-makers to gain timely insights and make data-driven decisions with confidence.`,
+    role: `Leveraging the Qlik Sense data analytics framework, Daniele was responsible for collecting real-time data from the company's data lake and constructing the dashboard interface. The solution was primarily built using HTML, CSS, and vanilla JavaScript, ensuring a responsive and user-friendly experience. Daniele's work enabled seamless integration of dynamic analytics, allowing users to visualize, analyze, and act on key business metrics efficiently.`,
+    year: "Spring 19",
+    image: "/lovable-uploads/04630c09-7217-4ad2-9d7e-c99576fd41ce.png",
+    link: "#",
+    github: "#",
+    videoUrl: "https://drive.daniele.is/index.php/s/cw6QjAjoWoSDyC2",
+    tags: ["Prototyping", "Web Development"]
+  },
 ];

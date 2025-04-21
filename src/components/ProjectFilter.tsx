@@ -13,10 +13,10 @@ interface ProjectFilterProps {
 
 const ProjectFilter = ({ selected, onSelect }: ProjectFilterProps) => {
   const filters: FilterOption[] = [
-    { label: "Expertise", value: "all" },
+    { label: "All Projects", value: "all" },
     { label: "Prototyping", value: "prototyping" },
-    { label: "Experience Design", value: "experience" },
     { label: "Web Development", value: "development" },
+    { label: "Experience Design", value: "experience" }
   ];
 
   return (
