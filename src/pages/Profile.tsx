@@ -1,9 +1,11 @@
 
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import MainNav from "@/components/MainNav";
 
 const Profile = () => {
   return (
     <div className="min-h-screen w-full">
+      <MainNav />
       <section className="relative max-w-4xl mx-auto py-20 px-4 flex flex-col items-center">
         <Avatar className="w-48 h-48 mb-8">
           <AvatarImage 
