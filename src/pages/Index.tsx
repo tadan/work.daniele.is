@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectModal from "@/components/ProjectModal";
 import { projects } from "@/data/projects";

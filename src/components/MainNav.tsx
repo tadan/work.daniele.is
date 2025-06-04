@@ -22,8 +22,9 @@ const MainNav = () => {
     (e.currentTarget as HTMLElement).style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
   };
 
-  const handleMouseLeave = (e: React.MouseEvent) => {
+  const handleMouseLeave = (e: React.MouseEvent, index: number) => {
     (e.currentTarget as HTMLElement).style.transform = '';
+    setHoveredIndex(null);
   };
 
   return (
@@ -61,12 +62,8 @@ const MainNav = () => {
                     : "text-foreground/70 hover:text-foreground z-10"
                 )}
                 onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
                 onMouseMove={(e) => handleMouseMove(e, index)}
-                onMouseLeave={(e) => {
-                  handleMouseLeave(e);
-                  setHoveredIndex(null);
-                }}
+                onMouseLeave={(e) => handleMouseLeave(e, index)}
                 aria-current={isActive ? "page" : undefined}
               >
                 <span className="flex items-center gap-2">
