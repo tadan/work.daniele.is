@@ -28,7 +28,7 @@ const Index = () => {
   return (
     <div className="min-h-screen w-full">
       <MainNav />
-      <section className="relative mb-20 flex items-center justify-center px-4 mt-8">
+      <section className="relative mb-20 flex items-center justify-center px-4 mt-20">
         <div className="w-full max-w-6xl mx-auto" style={{ height: "500px" }}>
           <iframe 
             src="https://my.spline.design/untitled-248dc7b765ab45fbaca09c6ac5ed8845/" 
