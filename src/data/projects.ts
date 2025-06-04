@@ -1,3 +1,4 @@
+
 export type Project = {
   title: string;
   description: string;
@@ -21,7 +22,8 @@ export const projects: Project[] = [
     year: "2020",
     image: "/lovable-uploads/f55b0014-566e-4de4-aceb-ee807cc694ef.png",
     link: "https://www.atlascopco.com/en-uk/itba/products",
-    github: "https://github.com/intershop/intershop-pwa"
+    github: "https://github.com/intershop/intershop-pwa",
+    tags: ["Web Development"]
   },
   {
     title: "TransitionView",
@@ -33,6 +35,7 @@ export const projects: Project[] = [
     link: "#",
     github: "#",
     videoUrl: "https://transitionview-pitch.com",
+    tags: ["Prototyping"]
   },
   {
     title: "The Future of Breakfast with Arla",
@@ -48,11 +51,12 @@ export const projects: Project[] = [
     image: "/lovable-uploads/a90c27c0-d51d-4b01-b7ee-acc92378aabb.png",
     link: "#",
     github: "#",
+    tags: ["Experience Design", "Prototyping"]
   },
   {
     title: "Prototyping Sustainable Logistics with DFDS",
     description: "Redefining sustainable logistics routes for Denmark's largest logistics company",
-    longDescription: `DFDS, standing as Denmark’s largest logistics company, embarked on project to redefine sustainable logistics for their clients. The goal was to create a comprehensive model of logistic routes that incorporated a myriad of sustainable requirements, meeting the rising demand for eco-friendly transportation solutions.`,
+    longDescription: `DFDS, standing as Denmark's largest logistics company, embarked on project to redefine sustainable logistics for their clients. The goal was to create a comprehensive model of logistic routes that incorporated a myriad of sustainable requirements, meeting the rising demand for eco-friendly transportation solutions.`,
     role: `My role was to bring clarity and interaction to the sustainable logistics model through proficient prototyping using Figma. I was tasked with translating the complex requirements and data into intuitive, user-friendly prototypes, showcasing the viability of sustainable routes.`,
     year: "2023",
     images: [
@@ -62,6 +66,7 @@ export const projects: Project[] = [
     image: "/lovable-uploads/87652519-d152-411b-a621-4a1d56fc71e6.png",
     link: "#",
     github: "#",
+    tags: ["Prototyping"]
   },
   {
     title: "PostNord Last Mile Dashboard",
@@ -75,7 +80,8 @@ export const projects: Project[] = [
     ],
     image: "/lovable-uploads/813e7db6-beb6-411d-8ecf-9f4c3bd54be4.png",
     link: "#",
-    github: "#"
+    github: "#",
+    tags: ["Prototyping", "Web Development"]
   },
   {
     title: "PostNord SWAN Dashboard",
@@ -85,7 +91,8 @@ export const projects: Project[] = [
     year: "2020–2022",
     image: "/lovable-uploads/2e635239-c6ce-4168-ac58-609fd397e61d.png",
     link: "#",
-    github: "#"
+    github: "#",
+    tags: ["Web Development"]
   },
   {
     title: "Electrolux Scorecard",
