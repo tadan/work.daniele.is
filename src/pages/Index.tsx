@@ -28,11 +28,15 @@ const Index = () => {
   return (
     <div className="min-h-screen w-full">
       <MainNav />
-      <section className="relative mb-20 flex items-center justify-center px-4">
-        <div className="max-w-4xl mx-auto text-center animate-in">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-balance">
-            A technologist and designer working with IRL and digital experiences.
-          </h1>
+      <section className="relative mb-20 flex items-center justify-center px-4 mt-8">
+        <div className="w-full max-w-6xl mx-auto" style={{ height: "500px" }}>
+          <iframe 
+            src="https://my.spline.design/untitled-248dc7b765ab45fbaca09c6ac5ed8845/" 
+            frameBorder="0" 
+            width="100%" 
+            height="100%"
+            className="rounded-lg"
+          />
         </div>
       </section>
 
