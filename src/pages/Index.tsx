@@ -1,16 +1,23 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectModal from "@/components/ProjectModal";
 import { projects } from "@/data/projects";
 import MainNav from "@/components/MainNav";
 import ProjectFilter from "@/components/ProjectFilter";
+import HeroSection from "@/components/HeroSection";
+import FloatingElements from "@/components/FloatingElements";
 
 const Index = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedFilter, setSelectedFilter] = useState("all");
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   const closeProject = () => {
     setSelectedProject(null);
@@ -26,32 +33,42 @@ const Index = () => {
   });
 
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen w-full relative overflow-hidden">
+      <FloatingElements />
       <MainNav />
-      <section className="relative mb-20 flex items-center justify-center px-4">
-        <div className="max-w-4xl mx-auto text-center animate-in">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-balance">
-            A technologist and designer working with IRL and digital experiences.
-          </h1>
-        </div>
-      </section>
+      
+      <HeroSection isLoaded={isLoaded} />
 
-      <section className="py-20 px-4">
-        <ProjectFilter selected={selectedFilter} onSelect={setSelectedFilter} />
+      <section className="py-20 px-4 relative z-10">
+        <div className={cn(
+          "transform transition-all duration-1000",
+          isLoaded ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+        )}>
+          <ProjectFilter selected={selectedFilter} onSelect={setSelectedFilter} />
+        </div>
+        
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {filteredProjects.map((project, index) => (
-              <ProjectCard
+              <div
                 key={project.title}
-                project={project}
-                hovered={hoveredIndex === index}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                onClick={() => {
-                  setSelectedProject(index);
-                  setCurrentImageIndex(0);
-                }}
-              />
+                className={cn(
+                  "transform transition-all duration-700 fade-in-up",
+                  `stagger-${(index % 4) + 1}`,
+                  isLoaded ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+                )}
+              >
+                <ProjectCard
+                  project={project}
+                  hovered={hoveredIndex === index}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  onClick={() => {
+                    setSelectedProject(index);
+                    setCurrentImageIndex(0);
+                  }}
+                />
+              </div>
             ))}
           </div>
         </div>
