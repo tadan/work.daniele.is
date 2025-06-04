@@ -16,7 +16,8 @@ const ProjectFilter = ({ selected, onSelect }: ProjectFilterProps) => {
     { label: "All Projects", value: "all" },
     { label: "Prototyping", value: "prototyping" },
     { label: "Web Development", value: "development" },
-    { label: "Experience Design", value: "experience" }
+    { label: "Experience Design", value: "experience" },
+    { label: "Facilitation", value: "facilitation" }
   ];
 
   return (

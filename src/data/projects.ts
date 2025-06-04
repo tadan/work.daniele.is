@@ -1,4 +1,5 @@
 
+
 export type Project = {
   title: string;
   description: string;
@@ -105,5 +106,29 @@ export const projects: Project[] = [
     github: "#",
     videoUrl: "https://drive.daniele.is/index.php/s/cw6QjAjoWoSDyC2",
     tags: ["Prototyping", "Web Development"]
+  },
+  {
+    title: "KIA Inspiration Lab",
+    description: "Intensive 2-day global hackathon tackling educational creativity challenges",
+    longDescription: `An intensive 2-day remote hackathon designed to tackle one of today's most pressing educational challenges: "How can we embed creativity into young people's lives as deeply as we embed literacy?" This global collaborative experience brought together 12 diverse participants across multiple time zones, including creative professionals from KIA, educational specialists, and hand-picked experts from education, science, and culture.`,
+    role: `As both facilitator and active contributor on Team 3, I guided our diverse group through the human-centered design process while ensuring every voice was heard and valued. My dual role involved: Orchestrated productive remote collaboration across different time zones and cultural backgrounds and guided the team through structured ideation, prototyping, and presentation phases.`,
+    year: "2023",
+    image: "/lovable-uploads/47f7f473-4a8f-4714-99e8-69f8ddf01446.png",
+    link: "#",
+    github: "#",
+    videoUrl: "https://www.youtube.com/watch?v=BFilUBLrVVc&feature=youtu.be",
+    tags: ["Facilitation"]
+  },
+  {
+    title: "The Curious Question Cards",
+    description: "A proof of concept card deck to spark children's curiosity through unexpected word combinations",
+    longDescription: `The Curious Question Cards were born out of the KIA Inspirational Lab, a 2-day global hackathon co-organized with Hyper Island. We co-developed a proof of concept for a deck of cards designed to spark children's curiosity and imagination through unexpected word combinations. Our team created and tested the prototype in three languages with groups of children across Europe. The cards encourage open-ended thinking by prompting playful, exploratory questions — a tool to foster creative confidence in learning environments.`,
+    role: `Led the proof of concept design, focusing on simplicity, clarity, and engagement for children. Facilitated and organized user testing sessions with children, incorporating feedback into rapid iterations. Supported a remote-first, cross-cultural team through structured ideation, prototyping, and storytelling.`,
+    year: "2023",
+    image: "/lovable-uploads/5e2552aa-8497-48c7-bf69-a2a63272a7e3.png",
+    link: "#",
+    github: "#",
+    videoUrl: "https://www.youtube.com/watch?v=6lZ3q1EfRVI&feature=youtu.be",
+    tags: ["Prototyping", "Experience Design"]
   },
 ];
