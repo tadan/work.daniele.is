@@ -11,43 +11,33 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 262 83% 58%;
+    --primary: 0 0% 9%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 262 83% 58%;
-    --radius: 1rem;
-    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --ring: 0 0% 3.9%;
+    --radius: 0.75rem;
   }
 
   * {
-    @apply border-border selection:bg-primary/20;
+    @apply border-border selection:bg-black/10;
   }
 
   html {
     @apply scroll-smooth antialiased;
-    scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  }
-
-  /* Focus styles for accessibility */
-  :focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 }
 
@@ -57,118 +47,29 @@
   }
   
   .glass {
-    @apply bg-white/90 backdrop-blur-xl border border-white/20 shadow-2xl;
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
   }
-
-  .gradient-text {
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hover-glow {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .hover-glow:hover {
-    box-shadow: 0 20px 40px -12px rgb(139 92 246 / 0.3);
-    transform: translateY(-2px);
-  }
-
-  .magnetic {
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .pulse-slow {
-    animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .slide-in-bottom {
-    animation: slide-in-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .fade-in-up {
-    animation: fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+.animate-in {
+  animation: animate-in 0.5s ease-out;
 }
 
-@keyframes pulse-slow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
-}
-
-@keyframes slide-in-bottom {
-  0% {
-    transform: translateY(100px);
+@keyframes animate-in {
+  from {
     opacity: 0;
+    transform: translateY(10px);
   }
-  100% {
-    transform: translateY(0);
+  to {
     opacity: 1;
-  }
-}
-
-@keyframes fade-in-up {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
     transform: translateY(0);
-    opacity: 1;
   }
 }
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+.hover-lift {
+  transition: transform 0.2s ease;
 }
 
-.shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  animation: shimmer 2s infinite;
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  :root {
-    --primary: 0 0% 0%;
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-  }
+.hover-lift:hover {
+  transform: translateY(-2px);
 }
