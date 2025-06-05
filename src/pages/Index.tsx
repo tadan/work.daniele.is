@@ -5,7 +5,6 @@ import ProjectModal from '@/components/ProjectModal'
 import { projects } from '@/data/projects'
 import MainNav from '@/components/MainNav'
 import ProjectFilter from '@/components/ProjectFilter'
-import Spline from '@splinetool/react-spline'
 
 const Index = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -29,8 +28,11 @@ const Index = () => {
     return (
         <div className='min-h-screen w-full pt-20'>
             <MainNav />
-            <section className='relative mb-20'>
-                <Spline scene='https://prod.spline.design/248dc7b7-65ab-45fb-aca0-9c6ac5ed8845/scene.splinecode' />
+            <section className='relative mb-20 h-96 bg-gradient-to-b from-gray-100 to-gray-200 flex items-center justify-center'>
+                <div className='text-center'>
+                    <h1 className='text-4xl font-bold text-gray-800 mb-4'>Welcome to My Portfolio</h1>
+                    <p className='text-gray-600'>Explore my projects and work</p>
+                </div>
             </section>
 
             <section className='py-20 px-4'>
