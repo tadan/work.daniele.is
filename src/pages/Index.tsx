@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
 import ProjectModal from '@/components/ProjectModal'
@@ -28,7 +29,7 @@ const Index = () => {
     return (
         <div className='min-h-screen w-full pt-10'>
             <MainNav />
-            <section className='relative mb-10 flex items-center justify-center'>
+            <section className='relative mb-10 flex items-center justify-center h-[60vh] md:h-[50vh]'>
                 <Spline
                     scene='https://prod.spline.design/VY7pZbeyTg0fys0t/scene.splinecode'
                     className='w-full h-full'
