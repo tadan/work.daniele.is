@@ -1,10 +1,10 @@
-
 import { useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
 import ProjectModal from '@/components/ProjectModal'
 import { projects } from '@/data/projects'
 import MainNav from '@/components/MainNav'
 import ProjectFilter from '@/components/ProjectFilter'
+import Spline from '@splinetool/react-spline'
 
 const Index = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -26,13 +26,13 @@ const Index = () => {
     })
 
     return (
-        <div className='min-h-screen w-full pt-20'>
+        <div className='min-h-screen w-full pt-10'>
             <MainNav />
-            <section className='relative mb-20 h-96 bg-gradient-to-b from-gray-100 to-gray-200 flex items-center justify-center'>
-                <div className='text-center'>
-                    <h1 className='text-4xl font-bold text-gray-800 mb-4'>Welcome to My Portfolio</h1>
-                    <p className='text-gray-600'>Explore my projects and work</p>
-                </div>
+            <section className='relative mb-10 flex items-center justify-center'>
+                <Spline
+                    scene='https://prod.spline.design/VY7pZbeyTg0fys0t/scene.splinecode'
+                    className='w-full h-full'
+                />
             </section>
 
             <section className='py-20 px-4'>
