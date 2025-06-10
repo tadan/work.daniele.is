@@ -31,7 +31,7 @@ const Contact = () => {
 
     try {
       // Using Formspree service to handle form submissions
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch("https://formspree.io/f/xyzjeoda", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
