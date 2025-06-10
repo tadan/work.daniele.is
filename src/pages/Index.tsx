@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
 import ProjectModal from '@/components/ProjectModal'
@@ -27,16 +26,16 @@ const Index = () => {
     })
 
     return (
-        <div className='min-h-screen w-full pt-10'>
+        <div className='min-h-screen w-full pt-5'>
             <MainNav />
-            <section className='relative mb-10 flex items-center justify-center h-[60vh] md:h-[50vh]'>
+            <section className='relative mb-10 flex items-center justify-center h-[70vh] md:h-[80vh]'>
                 <Spline
                     scene='https://prod.spline.design/VY7pZbeyTg0fys0t/scene.splinecode'
                     className='w-full h-full'
                 />
             </section>
 
-            <section className='py-20 px-4'>
+            <section className='py-0 px-4'>
                 <ProjectFilter
                     selected={selectedFilter}
                     onSelect={setSelectedFilter}
