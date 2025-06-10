@@ -21,16 +21,16 @@ const ProjectFilter = ({ selected, onSelect }: ProjectFilterProps) => {
   ];
 
   return (
-    <div className="flex gap-6 justify-center mb-16">
+    <div className="flex flex-wrap gap-3 md:gap-6 justify-center mb-16 px-4">
       {filters.map((filter) => (
         <button
           key={filter.value}
           onClick={() => onSelect(filter.value)}
           className={cn(
-            "text-sm transition-colors",
+            "text-sm transition-colors px-3 py-2 md:px-0 md:py-0 rounded-full md:rounded-none border md:border-none",
             selected === filter.value
-              ? "text-primary font-medium"
-              : "text-muted-foreground hover:text-primary"
+              ? "text-primary font-medium bg-primary/10 border-primary md:bg-transparent"
+              : "text-muted-foreground hover:text-primary border-border hover:border-primary md:border-none"
           )}
         >
           {filter.label}
