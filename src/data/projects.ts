@@ -1,3 +1,4 @@
+
 export type Project = {
     title: string
     description: string
@@ -141,5 +142,18 @@ export const projects: Project[] = [
         videoUrl:
             'https://www.youtube.com/watch?v=6lZ3q1EfRVI&feature=youtu.be',
         tags: ['Prototyping', 'Experience Design'],
+    },
+    {
+        title: 'Utopia Lab',
+        description:
+            'A 290-participants hackathon in Helsingborg where youth and decision makers solve city challenges',
+        longDescription: `I co-created a 290-participants hackathon in Helsingborg within H22 City Expo initiatives. The hackathon where youth and decision makers come together to solve some of the biggest challenges, creating Utopian Objects and Visions that will have the chance to be realised and tested in Helsingborg's city. The challenges are centered around some of today's most pertinent topics such as the environment and sustainability, mental health, democracy and participation, meaningful leisure time and discrimination.`,
+        role: `My role was to create concepts and material for the hackathon, manage all the technical aspects of uploading and processing the content for Instagram and the interaction for voting each object with customised QR code.`,
+        year: 'June 2022',
+        image: '/lovable-uploads/e085c25c-8116-436a-a385-c1f6b10e76bb.png',
+        link: 'https://www.instagram.com/utopialab_hbg/',
+        github: '#',
+        videoUrl: 'https://www.youtube.com/watch?v=mhb2m8TXc4o',
+        tags: ['Facilitation'],
     },
 ]

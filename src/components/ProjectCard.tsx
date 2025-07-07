@@ -1,5 +1,6 @@
 
 import { Project } from "@/data/projects";
+import { ArrowRight } from "lucide-react";
 
 type ProjectCardProps = {
   project: Project;
@@ -35,18 +36,15 @@ const ProjectCard = ({
       <div className="text-white text-center p-6">
         <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
         <p className="mb-6">{project.description}</p>
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors"
-            onClick={(e) => e.stopPropagation()}
-          >
-            Visit Project
-          </a>
-        )}
       </div>
+    </div>
+    <div
+      className={`absolute bottom-4 right-4 bg-white/90 text-black px-3 py-2 rounded-full text-sm font-medium flex items-center gap-2 transition-opacity duration-300 ${
+        hovered ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      Click for more info
+      <ArrowRight size={16} />
     </div>
   </div>
 );
