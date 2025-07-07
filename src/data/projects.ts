@@ -32,7 +32,7 @@ export const projects: Project[] = [
         longDescription: `Rogue Bees was a global innovation initiative launched by Accenture Song in collaboration with Hyper Island. It aimed to drive grassroots innovation by empowering employees across 125 global hubs to explore emerging trends and challenge conventional thinking. The project fostered a thriving creative community through monthly themes—starting with the Metaverse—along with newsletters, interviews, virtual events, and expert insights. Rogue Bees became a catalyst for culture change and ultimately inspired the creation of a new business unit focused on future technologies.`,
         role: `As the UX and visual designer for the Rogue Bees project, I was responsible for designing and producing all visual content and digital communication materials. I collaborated closely with the copywriter and content team to ensure a cohesive and engaging experience across platforms. My work included designing monthly newsletters, visual layouts, and digital assets that brought the stories and trends to life. I used Adobe Creative Cloud, Figma, and Mailchimp to create on-brand, impactful content that supported both storytelling and community engagement.`,
         year: '2021–2022',
-        image: '/lovable-uploads/6b9f6683-a127-4d0f-8b54-7f3dee69352d.png',
+        image: '/lovable-uploads/4934d40b-788b-4024-8178-01121d5c58a5.png',
         link: '#',
         github: '#',
         tags: ['Experience Design'],
