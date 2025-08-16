@@ -115,7 +115,7 @@ const ProjectModal = ({
                 </a>
               </Button>
             )}
-            <Button variant="outline" asChild>
+            <Button asChild className="bg-brand text-brand-foreground hover:bg-brand/90">
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Visit Project
