@@ -39,7 +39,7 @@ const ProjectCard = ({
       </div>
     </div>
     <div
-      className={`absolute bottom-4 right-4 bg-white/90 text-black px-3 py-2 rounded-full text-sm font-medium flex items-center gap-2 transition-opacity duration-300 ${
+      className={`absolute bottom-4 right-4 bg-brand text-brand-foreground hover:bg-white hover:text-black px-3 py-2 rounded-full text-sm font-medium flex items-center gap-2 transition-all duration-300 ${
         hovered ? "opacity-100" : "opacity-0"
       }`}
     >

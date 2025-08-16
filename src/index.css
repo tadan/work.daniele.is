@@ -25,6 +25,8 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.75rem;
+    --brand: 9 66% 62%;
+    --brand-foreground: 0 0% 98%;
   }
 
   * {

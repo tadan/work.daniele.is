@@ -27,10 +27,10 @@ const ProjectFilter = ({ selected, onSelect }: ProjectFilterProps) => {
           key={filter.value}
           onClick={() => onSelect(filter.value)}
           className={cn(
-            "text-sm transition-colors px-3 py-2 md:px-0 md:py-0 rounded-full md:rounded-none border md:border-none",
+            "text-sm transition-colors px-3 py-2 md:px-0 md:py-0 rounded-full md:rounded-none border md:border-none relative",
             selected === filter.value
-              ? "text-primary font-medium bg-primary/10 border-primary md:bg-transparent"
-              : "text-muted-foreground hover:text-primary border-border hover:border-primary md:border-none"
+              ? "text-brand font-medium bg-brand/10 border-brand md:bg-transparent md:after:absolute md:after:bottom-0 md:after:left-0 md:after:right-0 md:after:h-0.5 md:after:bg-brand"
+              : "text-muted-foreground hover:text-brand border-border hover:border-brand md:border-none"
           )}
         >
           {filter.label}
