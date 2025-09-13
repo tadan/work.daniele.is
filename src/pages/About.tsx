@@ -1,5 +1,6 @@
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import MainNav from '@/components/MainNav'
+import Footer from '@/components/Footer'
 
 const About = () => {
     const recommendations = [
@@ -70,6 +71,48 @@ const About = () => {
                 </div>
             </section>
 
+            <section className='bg-muted py-20'>
+                <div className='max-w-4xl mx-auto px-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
+                        <div className='space-y-3'>
+                            <h3 className='text-lg font-semibold uppercase tracking-wide'>
+                                Creativity, first and throughout
+                            </h3>
+                            <p className='text-muted-foreground leading-relaxed'>
+                                For me, creativity isn't just the spark at the beginning — it's the thread that runs through every stage of the process.
+                            </p>
+                        </div>
+                        
+                        <div className='space-y-3'>
+                            <h3 className='text-lg font-semibold uppercase tracking-wide'>
+                                Consistency, always
+                            </h3>
+                            <p className='text-muted-foreground leading-relaxed'>
+                                Great design is as much about reliability as it is about innovation. I believe in creating experiences that are clear, coherent, and trustworthy across every touchpoint, ensuring people know what to expect and can rely on it every time.
+                            </p>
+                        </div>
+                        
+                        <div className='space-y-3'>
+                            <h3 className='text-lg font-semibold uppercase tracking-wide'>
+                                People and culture, essential
+                            </h3>
+                            <p className='text-muted-foreground leading-relaxed'>
+                                Design doesn't exist in a vacuum — it's always shaped by the people and the context around it. I pay attention to human needs, cultural nuances, and team dynamics, making sure solutions are meaningful, inclusive, and grounded in reality.
+                            </p>
+                        </div>
+                        
+                        <div className='space-y-3'>
+                            <h3 className='text-lg font-semibold uppercase tracking-wide'>
+                                Prototype it, fast
+                            </h3>
+                            <p className='text-muted-foreground leading-relaxed'>
+                                Ideas gain value when they're tested. I prototype early and often, turning concepts into tangible experiences that spark conversations, reveal opportunities, and accelerate learning. Speed is key.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section className='bg-white text-black py-20'>
                 <div className='max-w-6xl mx-auto px-4'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
@@ -86,6 +129,7 @@ const About = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

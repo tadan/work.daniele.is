@@ -5,6 +5,7 @@ import { projects } from '@/data/projects'
 import MainNav from '@/components/MainNav'
 import ProjectFilter from '@/components/ProjectFilter'
 import LogoCarousel from '@/components/LogoCarousel'
+import Footer from '@/components/Footer'
 import Spline from '@splinetool/react-spline'
 
 const Index = () => {
@@ -70,6 +71,7 @@ const Index = () => {
                     onClose={closeProject}
                 />
             )}
+            <Footer />
         </div>
     )
 }

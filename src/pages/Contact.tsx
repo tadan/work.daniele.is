@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import MainNav from "@/components/MainNav";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -142,6 +143,7 @@ const Contact = () => {
           </Card>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
