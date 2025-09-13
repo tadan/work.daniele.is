@@ -7,7 +7,7 @@ const MainNav = () => {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/profile", label: "Profile" },
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
 
