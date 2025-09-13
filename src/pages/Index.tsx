@@ -4,6 +4,7 @@ import ProjectModal from '@/components/ProjectModal'
 import { projects } from '@/data/projects'
 import MainNav from '@/components/MainNav'
 import ProjectFilter from '@/components/ProjectFilter'
+import LogoCarousel from '@/components/LogoCarousel'
 import Spline from '@splinetool/react-spline'
 
 const Index = () => {
@@ -34,6 +35,8 @@ const Index = () => {
                     className='w-full h-full'
                 />
             </section>
+
+            <LogoCarousel />
 
             <section className='py-0 px-4'>
                 <ProjectFilter
