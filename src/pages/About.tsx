@@ -70,22 +70,20 @@ const About = () => {
                 </div>
             </section>
 
-            <section className='bg-white text-black py-20 relative min-h-screen overflow-hidden'>
-                <div className='max-w-6xl mx-auto px-4 relative h-full'>
-                    {recommendations.map((rec, index) => (
-                        <div
-                            key={index}
-                            className='absolute max-w-md'
-                            style={getRandomPosition(index)}
-                        >
-                            <blockquote className={`font-sans italic ${getFontSize(rec.text.length)} leading-relaxed mb-3`}>
-                                "{rec.text}"
-                            </blockquote>
-                            <cite className='not-italic text-gray-600 font-mono text-sm'>
-                                — {rec.author}
-                            </cite>
-                        </div>
-                    ))}
+            <section className='bg-white text-black py-20'>
+                <div className='max-w-6xl mx-auto px-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
+                        {recommendations.map((rec, index) => (
+                            <div key={index} className='space-y-4'>
+                                <blockquote className={`font-sans italic ${getFontSize(rec.text.length)} leading-relaxed`}>
+                                    "{rec.text}"
+                                </blockquote>
+                                <cite className='not-italic text-gray-600 font-mono text-sm'>
+                                    — {rec.author}
+                                </cite>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
         </div>
