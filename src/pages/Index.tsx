@@ -29,17 +29,19 @@ const Index = () => {
     })
 
     return (
-        <div className='min-h-screen w-full pt-5'>
+        <div className='min-h-screen w-full'>
             <MainNav />
             
             {/* Hero Section */}
             <section className='relative mb-20 flex items-center justify-center min-h-[50vh] px-4'>
                 <div className='max-w-4xl mx-auto text-center animate-in'>
-                    <h1 className='text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-8'>
+                    <h1 className='text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-8 animate-fade-in'>
                         I am <Link to="/about" className='text-brand hover:underline transition-colors'>designer and technologist</Link> based in Malmö, Sweden. I help companies <Link to="/projects" className='text-brand hover:underline transition-colors'>accelerate innovation</Link> through prototyping. My experience ranges from small studios to large consultancies, collaborating with some of Sweden's biggest clients. <a href="mailto:work@daniele.is" className='text-brand hover:underline transition-colors'>Let's bring your idea to life</a> together.
                     </h1>
                 </div>
             </section>
+
+            <LogoCarousel />
 
             {/* Skills Section */}
             <section className='py-20 px-4'>
@@ -82,8 +84,6 @@ const Index = () => {
                     </div>
                 </div>
             </section>
-
-            <LogoCarousel />
 
             <section className='py-0 px-4'>
                 <ProjectFilter
