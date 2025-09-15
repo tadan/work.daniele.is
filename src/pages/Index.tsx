@@ -2,31 +2,26 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ProjectCard from '@/components/ProjectCard'
 import ProjectModal from '@/components/ProjectModal'
-import { projects } from '@/data/projects'
+import { projects, Project } from '@/data/projects'
 import MainNav from '@/components/MainNav'
-import ProjectFilter from '@/components/ProjectFilter'
+
 import LogoCarousel from '@/components/LogoCarousel'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/button'
 
 const Index = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-    const [selectedProject, setSelectedProject] = useState<number | null>(null)
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null)
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
-    const [selectedFilter, setSelectedFilter] = useState('all')
-
     const closeProject = () => {
         setSelectedProject(null)
         setCurrentImageIndex(0)
     }
 
-    const filteredProjects = projects.filter((project) => {
-        if (selectedFilter === 'all') return true
-        if (!project.tags) return false
-        return project.tags.some((tag) =>
-            tag.toLowerCase().includes(selectedFilter.toLowerCase())
-        )
-    })
+    // Show only Atlas Copco and PostNord SWAN projects
+    const filteredProjects = projects.filter(project => 
+        project.title === 'Atlas Copco Smart Portal' || project.title === 'PostNord SWAN Dashboard'
+    )
 
     return (
         <div className='min-h-screen w-full'>
@@ -85,11 +80,7 @@ const Index = () => {
                 </div>
             </section>
 
-            <section className='py-0 px-4'>
-                <ProjectFilter
-                    selected={selectedFilter}
-                    onSelect={setSelectedFilter}
-                />
+            <section className='py-20 px-4'>
                 <div className='max-w-7xl mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                         {filteredProjects.map((project, index) => (
@@ -100,7 +91,7 @@ const Index = () => {
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => {
-                                    setSelectedProject(index)
+                                    setSelectedProject(project)
                                     setCurrentImageIndex(0)
                                 }}
                             />
@@ -111,7 +102,7 @@ const Index = () => {
 
             {selectedProject !== null && (
                 <ProjectModal
-                    project={projects[selectedProject]}
+                    project={selectedProject}
                     currentImageIndex={currentImageIndex}
                     setCurrentImageIndex={setCurrentImageIndex}
                     onClose={closeProject}
