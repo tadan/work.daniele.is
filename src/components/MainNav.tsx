@@ -19,7 +19,7 @@ const MainNav = () => {
                 <div className='flex justify-between items-center h-16'>
                     {/* Logo */}
                     <Link to='/' className='flex items-center'>
-                        <img src='/logo.svg' alt='Daniele Portfolio' className='h-8 w-auto' />
+                        <img src='/logo.svg' alt='Daniele Portfolio' className='h-12 w-auto' />
                     </Link>
 
                     {/* Desktop Navigation */}
