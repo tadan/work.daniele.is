@@ -31,15 +31,14 @@ const Projects = () => {
             'KIA Inspiration Lab',
             'The Curious Question Cards',
             'TransitionView',
+            'Rogue Bees – Accenture Song',
         ].includes(project.title)
     )
 
     const accentureProjects = projects.filter((project) =>
-        [
-            'Atlas Copco Smart Portal',
-            'Electrolux Scorecard',
-            'Rogue Bees – Accenture Song',
-        ].includes(project.title)
+        ['Atlas Copco Smart Portal', 'Electrolux Scorecard'].includes(
+            project.title
+        )
     )
 
     // Get all images from projects in a company
@@ -89,7 +88,7 @@ const Projects = () => {
                                 skipSnaps: false,
                                 duration: 0,
                             }}
-                            className='w-full'
+                            className='w-full relative'
                         >
                             <CarouselContent>
                                 {images.map((image, index) => (
@@ -151,7 +150,7 @@ const Projects = () => {
 
             {/* Hero Section */}
             <section className='py-8 px-8 flex items-center justify-center min-h-[30vh]'>
-                <div className='max-w-7xl mx-auto text-left animate-in'>
+                <div className='max-w-6xl mx-auto text-left animate-in'>
                     <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight'>
                         I began my career in fast-paced startups before joining
                         Accenture, collaborating with Fjord and working on
@@ -165,8 +164,8 @@ const Projects = () => {
 
             {/* Projects List */}
             <section className='py-16 bg-gray-100'>
-                <div className='max-w-7xl mx-auto px-8'>
-                    <h1 className='text-s uppercase mb-16'>List of Work</h1>
+                <div className='max-w-6xl mx-auto'>
+                    <h3 className='text-s uppercase mb-16'>List of Work</h3>
 
                     {renderCompanySection(
                         anotherTomorrowProjects,

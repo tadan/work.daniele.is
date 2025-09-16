@@ -31,7 +31,7 @@ const Index = () => {
 
             {/* Hero Section */}
             <section className='py-8 px-4 flex items-center justify-center min-h-[30vh]'>
-                <div className='max-w-7xl mx-auto text-left animate-in'>
+                <div className='max-w-6xl mx-auto text-left animate-in'>
                     <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight mb-2 animate-fade-in'>
                         I am{' '}
                         <Link
@@ -63,7 +63,7 @@ const Index = () => {
 
             {/* Skills Section */}
             <section className='py-8 px-4'>
-                <div className='max-w-7xl mx-auto'>
+                <div className='max-w-6xl mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
                         <div className='space-y-4'>
                             <h3 className='text-xl font-semibold mb-6'>
@@ -94,17 +94,11 @@ const Index = () => {
                                 Brand & Communication
                             </h3>
                             <ul className='space-y-2 text-muted-foreground'>
-                                <li>Brand & Communication Strategy</li>
                                 <li>Social Media Management</li>
+                                <li>Content Creation</li>
                                 <li>Email Marketing</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <div className='flex justify-center mt-16'>
-                        <Button asChild size='lg'>
-                            <Link to='/projects'>See all my projects</Link>
-                        </Button>
                     </div>
                 </div>
             </section>
@@ -112,8 +106,8 @@ const Index = () => {
             {/* Logo Carousel Section */}
             <LogoCarousel />
 
-            <section className='py-8 px-4 bg-gray-100'>
-                <div className='max-w-7xl mx-auto'>
+            <section className='py-16 px-4 bg-gray-100'>
+                <div className='max-w-6xl mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                         {filteredProjects.map((project, index) => (
                             <ProjectCard
@@ -129,6 +123,11 @@ const Index = () => {
                             />
                         ))}
                     </div>
+                </div>
+                <div className='flex justify-center mt-16'>
+                    <Button asChild size='lg'>
+                        <Link to='/projects'>See all my projects</Link>
+                    </Button>
                 </div>
             </section>
 

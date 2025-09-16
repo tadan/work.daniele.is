@@ -135,6 +135,8 @@ const About = () => {
 
             <section className='bg-stone-100 text-black py-20'>
                 <div className='max-w-6xl mx-auto px-4'>
+                    <h3 className='text-s uppercase mb-16'>recommendations</h3>
+
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
                         {recommendations.map((rec, index) => (
                             <div key={index} className='space-y-4'>
