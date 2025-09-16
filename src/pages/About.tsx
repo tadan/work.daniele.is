@@ -46,7 +46,7 @@ const About = () => {
     return (
         <div className='min-h-screen w-full'>
             <MainNav />
-            <section className='relative max-w-4xl mx-auto py-20 px-4 flex flex-col items-center'>
+            <section className='relative max-w-6xl mx-auto py-20 px-4 flex flex-col items-center'>
                 <Avatar className='w-48 h-48 mb-8'>
                     <AvatarImage
                         src='/lovable-uploads/d9aa2c4f-c5ed-4678-aac4-af8454c044ce.png'
@@ -76,7 +76,7 @@ const About = () => {
             </section>
 
             <section className='bg-stone-200 py-20'>
-                <div className='max-w-4xl mx-auto px-4'>
+                <div className='max-w-6xl mx-auto px-4'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
                         <div className='space-y-3'>
                             <h3 className='text-lg font-semibold uppercase tracking-wide'>

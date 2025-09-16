@@ -150,8 +150,8 @@ const Projects = () => {
             <MainNav />
 
             {/* Hero Section */}
-            <section className='relative mb-20 flex items-center justify-center min-h-[30vh] px-4'>
-                <div className='max-w-4xl mx-auto text-left animate-in'>
+            <section className='py-8 px-8 flex items-center justify-center min-h-[30vh]'>
+                <div className='max-w-7xl mx-auto text-left animate-in'>
                     <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight'>
                         I began my career in fast-paced startups before joining
                         Accenture, collaborating with Fjord and working on
