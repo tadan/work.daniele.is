@@ -65,49 +65,12 @@ const Projects = () => {
         images: string[]
     ) => (
         <div className='mb-16'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
-                <div>
-                    <h2 className='text-4xl font-semibold mb-4'>{title}</h2>
-                    <p className='text-muted-foreground text-lg mb-8 leading-relaxed'>{description}</p>
-                    
-                    <div className='space-y-0'>
-                        {projectList.map((project, index) => {
-                            const globalIndex = projects.findIndex(
-                                (p) => p.title === project.title
-                            )
-                            return (
-                                <div
-                                    key={project.title}
-                                    className='grid grid-cols-1 md:grid-cols-4 gap-2 py-6 border-b border-border hover:bg-muted/30 cursor-pointer transition-colors -mx-8 px-8 h-24'
-                                    onClick={() => {
-                                        setSelectedProject(globalIndex)
-                                        setCurrentImageIndex(0)
-                                    }}
-                                >
-                                    <div className='font-medium'>{project.title}</div>
-                                    <div className='text-muted-foreground text-sm'>
-                                        {project.description}
-                                    </div>
-                                    <div className='text-muted-foreground text-sm'>
-                                        {project.year}
-                                    </div>
-                                    <div className='text-muted-foreground italic text-sm'>
-                                        {project.tags?.join(', ')}
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
+            <div className='mb-8'>
+                <h2 className='text-4xl font-semibold mb-4'>{title}</h2>
+                <p className='text-muted-foreground text-lg mb-8 leading-relaxed'>{description}</p>
                 
-                <div className='lg:sticky lg:top-8'>
+                <div className='mb-12'>
                     <Carousel
-                        plugins={[
-                            Autoplay({
-                                delay: 3000,
-                                stopOnInteraction: false,
-                            }),
-                        ]}
                         opts={{
                             align: "start",
                             loop: true,
@@ -129,6 +92,35 @@ const Projects = () => {
                         </CarouselContent>
                     </Carousel>
                 </div>
+            </div>
+            
+            <div className='space-y-0 w-full'>
+                {projectList.map((project, index) => {
+                    const globalIndex = projects.findIndex(
+                        (p) => p.title === project.title
+                    )
+                    return (
+                        <div
+                            key={project.title}
+                            className='grid grid-cols-1 md:grid-cols-4 gap-2 py-6 border-b border-border hover:bg-muted/30 cursor-pointer transition-colors w-full h-24'
+                            onClick={() => {
+                                setSelectedProject(globalIndex)
+                                setCurrentImageIndex(0)
+                            }}
+                        >
+                            <div className='font-medium'>{project.title}</div>
+                            <div className='text-muted-foreground text-sm'>
+                                {project.description}
+                            </div>
+                            <div className='text-muted-foreground text-sm'>
+                                {project.year}
+                            </div>
+                            <div className='text-muted-foreground italic text-sm'>
+                                {project.tags?.join(', ')}
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
