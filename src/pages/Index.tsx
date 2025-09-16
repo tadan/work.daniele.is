@@ -30,7 +30,7 @@ const Index = () => {
             <MainNav />
 
             {/* Hero Section */}
-            <section className='relative mb-20 flex items-center justify-center min-h-[30vh] px-4'>
+            <section className='relative my-10 flex items-center justify-center min-h-[30vh] px-6'>
                 <div className='max-w-4xl mx-auto text-left animate-in'>
                     <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight mb-2 animate-fade-in'>
                         I am{' '}
@@ -60,38 +60,6 @@ const Index = () => {
                     </h1>
                 </div>
             </section>
-
-            {/* Logo Carousel Section */}
-            <LogoCarousel />
-
-            <section className='py-16 px-4 bg-gray-100'>
-                <div className='max-w-7xl mx-auto'>
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-                        {filteredProjects.map((project, index) => (
-                            <ProjectCard
-                                key={project.title}
-                                project={project}
-                                hovered={hoveredIndex === index}
-                                onMouseEnter={() => setHoveredIndex(index)}
-                                onMouseLeave={() => setHoveredIndex(null)}
-                                onClick={() => {
-                                    setSelectedProject(project)
-                                    setCurrentImageIndex(0)
-                                }}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {selectedProject !== null && (
-                <ProjectModal
-                    project={selectedProject}
-                    currentImageIndex={currentImageIndex}
-                    setCurrentImageIndex={setCurrentImageIndex}
-                    onClose={closeProject}
-                />
-            )}
 
             {/* Skills Section */}
             <section className='py-16 px-4'>
@@ -140,6 +108,38 @@ const Index = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Logo Carousel Section */}
+            <LogoCarousel />
+
+            <section className='py-16 px-4 bg-gray-100'>
+                <div className='max-w-7xl mx-auto'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                        {filteredProjects.map((project, index) => (
+                            <ProjectCard
+                                key={project.title}
+                                project={project}
+                                hovered={hoveredIndex === index}
+                                onMouseEnter={() => setHoveredIndex(index)}
+                                onMouseLeave={() => setHoveredIndex(null)}
+                                onClick={() => {
+                                    setSelectedProject(project)
+                                    setCurrentImageIndex(0)
+                                }}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {selectedProject !== null && (
+                <ProjectModal
+                    project={selectedProject}
+                    currentImageIndex={currentImageIndex}
+                    setCurrentImageIndex={setCurrentImageIndex}
+                    onClose={closeProject}
+                />
+            )}
 
             <Footer />
         </div>

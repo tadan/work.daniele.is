@@ -79,7 +79,7 @@ const Projects = () => {
                         <Carousel
                             plugins={[
                                 Autoplay({
-                                    delay: 500,
+                                    delay: 1200,
                                     stopOnInteraction: false,
                                 }),
                             ]}
@@ -120,7 +120,7 @@ const Projects = () => {
                     return (
                         <div
                             key={project.title}
-                            className='grid grid-cols-2 md:grid-cols-4 gap-3 h-24 border-b border-gray-900 hover:bg-black hover:text-brand cursor-pointer transition-all mx-0 lg:px-32 sm:px-4 items-center'
+                            className='grid grid-cols-2 md:grid-cols-4 gap-3 h-24 border-b border-gray-900 hover:bg-blue-100 hover:text-brand cursor-pointer transition-all mx-0 lg:px-32 sm:px-4 items-center'
                             onClick={() => {
                                 setSelectedProject(globalIndex)
                                 setCurrentImageIndex(0)
