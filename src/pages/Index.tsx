@@ -64,7 +64,7 @@ const Index = () => {
             {/* Logo Carousel Section */}
             <LogoCarousel />
 
-            <section className='py-20 px-4'>
+            <section className='py-16 px-4 bg-gray-100'>
                 <div className='max-w-7xl mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                         {filteredProjects.map((project, index) => (
@@ -94,7 +94,7 @@ const Index = () => {
             )}
 
             {/* Skills Section */}
-            <section className='py-20 px-4'>
+            <section className='py-16 px-4'>
                 <div className='max-w-6xl mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
                         <div className='space-y-4'>

@@ -45,7 +45,7 @@ const Projects = () => {
     // Get all images from projects in a company
     const getCompanyImages = (projectList: typeof projects) => {
         const images: string[] = []
-        projectList.forEach(project => {
+        projectList.forEach((project) => {
             if (project.images) {
                 images.push(...project.images)
             } else {
@@ -59,82 +59,94 @@ const Projects = () => {
     const accentureImages = getCompanyImages(accentureProjects)
 
     const renderCompanySection = (
-        projectList: typeof projects, 
-        title: string, 
+        projectList: typeof projects,
+        title: string,
         description: string,
         images: string[]
     ) => (
         <div className='mb-16'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
-                <div>
-                    <h2 className='text-4xl font-semibold mb-4'>{title}</h2>
-                    <p className='text-muted-foreground text-lg mb-8 leading-relaxed'>{description}</p>
-                    
-                    <div className='space-y-0'>
-                        {projectList.map((project, index) => {
-                            const globalIndex = projects.findIndex(
-                                (p) => p.title === project.title
-                            )
-                            return (
-                                <div
-                                    key={project.title}
-                                    className='grid grid-cols-1 md:grid-cols-4 gap-2 py-6 border-b border-border hover:bg-muted/30 cursor-pointer transition-colors -mx-8 px-8 h-24'
-                                    onClick={() => {
-                                        setSelectedProject(globalIndex)
-                                        setCurrentImageIndex(0)
-                                    }}
-                                >
-                                    <div className='font-medium'>{project.title}</div>
-                                    <div className='text-muted-foreground text-sm'>
-                                        {project.description}
-                                    </div>
-                                    <div className='text-muted-foreground text-sm'>
-                                        {project.year}
-                                    </div>
-                                    <div className='text-muted-foreground italic text-sm'>
-                                        {project.tags?.join(', ')}
-                                    </div>
-                                </div>
-                            )
-                        })}
+            {/* Top section with title, description, and carousel */}
+            <div className='mb-12'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
+                    <div>
+                        <h2 className='text-4xl font-semibold mb-4'>{title}</h2>
+                        <p className='text-muted-foreground text-lg mb-8 leading-relaxed'>
+                            {description}
+                        </p>
+                    </div>
+
+                    <div className='w-full'>
+                        <Carousel
+                            plugins={[
+                                Autoplay({
+                                    delay: 500,
+                                    stopOnInteraction: false,
+                                }),
+                            ]}
+                            opts={{
+                                align: 'start',
+                                loop: true,
+                                skipSnaps: false,
+                                duration: 0,
+                            }}
+                            className='w-full'
+                        >
+                            <CarouselContent>
+                                {images.map((image, index) => (
+                                    <CarouselItem key={index}>
+                                        <div className='aspect-video'>
+                                            <img
+                                                src={image}
+                                                alt={`${title} project ${
+                                                    index + 1
+                                                }`}
+                                                className='w-full h-full object-cover rounded-lg'
+                                            />
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                        </Carousel>
                     </div>
                 </div>
-                
-                <div className='lg:sticky lg:top-8'>
-                    <Carousel
-                        plugins={[
-                            Autoplay({
-                                delay: 3000,
-                                stopOnInteraction: false,
-                            }),
-                        ]}
-                        opts={{
-                            align: "start",
-                            loop: true,
-                        }}
-                        className="w-full"
-                    >
-                        <CarouselContent>
-                            {images.map((image, index) => (
-                                <CarouselItem key={index}>
-                                    <div className="aspect-video">
-                                        <img
-                                            src={image}
-                                            alt={`${title} project ${index + 1}`}
-                                            className="w-full h-full object-cover rounded-lg"
-                                        />
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                    </Carousel>
-                </div>
+            </div>
+
+            {/* Project list below */}
+            <div className='relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-white'>
+                {projectList.map((project, index) => {
+                    const globalIndex = projects.findIndex(
+                        (p) => p.title === project.title
+                    )
+                    return (
+                        <div
+                            key={project.title}
+                            className='grid grid-cols-2 md:grid-cols-4 gap-3 h-24 border-b border-gray-900 hover:bg-black hover:text-brand cursor-pointer transition-all mx-0 lg:px-32 sm:px-4 items-center'
+                            onClick={() => {
+                                setSelectedProject(globalIndex)
+                                setCurrentImageIndex(0)
+                            }}
+                        >
+                            <div className='font-lg font-bold'>
+                                {project.title}
+                            </div>
+                            <div className='text-muted-foreground text-sm hidden md:block'>
+                                {project.description}
+                            </div>
+                            <div className='text-muted-foreground lg:pl-16 text-sm hidden md:block'>
+                                {project.year}
+                            </div>
+                            <div className='text-muted-foreground italic text-sm'>
+                                {project.tags?.join(', ')}
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
 
     return (
-        <div className='min-h-screen w-full pt-5'>
+        <div className='min-h-screen w-full'>
             <MainNav />
 
             {/* Hero Section */}
@@ -162,11 +174,11 @@ const Projects = () => {
                         'At Another Tomorrow, I took the lead on design initiatives, prototyping bold ideas and driving long-term transformation. Working with innovative teams to create sustainable solutions and digital experiences that shape the future.',
                         anotherTomorrowImages
                     )}
-                    
+
                     {renderCompanySection(
                         accentureProjects,
                         'Accenture',
-                        'Collaborating with Fjord and working on projects with some of Sweden\'s largest clients. Building scalable solutions and innovative digital experiences for enterprise-level challenges.',
+                        "Collaborating with Fjord and working on projects with some of Sweden's largest clients. Building scalable solutions and innovative digital experiences for enterprise-level challenges.",
                         accentureImages
                     )}
 

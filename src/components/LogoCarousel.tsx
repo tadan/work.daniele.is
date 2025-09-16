@@ -26,10 +26,10 @@ const logos = [
 
 const LogoCarousel = () => {
     return (
-        <section className='py-16 px-4'>
+        <section className='py-8 px-4'>
             <div className='max-w-7xl mx-auto text-center'>
                 <h2 className='text-2xl md:text-2xl font-semibold text-foreground mb-12'>
-                    Innovation guidance trusted by teams at
+                    Trusted by teams at
                 </h2>
                 <Carousel
                     opts={{
