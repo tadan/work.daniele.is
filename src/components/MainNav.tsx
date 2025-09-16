@@ -15,11 +15,15 @@ const MainNav = () => {
 
     return (
         <nav className='bg-transparent sticky top-0 z-50'>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='flex justify-between items-center h-16'>
                     {/* Logo */}
                     <Link to='/' className='flex items-center'>
-                        <img src='/logo.svg' alt='Daniele Portfolio' className='h-12 w-auto' />
+                        <img
+                            src='/logo_transparent.svg'
+                            alt="Daniele Tatasciore's Logo"
+                            className='h-12 w-auto'
+                        />
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -29,9 +33,9 @@ const MainNav = () => {
                                 key={link.href}
                                 to={link.href}
                                 className={cn(
-                                    'text-sm font-medium transition-colors hover:text-brand hover:underline',
+                                    'text-sm font-medium transition-colors hover:text-brand',
                                     location.pathname === link.href
-                                        ? 'text-brand underline'
+                                        ? 'text-brand'
                                         : 'text-foreground'
                                 )}
                             >
