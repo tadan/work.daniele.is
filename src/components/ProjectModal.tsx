@@ -97,12 +97,16 @@ const ProjectModal = ({
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold mb-2">Overview</h3>
-              <p className="text-muted-foreground">{project.longDescription}</p>
+              <h3 className="text-xl font-semibold mb-2">The Challenge</h3>
+              <p className="text-muted-foreground">{project.challenge}</p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-2">My Role</h3>
-              <p className="text-muted-foreground">{project.role}</p>
+              <h3 className="text-xl font-semibold mb-2">The Solution</h3>
+              <p className="text-muted-foreground">{project.solution}</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">My Role & Impact</h3>
+              <p className="text-muted-foreground">{project.impact}</p>
             </div>
             <div className="flex gap-4 pt-4">
               {project.videoUrl && (
@@ -143,12 +147,16 @@ const ProjectModal = ({
             {/* Left Column - Text Content */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4">Overview</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">{project.longDescription}</p>
+                <h3 className="text-2xl font-semibold mb-4">The Challenge</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">{project.challenge}</p>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-4">My Role</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">{project.role}</p>
+                <h3 className="text-2xl font-semibold mb-4">The Solution</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">{project.solution}</p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold mb-4">My Role & Impact</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">{project.impact}</p>
               </div>
               <div className="flex gap-4 pt-4">
                 {project.videoUrl && (
