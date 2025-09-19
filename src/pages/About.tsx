@@ -49,7 +49,7 @@ const About = () => {
             <section className='relative max-w-6xl mx-auto py-20 px-4 flex flex-col items-center'>
                 <Avatar className='w-48 h-48 mb-8'>
                     <AvatarImage
-                        src='/lovable-uploads/d9aa2c4f-c5ed-4678-aac4-af8454c044ce.png'
+                        src='/uploads/d9aa2c4f-c5ed-4678-aac4-af8454c044ce.png'
                         alt='Profile portrait'
                         className='object-cover'
                     />
