@@ -36,9 +36,12 @@ const Projects = () => {
     )
 
     const accentureProjects = projects.filter((project) =>
-        ['Atlas Copco Smart Portal', 'Electrolux Scorecard'].includes(
-            project.title
-        )
+        [
+            'Atlas Copco Smart Portal',
+            'Electrolux Scorecard',
+            'Mobility 2039',
+            'Save the Children - Mina Svar',
+        ].includes(project.title)
     )
 
     // Get all images from projects in a company

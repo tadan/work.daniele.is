@@ -8,8 +8,8 @@ const MainNav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const links = [
-        { href: '/about', label: 'About' },
         { href: '/projects', label: 'Projects' },
+        { href: '/about', label: 'About' },
         { href: '/contact', label: 'Contact' },
     ]
 
@@ -33,7 +33,7 @@ const MainNav = () => {
                                 key={link.href}
                                 to={link.href}
                                 className={cn(
-                                    'text-sm font-medium transition-colors hover:text-brand',
+                                    'text-lg font-medium transition-colors hover:text-brand',
                                     location.pathname === link.href
                                         ? 'text-brand'
                                         : 'text-foreground'
