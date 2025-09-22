@@ -11,6 +11,7 @@ export type Project = {
     moreInfo: string
     videoUrl?: string
     tags?: string[]
+    onlyLink?: boolean
 }
 
 export const projects: Project[] = [
@@ -57,7 +58,7 @@ export const projects: Project[] = [
         image: '/uploads/d8131e9b-fecb-42f0-b46b-bdd4589231f8.png',
         link: '#',
         moreInfo: 'https://www.anothertomorrow.com/transition-view',
-        videoUrl: 'https://drive.proton.me/urls/HBMQY5BR6M#4pRfg1ae1ddj',
+        videoUrl: 'https://www.youtube.com/watch?v=MecLoA9Y0CI',
         tags: ['Prototyping'],
     },
     {
@@ -69,9 +70,9 @@ export const projects: Project[] = [
         role: `My responsibilities involved researching and exploring all the technical aspects of the prototypes. Once approved by the client, I constructed the vending machine prototype and developed its digital counterpart in Figma. On the test day, the prototype was equipped with tracking analytics, enabling us to collect an extensive dataset about user interactions. This was complemented by qualitative data gathered from interviews.`,
         year: '2024',
         images: [
+            '/uploads/arla-breakbot.gif',
             '/uploads/43157a96-e053-4c75-9618-2b3ca6503f4e.png',
             '/uploads/a90c27c0-d51d-4b01-b7ee-acc92378aabb.png',
-            '/uploads/15d70303-40c9-4aa2-8c9c-abe3ef9ec6cd.png',
         ],
         image: '/uploads/a90c27c0-d51d-4b01-b7ee-acc92378aabb.png',
         link:
@@ -143,9 +144,9 @@ export const projects: Project[] = [
         role: `Leveraging the Qlik Sense data analytics framework, I was responsible for collecting real-time data from the company's data lake and constructing the dashboard interface. The solution was primarily built using HTML, CSS, and vanilla JavaScript, ensuring a responsive and user-friendly experience. My work enabled seamless integration of dynamic analytics, allowing users to visualize, analyze, and act on key business metrics efficiently.`,
         year: 'Spring 19',
         image: '/uploads/04630c09-7217-4ad2-9d7e-c99576fd41ce.png',
-        link: '#',
-        moreInfo: '#',
-        videoUrl: '#',
+        link: null,
+        moreInfo: null,
+        videoUrl: null,
         tags: ['Prototyping', 'Web Development'],
     },
     {
@@ -157,8 +158,8 @@ export const projects: Project[] = [
         role: `As both facilitator and active contributor on Team 3, I guided our diverse group through the human-centered design process while ensuring every voice was heard and valued. My dual role involved orchestrating productive remote collaboration across different time zones and cultural backgrounds, and guiding the team through structured ideation, prototyping, and presentation phases.`,
         year: '2023',
         image: '/uploads/47f7f473-4a8f-4714-99e8-69f8ddf01446.png',
-        link: '#',
-        moreInfo: '#',
+        link: null,
+        moreInfo: null,
         videoUrl:
             'https://www.youtube.com/watch?v=BFilUBLrVVc&feature=youtu.be',
         tags: ['Facilitation'],
@@ -172,8 +173,8 @@ export const projects: Project[] = [
         role: `I led the proof of concept design, focusing on simplicity, clarity, and engagement for children. I facilitated and organized user testing sessions with children, incorporating feedback into rapid iterations. I also supported a remote-first, cross-cultural team through structured ideation, prototyping, and storytelling.`,
         year: '2023',
         image: '/uploads/5e2552aa-8497-48c7-bf69-a2a63272a7e3.png',
-        link: '#',
-        moreInfo: '#',
+        link: null,
+        moreInfo: null,
         videoUrl:
             'https://www.youtube.com/watch?v=6lZ3q1EfRVI&feature=youtu.be',
         tags: ['Prototyping', 'Experience Design'],
@@ -223,7 +224,7 @@ export const projects: Project[] = [
     {
         title: 'Save the Children - Mina Svar',
         description:
-            "An impact measurement tool developed to capture children and young adults' own experiences of their current situation",
+            'I was responsible for bug fixes and feature improvements using Xcode and TestFlight for deployment and testing cycles',
         challenge:
             'Organizations increasingly recognize the importance of ensuring social sustainability in their operations, but measuring and following up on social sustainability efforts is complex. Unlike environmental sustainability, social sustainability was difficult to measure using absolute and quantifiable values, making it challenging to assess the effectiveness of youth engagement programs.',
         solution:
@@ -236,9 +237,52 @@ export const projects: Project[] = [
             '/uploads/radda-barnen.gif',
             '/uploads/radda-barnen-mina-svar.jpg',
         ],
-        link: 'https://apps.apple.com/se/app/mina-svar/id1441011794?l=en-GB',
+        link: 'https://www.minasvar.app/',
         moreInfo:
             "Contributed to creating structural societal change and reducing discrimination against children in socially and economically vulnerable areas. The app strengthens young people's influence, participation and engagement in issues that affect them, supporting UN Agenda 2030 goals through data-driven social sustainability measurement.",
         tags: ['iOS', 'Swift', 'TestFlight'],
+        onlyLink: true,
+    },
+    {
+        title: 'Airmee - Design & Development',
+        description:
+            "Design and development of Airmee's first products and prototypes.",
+        challenge: `Airmee needed to create and develop their first products and prototypes to establish a strong market presence in the logistics sector. The challenge was to design user-centric solutions that would meet the needs of both customers and operational teams while aligning with Airmee's brand values.`,
+        solution: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        role: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        year: '2017-2018',
+        image: null,
+        link: null,
+        moreInfo: null,
+        videoUrl: null,
+        tags: ['Web Development', 'Prototyping'],
+    },
+    {
+        title: 'Stagecast',
+        description:
+            'A platform that connects performers with venues for live events.',
+        challenge: `Stagecast needed to create a platform that would facilitate connections between performers and venues for live events. The challenge was to design an intuitive and efficient system that would streamline the booking process and enhance the experience for both performers and venue managers.`,
+        solution: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        role: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        year: '2018',
+        image: null,
+        link: null,
+        moreInfo: null,
+        videoUrl: null,
+        tags: ['Web Development'],
+    },
+    {
+        title: 'Freelance Work',
+        description:
+            'Various freelance projects involving web development and design.',
+        challenge: `Freelance projects often come with unique challenges, requiring adaptability and a broad skill set to meet diverse client needs. The challenge is to deliver high-quality solutions that align with client goals while managing time and resources effectively.`,
+        solution: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        role: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        year: '2016-2017',
+        image: null,
+        link: null,
+        moreInfo: null,
+        videoUrl: null,
+        tags: ['Web Development', 'Design'],
     },
 ]

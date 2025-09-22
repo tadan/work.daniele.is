@@ -44,6 +44,14 @@ const Projects = () => {
         ].includes(project.title)
     )
 
+    const otherProjects = projects.filter((project) =>
+        [
+            'Stagecast',
+            'Airmee - Design & Development',
+            'Freelance Work',
+        ].includes(project.title)
+    )
+
     // Get all images from projects in a company
     const getCompanyImages = (projectList: typeof projects) => {
         const images: string[] = []
@@ -59,6 +67,7 @@ const Projects = () => {
 
     const anotherTomorrowImages = getCompanyImages(anotherTomorrowProjects)
     const accentureImages = getCompanyImages(accentureProjects)
+    const otherProjectImages = getCompanyImages(otherProjects)
 
     const renderCompanySection = (
         projectList: typeof projects,
@@ -66,7 +75,7 @@ const Projects = () => {
         description: string,
         images: string[]
     ) => (
-        <div className='mb-16'>
+        <div className='mb-12 sm:px-4'>
             {/* Top section with title, description, and carousel */}
             <div className='mb-12'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
@@ -114,35 +123,45 @@ const Projects = () => {
             </div>
 
             {/* Project list below */}
-            <div className='relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-white'>
-                {projectList.map((project, index) => {
-                    const globalIndex = projects.findIndex(
-                        (p) => p.title === project.title
-                    )
-                    return (
-                        <div
-                            key={project.title}
-                            className='grid grid-cols-2 md:grid-cols-4 gap-3 h-24 border-b border-gray-900 hover:bg-blue-100 hover:text-brand cursor-pointer transition-all mx-0 lg:px-32 sm:px-4 items-center'
-                            onClick={() => {
-                                setSelectedProject(globalIndex)
-                                setCurrentImageIndex(0)
-                            }}
-                        >
-                            <div className='font-lg font-bold'>
-                                {project.title}
+            <div className='relative w-screen left-1/2 right-1/2 -mx-[50vw] px-2 bg-white'>
+                <div className='max-w-7xl mx-auto'>
+                    {projectList.map((project, index) => {
+                        const globalIndex = projects.findIndex(
+                            (p) => p.title === project.title
+                        )
+                        return (
+                            <div
+                                key={project.title}
+                                className='grid grid-cols-2 md:grid-cols-4 gap-1 h-24 border-b border-gray-900 hover:bg-blue-100 hover:text-brand cursor-pointer transition-all mx-0 px-4 md:px-8 items-center'
+                                onClick={() => {
+                                    if (project.onlyLink && project.link) {
+                                        window.open(
+                                            project.link,
+                                            '_blank',
+                                            'noopener,noreferrer'
+                                        )
+                                    } else {
+                                        setSelectedProject(globalIndex)
+                                        setCurrentImageIndex(0)
+                                    }
+                                }}
+                            >
+                                <div className='font-lg font-bold'>
+                                    {project.title}
+                                </div>
+                                <div className='text-muted-foreground text-sm hidden md:block'>
+                                    {project.description}
+                                </div>
+                                <div className='text-muted-foreground lg:pl-16 text-sm hidden md:block'>
+                                    {project.year}
+                                </div>
+                                <div className='text-muted-foreground italic text-sm'>
+                                    {project.tags?.join(', ')}
+                                </div>
                             </div>
-                            <div className='text-muted-foreground text-sm hidden md:block'>
-                                {project.description}
-                            </div>
-                            <div className='text-muted-foreground lg:pl-16 text-sm hidden md:block'>
-                                {project.year}
-                            </div>
-                            <div className='text-muted-foreground italic text-sm'>
-                                {project.tags?.join(', ')}
-                            </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )
@@ -164,11 +183,61 @@ const Projects = () => {
                     </h1>
                 </div>
             </section>
+            {/* Experience Columns */}
+            <section className='pb-16 px-8'>
+                <div className='max-w-6xl mx-auto'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                        <div>
+                            <h3 className='text-xl font-medium text-brand'>
+                                Small-Agency Design Lead
+                            </h3>
+                            <p className='text-sm text-gray-700 mb-8'>
+                                4 years at Another Tomorrow
+                            </p>
+                            <ul className='text-2xl space-y-2 text-gray-900'>
+                                <li>PostNord</li>
+                                <li>KIA</li>
+                                <li>Arla</li>
+                                <li>DFDS</li>
+                            </ul>
+                        </div>
 
+                        <div>
+                            <h3 className='text-xl font-medium text-brand'>
+                                Technology & Design Consultancy
+                            </h3>
+                            <p className='text-sm text-gray-700 mb-8'>
+                                2 years at Accenture
+                            </p>
+                            <ul className='text-2xl space-y-2 text-gray-900'>
+                                <li>Atlas Copco</li>
+                                <li>H&M</li>
+                                <li>Electrolux</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className='text-xl font-medium text-brand'>
+                                Startup & Freelancing
+                            </h3>
+                            <p className='text-sm text-gray-700 mb-8'>
+                                2 years in Sweden and Germany
+                            </p>
+                            <ul className='text-2xl space-y-2 text-gray-900'>
+                                <li>Airmee</li>
+                                <li>Stagecast</li>
+                                <li>Freelance in Germany</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
             {/* Projects List */}
             <section className='py-16 bg-gray-100'>
                 <div className='max-w-6xl mx-auto'>
-                    <h3 className='text-s uppercase mb-16'>List of Work</h3>
+                    <h3 className='text-s uppercase mb-16 sm:px-4'>
+                        List of Work
+                    </h3>
 
                     {renderCompanySection(
                         anotherTomorrowProjects,
@@ -184,14 +253,12 @@ const Projects = () => {
                         accentureImages
                     )}
 
-                    <div className='mb-16'>
-                        <h2 className='text-2xl font-semibold mb-8'>
-                            Other Projects
-                        </h2>
-                        <div className='text-muted-foreground italic'>
-                            Coming soon...
-                        </div>
-                    </div>
+                    {renderCompanySection(
+                        otherProjects,
+                        'Other Projects',
+                        'These projects showcase my versatility and ability to adapt to different challenges and industries.',
+                        otherProjectImages
+                    )}
                 </div>
             </section>
 

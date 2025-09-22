@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Video } from 'lucide-react'
+import { ExternalLink, Video, Link } from 'lucide-react'
 import { Project } from '@/data/projects'
 import { useState } from 'react'
 
@@ -82,8 +82,10 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 {project.role}
                             </p>
                         </div>
-                        {(project.videoUrl || project.link) && (
-                            <div className='flex gap-4 pt-4'>
+                        {(project.videoUrl ||
+                            project.link ||
+                            project.moreInfo) && (
+                            <div className='flex flex-wrap gap-4 pt-4'>
                                 {project.videoUrl && (
                                     <Button asChild>
                                         <a
@@ -108,6 +110,21 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                         >
                                             <ExternalLink className='mr-2 h-4 w-4' />
                                             Visit Project
+                                        </a>
+                                    </Button>
+                                )}
+                                {project.moreInfo && (
+                                    <Button
+                                        asChild
+                                        className='bg-brand/70 text-brand-foreground hover:bg-brand/60'
+                                    >
+                                        <a
+                                            href={project.moreInfo}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                        >
+                                            <Link className='mr-2 h-4 w-4' />
+                                            Learn More
                                         </a>
                                     </Button>
                                 )}
@@ -159,8 +176,10 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                     {project.role}
                                 </p>
                             </div>
-                            {(project.videoUrl || project.link) && (
-                                <div className='flex gap-4 pt-4'>
+                            {(project.videoUrl ||
+                                project.link ||
+                                project.moreInfo) && (
+                                <div className='flex flex-wrap gap-4 pt-4'>
                                     {project.videoUrl && (
                                         <Button asChild size='lg'>
                                             <a
@@ -186,6 +205,22 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                             >
                                                 <ExternalLink className='mr-2 h-4 w-4' />
                                                 Visit Project
+                                            </a>
+                                        </Button>
+                                    )}
+                                    {project.moreInfo && (
+                                        <Button
+                                            asChild
+                                            size='lg'
+                                            className='bg-brand/70 text-brand-foreground hover:bg-brand/60'
+                                        >
+                                            <a
+                                                href={project.moreInfo}
+                                                target='_blank'
+                                                rel='noopener noreferrer'
+                                            >
+                                                <Link className='mr-2 h-4 w-4' />
+                                                Learn More
                                             </a>
                                         </Button>
                                     )}
