@@ -68,15 +68,6 @@
   }
 }
 
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
 .hover-lift {
   transition: transform 0.2s ease;
 }

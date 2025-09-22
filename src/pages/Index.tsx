@@ -12,6 +12,11 @@ import { Button } from '@/components/ui/button'
 const Index = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
     const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+    const closeProject = () => {
+        setSelectedProject(null)
+        setCurrentImageIndex(0)
+    }
 
     // Show only Atlas Copco and PostNord SWAN projects
     const filteredProjects = projects.filter(
@@ -113,6 +118,7 @@ const Index = () => {
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => {
                                     setSelectedProject(project)
+                                    setCurrentImageIndex(0)
                                 }}
                             />
                         ))}
@@ -128,7 +134,9 @@ const Index = () => {
             {selectedProject !== null && (
                 <ProjectModal
                     project={selectedProject}
-                    onClose={() => setSelectedProject(null)}
+                    currentImageIndex={currentImageIndex}
+                    setCurrentImageIndex={setCurrentImageIndex}
+                    onClose={closeProject}
                 />
             )}
 
