@@ -13,12 +13,6 @@ import Autoplay from 'embla-carousel-autoplay'
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState<number | null>(null)
-    const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
-    const closeProject = () => {
-        setSelectedProject(null)
-        setCurrentImageIndex(0)
-    }
 
     // Organize projects by company
     const anotherTomorrowProjects = projects.filter((project) =>
@@ -125,7 +119,6 @@ const Projects = () => {
                             className='grid grid-cols-2 md:grid-cols-4 gap-3 h-24 border-b border-gray-900 hover:bg-blue-100 hover:text-brand cursor-pointer transition-all mx-0 lg:px-32 sm:px-4 items-center'
                             onClick={() => {
                                 setSelectedProject(globalIndex)
-                                setCurrentImageIndex(0)
                             }}
                         >
                             <div className='font-lg font-bold'>
@@ -198,9 +191,7 @@ const Projects = () => {
             {selectedProject !== null && (
                 <ProjectModal
                     project={projects[selectedProject]}
-                    currentImageIndex={currentImageIndex}
-                    setCurrentImageIndex={setCurrentImageIndex}
-                    onClose={closeProject}
+                    onClose={() => setSelectedProject(null)}
                 />
             )}
 
