@@ -183,55 +183,7 @@ const Projects = () => {
                     </h1>
                 </div>
             </section>
-            {/* Experience Columns */}
-            <section className='pb-16 px-8'>
-                <div className='max-w-6xl mx-auto'>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-                        <div>
-                            <h3 className='text-xl font-medium text-brand'>
-                                Small-Agency Design Lead
-                            </h3>
-                            <p className='text-sm text-gray-700 mb-8'>
-                                4 years at Another Tomorrow
-                            </p>
-                            <ul className='text-2xl space-y-2 text-gray-900'>
-                                <li>PostNord</li>
-                                <li>KIA</li>
-                                <li>Arla</li>
-                                <li>DFDS</li>
-                            </ul>
-                        </div>
 
-                        <div>
-                            <h3 className='text-xl font-medium text-brand'>
-                                Technology & Design Consultancy
-                            </h3>
-                            <p className='text-sm text-gray-700 mb-8'>
-                                2 years at Accenture
-                            </p>
-                            <ul className='text-2xl space-y-2 text-gray-900'>
-                                <li>Atlas Copco</li>
-                                <li>H&M</li>
-                                <li>Electrolux</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3 className='text-xl font-medium text-brand'>
-                                Startup & Freelancing
-                            </h3>
-                            <p className='text-sm text-gray-700 mb-8'>
-                                2 years in Sweden and Germany
-                            </p>
-                            <ul className='text-2xl space-y-2 text-gray-900'>
-                                <li>Airmee</li>
-                                <li>Stagecast</li>
-                                <li>Freelance in Germany</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
             {/* Projects List */}
             <section className='py-16 bg-gray-100'>
                 <div className='max-w-6xl mx-auto'>
@@ -265,8 +217,6 @@ const Projects = () => {
             {selectedProject !== null && (
                 <ProjectModal
                     project={projects[selectedProject]}
-                    currentImageIndex={currentImageIndex}
-                    setCurrentImageIndex={setCurrentImageIndex}
                     onClose={closeProject}
                 />
             )}
