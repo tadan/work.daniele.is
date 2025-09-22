@@ -134,8 +134,6 @@ const Index = () => {
             {selectedProject !== null && (
                 <ProjectModal
                     project={selectedProject}
-                    currentImageIndex={currentImageIndex}
-                    setCurrentImageIndex={setCurrentImageIndex}
                     onClose={closeProject}
                 />
             )}

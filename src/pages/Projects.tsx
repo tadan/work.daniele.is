@@ -165,6 +165,47 @@ const Projects = () => {
                 </div>
             </section>
 
+            {/* Experience Columns */}
+            <section className='py-16 px-8'>
+                <div className='max-w-6xl mx-auto'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                        <div>
+                            <h3 className='text-xl font-medium text-brand mb-6'>
+                                Small-agency Design Lead
+                            </h3>
+                            <ul className='space-y-2 text-muted-foreground'>
+                                <li>PostNord</li>
+                                <li>KIA</li>
+                                <li>Arla</li>
+                                <li>DFDS</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 className='text-xl font-medium text-brand mb-6'>
+                                Technology & Design Consultancy
+                            </h3>
+                            <ul className='space-y-2 text-muted-foreground'>
+                                <li>Atlas Copco</li>
+                                <li>H&M</li>
+                                <li>Electrolux</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 className='text-xl font-medium text-brand mb-6'>
+                                Startup & Freelancing
+                            </h3>
+                            <ul className='space-y-2 text-muted-foreground'>
+                                <li>Airmee</li>
+                                <li>Stagecast</li>
+                                <li>Freelance in Germany</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Projects List */}
             <section className='py-16 bg-gray-100'>
                 <div className='max-w-6xl mx-auto'>
@@ -198,8 +239,6 @@ const Projects = () => {
             {selectedProject !== null && (
                 <ProjectModal
                     project={projects[selectedProject]}
-                    currentImageIndex={currentImageIndex}
-                    setCurrentImageIndex={setCurrentImageIndex}
                     onClose={closeProject}
                 />
             )}
