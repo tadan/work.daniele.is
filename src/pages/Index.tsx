@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ProjectCard from '@/components/ProjectCard'
 import ProjectModal from '@/components/ProjectModal'
+import HeroSlideshow from '@/components/HeroSlideshow'
 import { projects, Project } from '@/data/projects'
 import MainNav from '@/components/MainNav'
 
@@ -12,11 +13,18 @@ import { Button } from '@/components/ui/button'
 const Index = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
     const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-    const [currentImageIndex, setCurrentImageIndex] = useState(0)
     const closeProject = () => {
         setSelectedProject(null)
-        setCurrentImageIndex(0)
     }
+
+    // Hero slideshow images - selecting 5 representative project images
+    const heroImages = [
+        '/uploads/2e635239-c6ce-4168-ac58-609fd397e61d.png', // PostNord SWAN
+        '/uploads/f55b0014-566e-4de4-aceb-ee807cc694ef.png', // Atlas Copco
+        '/uploads/roguebees_lookbackbook.png', // Rogue Bees
+        '/uploads/a90c27c0-d51d-4b01-b7ee-acc92378aabb.png', // Arla
+        '/uploads/87652519-d152-411b-a621-4a1d56fc71e6.png', // DFDS
+    ]
 
     // Show only Atlas Copco and PostNord SWAN projects
     const filteredProjects = projects.filter(
@@ -30,34 +38,43 @@ const Index = () => {
             <MainNav />
 
             {/* Hero Section */}
-            <section className='py-8 px-4 flex items-center justify-center min-h-[30vh]'>
-                <div className='max-w-6xl mx-auto text-left animate-in'>
-                    <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight mb-2 animate-fade-in'>
-                        I am{' '}
-                        <Link
-                            to='/about'
-                            className='text-foreground hover:text-brand transition-colors'
-                        >
-                            designer and technologist
-                        </Link>{' '}
-                        based in Malmö, Sweden. I help companies{' '}
-                        <Link
-                            to='/projects'
-                            className='text-foreground hover:text-brand transition-colors'
-                        >
-                            accelerate innovation
-                        </Link>{' '}
-                        through prototyping. My experience ranges from small
-                        studios to large consultancies, collaborating with some
-                        of Sweden's biggest clients.{' '}
-                        <a
-                            href='mailto:work@daniele.is'
-                            className='text-foreground hover:text-brand transition-colors'
-                        >
-                            Let's bring your idea to life
-                        </a>{' '}
-                        together.
-                    </h1>
+            <section className='py-8 px-4 min-h-[70vh] flex items-center'>
+                <div className='max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+                    <div className='hero-text-animate'>
+                        <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight mb-6'>
+                            I am{' '}
+                            <Link
+                                to='/about'
+                                className='text-brand hover:text-brand/80 transition-colors underline decoration-brand/30 hover:decoration-brand/80'
+                            >
+                                designer and technologist
+                            </Link>{' '}
+                            based in Malmö, Sweden. I help companies{' '}
+                            <Link
+                                to='/projects'
+                                className='text-brand hover:text-brand/80 transition-colors underline decoration-brand/30 hover:decoration-brand/80'
+                            >
+                                accelerate innovation
+                            </Link>{' '}
+                            through prototyping. My experience ranges from small
+                            studios to large consultancies, collaborating with some
+                            of Sweden's biggest clients.{' '}
+                            <a
+                                href='mailto:work@daniele.is'
+                                className='text-brand hover:text-brand/80 transition-colors underline decoration-brand/30 hover:decoration-brand/80'
+                            >
+                                Let's bring your idea to life
+                            </a>{' '}
+                            together.
+                        </h1>
+                    </div>
+                    
+                    <div className='hero-slideshow-animate'>
+                        <HeroSlideshow 
+                            images={heroImages}
+                            className='h-[400px] lg:h-[500px] shadow-2xl'
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -118,7 +135,6 @@ const Index = () => {
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => {
                                     setSelectedProject(project)
-                                    setCurrentImageIndex(0)
                                 }}
                             />
                         ))}
