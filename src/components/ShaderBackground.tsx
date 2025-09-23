@@ -9,7 +9,6 @@ const ShaderBackground: React.FC<ShaderBackgroundProps> = ({ className = '' }) =
   const animationRef = useRef<number>();
   const programRef = useRef<WebGLProgram | null>(null);
   const glRef = useRef<WebGLRenderingContext | null>(null);
-  const mouseRef = useRef({ x: 0.5, y: 0.5 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -19,17 +18,6 @@ const ShaderBackground: React.FC<ShaderBackgroundProps> = ({ className = '' }) =
     if (!gl) return;
 
     glRef.current = gl;
-
-    // Mouse tracking
-    const handleMouseMove = (event: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseRef.current = {
-        x: (event.clientX - rect.left) / rect.width,
-        y: 1.0 - (event.clientY - rect.top) / rect.height, // Flip Y coordinate
-      };
-    };
-
-    canvas.addEventListener('mousemove', handleMouseMove);
 
     // Vertex shader - simple pass-through
     const vertexShaderSource = `
@@ -42,71 +30,54 @@ const ShaderBackground: React.FC<ShaderBackgroundProps> = ({ className = '' }) =
       }
     `;
 
-    // Enhanced fragment shader with mouse interaction
+    // Fragment shader - optimized noise with current color palette
     const fragmentShaderSource = `
       precision mediump float;
       
       uniform float u_time;
-      uniform vec2 u_mouse;
       uniform vec2 u_resolution;
       varying vec2 v_uv;
       
-      // Simple noise function
+      // Simple noise function (lighter than simplex)
       float noise(vec2 p) {
         return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
       }
       
-      // FBM with mouse influence
+      // Simplified FBM with only 2 octaves for performance
       float fbm(vec2 p) {
         float sum = 0.0;
-        float amp = 0.5;
-        
-        // Mouse distance affects noise scale
-        float mouseDistance = distance(u_mouse, v_uv);
-        float mouseFactor = smoothstep(0.3, 0.7, mouseDistance);
-        
-        for(int i = 0; i < 3; i++) {
-          sum += amp * noise(p * (1.0 + mouseFactor * 0.5));
-          p *= 2.0;
-          amp *= 0.5;
-        }
+        sum += 0.5 * noise(p);
+        sum += 0.25 * noise(p * 2.0);
         return sum;
       }
       
       void main() {
         vec2 uv = v_uv;
         
-        // Slow time movement
-        float time = u_time * 0.03;
+        // Very slow time movement for subtlety
+        float time = u_time * 0.05;
         
-        // Mouse influence
-        float mouseDistance = distance(u_mouse, uv);
-        float mouseGlow = smoothstep(0.4, 0.0, mouseDistance);
-        
-        // Create organic movement with mouse influence
-        float n1 = fbm(uv * 2.0 + vec2(time * 0.1, time * 0.08) + mouseGlow * 0.1);
+        // Create gentle organic movement
+        float n1 = fbm(uv * 2.0 + vec2(time * 0.1, time * 0.08));
         float n2 = fbm(uv * 1.5 + vec2(time * 0.06, -time * 0.04));
         
         // Combine for subtle variation
         float pattern = n1 * 0.6 + n2 * 0.4;
         
-        // Current color palette
-        vec3 background = vec3(0.878, 0.878, 0.878);  // --background
-        vec3 muted = vec3(0.808, 0.808, 0.808);       // --muted
-        vec3 brand = vec3(0.855, 0.624, 0.412);       // --brand
+        // Current color palette in HSL converted to RGB
+        vec3 background = vec3(0.878, 0.878, 0.878);  // --background: 0 0% 87.8%
+        vec3 muted = vec3(0.808, 0.808, 0.808);       // --muted: 0 0% 80.8%
+        vec3 brand = vec3(0.855, 0.624, 0.412);       // --brand: 9 66% 62% (approx)
         
         // Very subtle color mixing
-        vec3 color = mix(background, muted, pattern * 0.08);
+        vec3 color = mix(background, muted, pattern * 0.1);
         
-        // Add brand color influence near mouse
-        color = mix(color, brand, mouseGlow * 0.03 + pattern * 0.015);
+        // Add tiny hint of brand color in certain areas
+        color = mix(color, brand, pattern * 0.02);
         
-        // Subtle mouse glow effect
-        color += mouseGlow * 0.02 * vec3(1.0, 0.95, 0.9);
-        
-        // Gentle vignette
-        float vignette = 1.0 - smoothstep(0.4, 1.0, length(uv - 0.5));
-        color *= 0.96 + 0.04 * vignette;
+        // Subtle vignette effect
+        float vignette = 1.0 - smoothstep(0.3, 1.0, length(uv - 0.5));
+        color *= 0.95 + 0.05 * vignette;
         
         gl_FragColor = vec4(color, 1.0);
       }
@@ -163,7 +134,6 @@ const ShaderBackground: React.FC<ShaderBackgroundProps> = ({ className = '' }) =
 
     // Get uniform locations
     const timeLocation = gl.getUniformLocation(program, 'u_time');
-    const mouseLocation = gl.getUniformLocation(program, 'u_mouse');
     const resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
     const positionLocation = gl.getAttribLocation(program, 'a_position');
 
@@ -189,7 +159,6 @@ const ShaderBackground: React.FC<ShaderBackgroundProps> = ({ className = '' }) =
 
       // Set uniforms
       gl.uniform1f(timeLocation, currentTime);
-      gl.uniform2f(mouseLocation, mouseRef.current.x, mouseRef.current.y);
       gl.uniform2f(resolutionLocation, displayWidth, displayHeight);
 
       // Set up position attribute
@@ -206,7 +175,6 @@ const ShaderBackground: React.FC<ShaderBackgroundProps> = ({ className = '' }) =
     animate();
 
     return () => {
-      canvas.removeEventListener('mousemove', handleMouseMove);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }

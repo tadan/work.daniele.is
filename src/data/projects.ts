@@ -183,6 +183,7 @@ export const projects: Project[] = [
         moreInfo: null,
         videoUrl:
             'https://www.youtube.com/watch?v=6lZ3q1EfRVI&feature=youtu.be',
+        tags: ['Prototyping', 'Experience Design'],
     },
     {
         title: 'Utopia Lab',
