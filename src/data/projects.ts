@@ -243,7 +243,7 @@ export const projects: Project[] = [
             '/uploads/radda-barnen.gif',
             '/uploads/radda-barnen-mina-svar.jpg',
         ],
-        link: 'https://www.minasvar.app/',
+        link: 'https://www.youtube.com/watch?v=VMCsIlPesj8?feature=shared',
         moreInfo:
             "Contributed to creating structural societal change and reducing discrimination against children in socially and economically vulnerable areas. The app strengthens young people's influence, participation and engagement in issues that affect them, supporting UN Agenda 2030 goals through data-driven social sustainability measurement.",
         tags: ['iOS', 'Swift', 'TestFlight'],
@@ -262,6 +262,7 @@ export const projects: Project[] = [
         year: '2017-2018',
         image: '/uploads/airmee-skåpbil.jpg',
         images: [
+            '/uploads/DelivAR-Demo.gif',
             '/uploads/airmee-skåpbil.jpg',
             '/uploads/airmee-dashboard.png',
         ],

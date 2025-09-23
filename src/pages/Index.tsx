@@ -21,9 +21,9 @@ const Index = () => {
     // Hero slideshow images - selecting 5 representative project images
     const heroImages = [
         '/uploads/2e635239-c6ce-4168-ac58-609fd397e61d.png', // PostNord SWAN
-        '/uploads/f55b0014-566e-4de4-aceb-ee807cc694ef.png', // Atlas Copco
+        '/uploads/AtlasCopco-gradient.png', // Atlas Copco
         '/uploads/roguebees_lookbackbook.png', // Rogue Bees
-        '/uploads/a90c27c0-d51d-4b01-b7ee-acc92378aabb.png', // Arla
+        '/uploads/postnord_lastmile--screen.png', // PostNord Lastime
         '/uploads/87652519-d152-411b-a621-4a1d56fc71e6.png', // DFDS
     ]
 
