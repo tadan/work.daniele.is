@@ -40,8 +40,14 @@ const Index = () => {
 
             {/* Hero Section */}
             <section className='relative py-8 px-4 min-h-[70vh] flex items-center overflow-hidden'>
-                <ShaderBackground className="opacity-30" />
-                <div className='max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10'>
+                <ShaderBackground className='opacity-30' />
+                <div className='max-w-6xl mx-auto grid grid-cols-1 items-center relative z-10'>
+                    <div className='hero-slideshow-animate'>
+                        <HeroSlideshow
+                            images={heroImages}
+                            className='h-[400px] lg:h-[500px] shadow-2xl mb-16'
+                        />
+                    </div>
                     <div className='hero-text-animate'>
                         <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight mb-6'>
                             I am{' '}
@@ -59,8 +65,8 @@ const Index = () => {
                                 accelerate innovation
                             </Link>{' '}
                             through prototyping. My experience ranges from small
-                            studios to large consultancies, collaborating with some
-                            of Sweden's biggest clients.{' '}
+                            studios to large consultancies, collaborating with
+                            some of Sweden's biggest clients.{' '}
                             <a
                                 href='mailto:work@daniele.is'
                                 className='text-brand hover:text-brand/80 transition-colors underline decoration-brand/30 hover:decoration-brand/80'
@@ -69,13 +75,6 @@ const Index = () => {
                             </a>{' '}
                             together.
                         </h1>
-                    </div>
-                    
-                    <div className='hero-slideshow-animate'>
-                        <HeroSlideshow 
-                            images={heroImages}
-                            className='h-[400px] lg:h-[500px] shadow-2xl'
-                        />
                     </div>
                 </div>
             </section>
