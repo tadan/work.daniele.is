@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import ProjectCard from '@/components/ProjectCard'
 import ProjectModal from '@/components/ProjectModal'
 import HeroSlideshow from '@/components/HeroSlideshow'
+import ShaderBackground from '@/components/ShaderBackground'
 import { projects, Project } from '@/data/projects'
 import MainNav from '@/components/MainNav'
 
@@ -38,8 +39,9 @@ const Index = () => {
             <MainNav />
 
             {/* Hero Section */}
-            <section className='py-8 px-4 min-h-[70vh] flex items-center'>
-                <div className='max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+            <section className='relative py-8 px-4 min-h-[70vh] flex items-center overflow-hidden'>
+                <ShaderBackground className="opacity-30" />
+                <div className='max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10'>
                     <div className='hero-text-animate'>
                         <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight mb-6'>
                             I am{' '}
