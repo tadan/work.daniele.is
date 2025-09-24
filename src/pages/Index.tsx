@@ -68,7 +68,7 @@ const Index = () => {
                             studios to large consultancies, collaborating with
                             some of Sweden's biggest clients.{' '}
                             <a
-                                href='mailto:work@daniele.is'
+                                href='mailto:work@daniele.is?subject=Let%27s%20work%20together&body=Hi%20Daniele%2C%0A%0AI%27m%20interested%20in%20working%20with%20you%20on%20a%20project.%20I%27d%20love%20to%20discuss%20how%20we%20can%20collaborate%20to%20bring%20innovative%20ideas%20to%20life%20through%20prototyping%20and%20design.%0A%0ALooking%20forward%20to%20hearing%20from%20you%21%0A%0ABest%20regards'
                                 className='text-brand hover:text-brand/80 transition-colors underline decoration-brand/30 hover:decoration-brand/80'
                             >
                                 Let's bring your idea to life
