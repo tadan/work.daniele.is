@@ -146,7 +146,7 @@ const Projects = () => {
                                     }
                                 }}
                             >
-                                <div className='font-lg font-bold'>
+                                <div className='text-xl px-2 font-semibold'>
                                     {project.title}
                                 </div>
                                 <div className='text-muted-foreground text-sm hidden md:block'>

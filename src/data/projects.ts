@@ -112,6 +112,7 @@ export const projects: Project[] = [
         year: '2020',
         images: [
             '/uploads/postnord_lastmile.gif',
+            '/uploads/631f779f-a34e-4e71-bd49-e5feaffa617f.png',
             '/uploads/postnord_lastmile--screen.png',
         ],
         image: '/uploads/postnord_lastmile--screen.png',
@@ -180,6 +181,11 @@ export const projects: Project[] = [
         tags: ['Product Design', 'User Research', 'Cross-cultural Design'],
         year: '2023',
         image: '/uploads/5e2552aa-8497-48c7-bf69-a2a63272a7e3.png',
+        images: [
+            '/uploads/TheCuriousQuestions.gif',
+            '/uploads/curious-question-card.jpg',
+            '/uploads/5e2552aa-8497-48c7-bf69-a2a63272a7e3.png',
+        ],
         link: null,
         moreInfo: null,
         videoUrl:
@@ -303,7 +309,12 @@ export const projects: Project[] = [
         solution: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
         role: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
         year: '2016-2017',
-        image: null,
+        image: '/uploads/cinematic.jpg',
+        images: [
+            '/uploads/habitable-wifi.jpg',
+            '/uploads/cinematic.jpg',
+            '/uploads/oort-top-white.jpg',
+        ],
         link: 'https://lumakollektiv.com',
         moreInfo: null,
         videoUrl: null,
