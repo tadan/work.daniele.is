@@ -25,7 +25,8 @@ export const projects: Project[] = [
         year: '2020',
         image: '/uploads/AtlasCopco-gradient.png',
         link: 'https://www.atlascopco.com/en-uk/itba/products',
-        moreInfo: 'https://github.com/intershop/intershop-pwa',
+        moreInfo:
+            'https://blog.intershop.com/en/digitalization-manufacturing-atlas-copco-b2b',
         tags: ['Web Development'],
     },
     {
@@ -183,7 +184,6 @@ export const projects: Project[] = [
         moreInfo: null,
         videoUrl:
             'https://www.youtube.com/watch?v=6lZ3q1EfRVI&feature=youtu.be',
-        tags: ['Prototyping', 'Experience Design'],
     },
     {
         title: 'Utopia Lab',

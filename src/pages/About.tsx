@@ -1,6 +1,7 @@
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import MainNav from '@/components/MainNav'
 import Footer from '@/components/Footer'
+import { Button } from '@/components/ui/button'
 
 const About = () => {
     const recommendations = [
@@ -46,18 +47,9 @@ const About = () => {
     return (
         <div className='min-h-screen w-full'>
             <MainNav />
-            <section className='relative max-w-6xl mx-auto py-20 px-4 flex flex-col items-center'>
-                <Avatar className='w-48 h-48 mb-8'>
-                    <AvatarImage
-                        src='/uploads/d9aa2c4f-c5ed-4678-aac4-af8454c044ce.png'
-                        alt='Profile portrait'
-                        className='object-cover'
-                    />
-                    <AvatarFallback>DT</AvatarFallback>
-                </Avatar>
-
-                <div className='text-center max-w-2xl'>
-                    <h1 className='text-4xl md:text-5xl font-bold mb-6'>
+            <section className='relative max-w-6xl mx-auto py-20 px-4 flex flex-row'>
+                <div className='text-left max-w-2xl'>
+                    <h1 className='text-3xl md:text-4xl font-bold mb-6'>
                         Daniele Tatasciore
                     </h1>
                     <p className='text-xl text-muted-foreground leading-relaxed'>
@@ -73,8 +65,15 @@ const About = () => {
                         vision into reality through design and technology.
                     </p>
                 </div>
+                <Avatar className='w-48 h-72 mx-16'>
+                    <AvatarImage
+                        src='/uploads/d9aa2c4f-c5ed-4678-aac4-af8454c044ce.png'
+                        alt='Profile portrait'
+                        className='object-cover'
+                    />
+                    <AvatarFallback>Daniele T's photo</AvatarFallback>
+                </Avatar>
             </section>
-
             <section className='bg-stone-200 py-20'>
                 <div className='max-w-6xl mx-auto px-4'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
@@ -153,6 +152,16 @@ const About = () => {
                             </div>
                         ))}
                     </div>
+                </div>
+                <div className='flex justify-center mt-4'>
+                    <Button asChild size='lg'>
+                        <a
+                            href='https://linkedin.com/in/danieletatasciore'
+                            className='block mt-8 text-center text-lg font-semibold'
+                        >
+                            More Recommendations on LinkedIn &rarr;
+                        </a>
+                    </Button>
                 </div>
             </section>
             <Footer />
