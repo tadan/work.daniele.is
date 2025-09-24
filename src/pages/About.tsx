@@ -49,23 +49,36 @@ const About = () => {
             <MainNav />
             <section className='relative max-w-6xl mx-auto py-20 px-4 flex flex-row'>
                 <div className='text-left max-w-2xl'>
-                    <h1 className='text-3xl md:text-4xl font-bold mb-6'>
-                        Daniele Tatasciore
-                    </h1>
+                    <h3 className='text-s uppercase font-bold mb-2'>About</h3>
                     <p className='text-xl text-muted-foreground leading-relaxed'>
-                        A cross-functional creative blending expertise in UI/UX
-                        design, front-end development, and emerging
-                        technologies. With a proven track record collaborating
-                        with startups, consultancies, and corporate clients, I
-                        specialize in transforming ideas into engaging,
-                        user-centered digital experiences. I leverage creative
-                        thinking, rapid prototyping, and AI-driven innovation to
-                        deliver impactful solutions that drive meaningful
-                        change. Passionate about pushing boundaries and turning
-                        vision into reality through design and technology.
+                        I have over 7 years experience in digital product design
+                        and frontend development, specializing in complex
+                        technical systems and user-centered design solutions. I
+                        learned and honed my craft in the fast-paced world of
+                        enterprise consulting at Accenture, where I delivered
+                        digital products and technical solutions for global
+                        clients. Recognizing an opportunity to focus on product
+                        leadership, I transitioned to in-house design roles.{' '}
+                        <br></br> <br></br>In 2020 I joined Another Tomorrow as
+                        Head of User Experience Design, where I delivered design
+                        excellence on high-impact logistics and supply chain
+                        projects. I led design system implementation across
+                        multiple platforms, created innovative prototypes for
+                        complex technical interfaces, and facilitated
+                        cross-functional workshops with stakeholders from
+                        engineering to operations teams. <br />
+                        <br></br> In 2022 I Since 2024 I work as an independent
+                        consultant through GGMR AB, helping companies bridge the
+                        gap between complex technical systems and exceptional
+                        user experiences. I'm a hands-on designer who excels at
+                        translating business requirements into scalable design
+                        solutions, with deep expertise in design systems and
+                        enterprise product design. <br></br>
+                        <br></br>I've been selling genuine Italian food from my
+                        family farm to Sweden and I can make tasty pizza.
                     </p>
                 </div>
-                <Avatar className='w-48 h-72 mx-16'>
+                <Avatar className='w-30 h-80 m-32'>
                     <AvatarImage
                         src='/uploads/d9aa2c4f-c5ed-4678-aac4-af8454c044ce.png'
                         alt='Profile portrait'
@@ -76,6 +89,9 @@ const About = () => {
             </section>
             <section className='bg-stone-200 py-20'>
                 <div className='max-w-6xl mx-auto px-4'>
+                    <h3 className='text-s uppercase font-bold mb-6'>
+                        Principles
+                    </h3>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
                         <div className='space-y-3'>
                             <h3 className='text-lg font-semibold uppercase tracking-wide'>
@@ -134,7 +150,9 @@ const About = () => {
 
             <section className='bg-stone-100 text-black py-20'>
                 <div className='max-w-6xl mx-auto px-4'>
-                    <h3 className='text-s uppercase mb-16'>recommendations</h3>
+                    <h3 className='text-s uppercase font-bold mb-16'>
+                        recommendations
+                    </h3>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
                         {recommendations.map((rec, index) => (
@@ -159,7 +177,7 @@ const About = () => {
                             href='https://linkedin.com/in/danieletatasciore'
                             className='block mt-8 text-center text-lg font-semibold'
                         >
-                            More Recommendations on LinkedIn &rarr;
+                            See endorsements on LinkedIn &rarr;
                         </a>
                     </Button>
                 </div>
