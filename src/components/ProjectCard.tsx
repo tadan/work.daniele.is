@@ -42,7 +42,7 @@ const ProjectCard = ({
             </div>
         </div>
         <div className='space-y-2'>
-            <h3 className='text-s uppercase'>case study</h3>
+            <h3 className='text-sm uppercase'>Highlight</h3>
             <h2 className='text-xl font-semibold'>{project.title}</h2>
             <p className='text-muted-foreground'>{project.description}</p>
         </div>

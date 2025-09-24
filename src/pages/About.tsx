@@ -45,40 +45,50 @@ const About = () => {
     }
 
     return (
-        <div className='min-h-screen w-full'>
+        <div className='bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen w-full'>
             <MainNav />
-            <section className='relative max-w-6xl mx-auto py-20 px-4 flex flex-row'>
-                <div className='text-left max-w-2xl'>
+            <section className='relative max-w-6xl mx-auto py-20 px-4 flex flex-row '>
+                <div className='text-left max-w-2xl '>
                     <h3 className='text-s uppercase font-bold mb-2'>About</h3>
-                    <p className='text-xl text-muted-foreground leading-relaxed'>
+                    <p className='text-xl text-gray-800 leading-relaxed'>
                         I have over 7 years experience in digital product design
-                        and frontend development, specializing in complex
-                        technical systems and user-centered design solutions. I
-                        learned and honed my craft in the fast-paced world of
-                        enterprise consulting at Accenture, where I delivered
+                        and frontend development, specializing in{' '}
+                        <strong>
+                            complex technical systems and user-centered design
+                            solutions
+                        </strong>
+                        . I learned and honed my craft in the fast-paced world
+                        of enterprise consulting at Accenture, where I delivered
                         digital products and technical solutions for global
                         clients. Recognizing an opportunity to focus on product
                         leadership, I transitioned to in-house design roles.{' '}
                         <br></br> <br></br>In 2020 I joined Another Tomorrow as
                         Head of User Experience Design, where I delivered design
                         excellence on high-impact logistics and supply chain
-                        projects. I led design system implementation across
-                        multiple platforms, created innovative prototypes for
-                        complex technical interfaces, and facilitated
-                        cross-functional workshops with stakeholders from
-                        engineering to operations teams. <br />
+                        projects .{' '}
+                        <strong>
+                            I led design system implementation across multiple
+                            platforms, created innovative prototypes for complex
+                            technical interfaces, and facilitated
+                            cross-functional workshops
+                        </strong>{' '}
+                        with stakeholders from engineering to operations teams.{' '}
+                        <br />
                         <br></br> In 2022 I Since 2024 I work as an independent
                         consultant through GGMR AB, helping companies bridge the
                         gap between complex technical systems and exceptional
-                        user experiences. I'm a hands-on designer who excels at
-                        translating business requirements into scalable design
-                        solutions, with deep expertise in design systems and
-                        enterprise product design. <br></br>
+                        user experiences.{' '}
+                        <strong>
+                            I'm a hands-on designer who excels at translating
+                            business requirements into scalable design solutions
+                        </strong>
+                        , with deep expertise in design systems and enterprise
+                        product design. <br></br>
                         <br></br>I've been selling genuine Italian food from my
-                        family farm to Sweden and I can make tasty pizza.
+                        family farm to Sweden and I can bake tasty pizza.
                     </p>
                 </div>
-                <Avatar className='w-30 h-80 m-32'>
+                <Avatar className='h-60 mt-2 ml-10'>
                     <AvatarImage
                         src='/uploads/d9aa2c4f-c5ed-4678-aac4-af8454c044ce.png'
                         alt='Profile portrait'
@@ -87,7 +97,7 @@ const About = () => {
                     <AvatarFallback>Daniele T's photo</AvatarFallback>
                 </Avatar>
             </section>
-            <section className='bg-stone-200 py-20'>
+            <section className='bg-white py-20'>
                 <div className='max-w-6xl mx-auto px-4'>
                     <h3 className='text-s uppercase font-bold mb-6'>
                         Principles

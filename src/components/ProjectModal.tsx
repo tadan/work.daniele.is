@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { ExternalLink, Video, Link } from 'lucide-react'
 import { Project } from '@/data/projects'
 import { useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 type ProjectModalProps = {
     project: Project
@@ -17,7 +18,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             onClick={onClose}
         >
             <div
-                className='bg-background max-w-6xl w-full rounded-lg p-6 overflow-y-auto max-h-[90vh]'
+                className='bg-slate-100 max-w-7xl w-full p-6 overflow-y-auto max-h-[90vh]'
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Mobile Layout */}
@@ -27,12 +28,10 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             <h2 className='text-3xl font-bold mb-2'>
                                 {project.title}
                             </h2>
-                            <p className='text-muted-foreground'>
-                                {project.year}
-                            </p>
+                            <p className='text-neutral-700'>{project.year}</p>
                         </div>
-                        <Button variant='ghost' size='sm' onClick={onClose}>
-                            ×
+                        <Button variant='outline' size='lg' onClick={onClose}>
+                            X
                         </Button>
                     </div>
                     {/* Stacked Images */}
@@ -62,25 +61,27 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             <h3 className='text-xl font-semibold mb-2'>
                                 The Challenge
                             </h3>
-                            <p className='text-muted-foreground'>
-                                {project.challenge}
+                            <p className='text-neutral-700'>
+                                <ReactMarkdown>
+                                    {project.challenge}
+                                </ReactMarkdown>
                             </p>
                         </div>
                         <div>
                             <h3 className='text-xl font-semibold mb-2'>
                                 The Solution
                             </h3>
-                            <p className='text-muted-foreground'>
-                                {project.solution}
+                            <p className='text-neutral-700'>
+                                <ReactMarkdown>
+                                    {project.solution}
+                                </ReactMarkdown>
                             </p>
                         </div>
                         <div>
                             <h3 className='text-xl font-semibold mb-2'>
                                 My Role
                             </h3>
-                            <p className='text-muted-foreground'>
-                                {project.role}
-                            </p>
+                            <p className='text-neutral-700'>{project.role}</p>
                         </div>
                         {(project.videoUrl ||
                             project.link ||
@@ -140,40 +141,46 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             <h2 className='text-4xl font-bold mb-2'>
                                 {project.title}
                             </h2>
-                            <p className='text-muted-foreground text-lg'>
+                            <p className='text-neutral-700 text-lg'>
                                 {project.year}
                             </p>
                         </div>
-                        <Button variant='ghost' size='sm' onClick={onClose}>
-                            ×
+                        <Button variant='ghost' size='lg' onClick={onClose}>
+                            X
                         </Button>
                     </div>
 
                     <div className='grid grid-cols-2 gap-8'>
                         {/* Left Column - Text Content */}
-                        <div className='space-y-8'>
+                        <div className='space-y-12'>
                             <div>
                                 <h3 className='text-2xl font-semibold mb-4'>
                                     The Challenge
                                 </h3>
-                                <p className='text-muted-foreground text-lg leading-relaxed'>
-                                    {project.challenge}
+                                <p className='text-neutral-700 text-lg leading-relaxed'>
+                                    <ReactMarkdown>
+                                        {project.challenge}
+                                    </ReactMarkdown>
                                 </p>
                             </div>
                             <div>
                                 <h3 className='text-2xl font-semibold mb-4'>
                                     The Solution
                                 </h3>
-                                <p className='text-muted-foreground text-lg leading-relaxed'>
-                                    {project.solution}
+                                <p className='text-neutral-700 text-lg leading-relaxed'>
+                                    <ReactMarkdown>
+                                        {project.solution}
+                                    </ReactMarkdown>
                                 </p>
                             </div>
                             <div>
                                 <h3 className='text-2xl font-semibold mb-4'>
                                     My Role
                                 </h3>
-                                <p className='text-muted-foreground text-lg leading-relaxed'>
-                                    {project.role}
+                                <p className='text-neutral-700 text-lg leading-relaxed'>
+                                    <ReactMarkdown>
+                                        {project.role}
+                                    </ReactMarkdown>
                                 </p>
                             </div>
                             {(project.videoUrl ||

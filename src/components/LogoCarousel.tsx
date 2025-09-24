@@ -27,7 +27,7 @@ const logos = [
 const LogoCarousel = () => {
     return (
         <section className='py-8 px-4'>
-            <div className='max-w-6xl mx-auto text-center'>
+            <div className='max-w-6xl mx-auto text-left'>
                 <h2 className='text-2xl md:text-2xl font-semibold text-foreground mb-12'>
                     Trusted by teams at
                 </h2>

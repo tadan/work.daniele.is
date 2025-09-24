@@ -53,14 +53,14 @@ const Index = () => {
                             I am{' '}
                             <Link
                                 to='/about'
-                                className='text-brand hover:text-brand/80 transition-colors underline decoration-brand/30 hover:decoration-brand/80'
+                                className='text-brand hover:text-brand/80 transition-colors decoration-brand/30 hover:decoration-brand/80'
                             >
                                 designer and technologist
                             </Link>{' '}
                             based in Malmö, Sweden. I help companies{' '}
                             <Link
                                 to='/projects'
-                                className='text-brand hover:text-brand/80 transition-colors underline decoration-brand/30 hover:decoration-brand/80'
+                                className='text-brand hover:text-brand/80 transition-colors decoration-brand/30 hover:decoration-brand/80'
                             >
                                 accelerate innovation
                             </Link>{' '}
@@ -69,7 +69,7 @@ const Index = () => {
                             some of Sweden's biggest clients.{' '}
                             <a
                                 href='mailto:work@daniele.is?subject=Let%27s%20work%20together&body=Hi%20Daniele%2C%0A%0AI%27m%20interested%20in%20working%20with%20you%20on%20a%20project.%20I%27d%20love%20to%20discuss%20how%20we%20can%20collaborate%20to%20bring%20innovative%20ideas%20to%20life%20through%20prototyping%20and%20design.%0A%0ALooking%20forward%20to%20hearing%20from%20you%21%0A%0ABest%20regards'
-                                className='text-brand hover:text-brand/80 transition-colors underline decoration-brand/30 hover:decoration-brand/80'
+                                className='text-brand hover:text-brand/80 transition-colors decoration-brand/30 hover:decoration-brand/80'
                             >
                                 Let's bring your idea to life
                             </a>{' '}
@@ -79,9 +79,15 @@ const Index = () => {
                 </div>
             </section>
 
+            {/* Logo Carousel Section */}
+            <LogoCarousel />
+
             {/* Skills Section */}
-            <section className='py-8 px-4'>
+            <section className='py-8 px-4 bg-slate-100'>
                 <div className='max-w-6xl mx-auto'>
+                    <h2 className='text-2xl md:text-2xl font-semibold text-foreground my-12'>
+                        My Service and Skillset
+                    </h2>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
                         <div className='space-y-4'>
                             <h3 className='text-xl font-semibold mb-6'>
@@ -121,10 +127,7 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* Logo Carousel Section */}
-            <LogoCarousel />
-
-            <section className='py-16 px-4 bg-gray-100'>
+            <section className='py-16 px-4 bg-slate-100'>
                 <div className='max-w-6xl mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                         {filteredProjects.map((project, index) => (

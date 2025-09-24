@@ -4,6 +4,7 @@ import ProjectModal from '@/components/ProjectModal'
 import { projects } from '@/data/projects'
 import MainNav from '@/components/MainNav'
 import Footer from '@/components/Footer'
+import ReactMarkdown from 'react-markdown'
 import {
     Carousel,
     CarouselContent,
@@ -75,7 +76,7 @@ const Projects = () => {
         description: string,
         images: string[]
     ) => (
-        <div className='mb-12 sm:px-4'>
+        <div className='mb-20 sm:px-4 '>
             {/* Top section with title, description, and carousel */}
             <div className='mb-12'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
@@ -147,10 +148,14 @@ const Projects = () => {
                                 }}
                             >
                                 <div className='text-xl px-2 font-semibold'>
-                                    {project.title}
+                                    <ReactMarkdown>
+                                        {project.title}
+                                    </ReactMarkdown>
                                 </div>
                                 <div className='text-muted-foreground text-sm hidden md:block'>
-                                    {project.description}
+                                    <ReactMarkdown>
+                                        {project.description}
+                                    </ReactMarkdown>
                                 </div>
                                 <div className='text-muted-foreground lg:pl-16 text-sm hidden md:block'>
                                     {project.year}
@@ -191,10 +196,10 @@ const Projects = () => {
                             <h3 className='text-xl font-medium text-brand'>
                                 Small-Agency Design Lead
                             </h3>
-                            <p className='text-sm mb-4'>
+                            <p className='text-sm mb-4 text-muted-foreground'>
                                 4 years at Another Tomorrow
                             </p>
-                            <ul className='text-2xl space-y-2 text-muted-foreground'>
+                            <ul className='text-2xl space-y-2 text-black'>
                                 <li>PostNord</li>
                                 <li>KIA</li>
                                 <li>Arla</li>
@@ -206,8 +211,10 @@ const Projects = () => {
                             <h3 className='text-xl font-medium text-brand'>
                                 Technology & Design Consultancy
                             </h3>
-                            <p className='text-sm mb-4'>2 years at Accenture</p>
-                            <ul className='text-2xl space-y-2 text-muted-foreground'>
+                            <p className='text-sm mb-4 text-muted-foreground'>
+                                2 years at Accenture
+                            </p>
+                            <ul className='text-2xl space-y-2 text-black'>
                                 <li>Atlas Copco</li>
                                 <li>H&M</li>
                                 <li>Electrolux</li>
@@ -218,10 +225,10 @@ const Projects = () => {
                             <h3 className='text-xl font-medium text-brand'>
                                 Startup & Freelancing
                             </h3>
-                            <p className='text-sm mb-4'>
+                            <p className='text-sm mb-4 text-muted-foreground'>
                                 3 years in Sweden and Germany
                             </p>
-                            <ul className='text-2xl space-y-2 text-muted-foreground'>
+                            <ul className='text-2xl space-y-2 text-black'>
                                 <li>Airmee</li>
                                 <li>Stagecast</li>
                                 <li>Freelance in Germany</li>
@@ -231,9 +238,9 @@ const Projects = () => {
                 </div>
             </section>
             {/* Projects List */}
-            <section className='py-16 bg-gray-100'>
+            <section className='mt-12 pt-12 bg-gradient-to-b from-white via-gray-50 to-gray-200"'>
                 <div className='max-w-6xl mx-auto'>
-                    <h3 className='text-s uppercase mb-16 sm:px-4'>
+                    <h3 className='text-s uppercase py-2 sm:px-4 font-bold'>
                         List of Work
                     </h3>
 

@@ -32,10 +32,10 @@ export const projects: Project[] = [
     {
         title: 'Rogue Bees – Accenture Song',
         description:
-            'A global innovation initiative empowering employees across 125 hubs to explore emerging trends',
-        challenge: `Accenture Song needed to drive grassroots innovation by empowering employees across 125 global hubs to explore emerging trends and challenge conventional thinking. The challenge was to create an engaging platform that would foster a thriving creative community and inspire culture change across the organization.`,
-        solution: `We launched Rogue Bees, a global innovation initiative in collaboration with Hyper Island. The project fostered community engagement through monthly themes—starting with the Metaverse—along with newsletters, interviews, virtual events, and expert insights. This became a catalyst for culture change and ultimately inspired the creation of a new business unit focused on future technologies.`,
-        role: `As the UX and visual designer for the Rogue Bees project, I was responsible for designing and producing all visual content and digital communication materials. I collaborated closely with the copywriter and content team to ensure a cohesive and engaging experience across platforms. My work included designing monthly newsletters, visual layouts, and digital assets that brought the stories and trends to life. I used Adobe Creative Cloud, Figma, and Mailchimp to create on-brand, impactful content that supported both storytelling and community engagement.`,
+            'A global innovation **initiative empowering employees across 125 hubs** to explore emerging trends',
+        challenge: `Accenture Song needed to drive grassroots innovation by empowering employees across 125 global hubs to **explore emerging trends and challenge conventional thinking**. The challenge was to create an engaging platform that would foster a thriving creative community and inspire culture change across the organization.`,
+        solution: `We launched Rogue Bees, a global innovation initiative in collaboration with Hyper Island. The project fostered community engagement through monthly themes—starting with the Metaverse—along with newsletters, interviews, virtual events, and expert insights. This became **a catalyst for culture change and ultimately inspired the creation of a new business unit focused on future technologies.**`,
+        role: `As the UX and visual designer for the Rogue Bees project, **I was responsible for designing and producing all visual content and digital communication materials.** I collaborated closely with the copywriter and content team to ensure a cohesive and engaging experience across platforms. **My work included designing monthly newsletters, visual layouts, and digital assets** that brought the stories and trends to life. I used Adobe Creative Cloud, Figma, and Mailchimp to create on-brand, impactful content that supported both storytelling and community engagement.`,
         year: '2021–2022',
         image: '/uploads/roguebees_lookbackbook.png',
         images: [
@@ -52,9 +52,9 @@ export const projects: Project[] = [
         title: 'TransitionView',
         description:
             'A scientific innovation for companies transitioning to net-zero emissions',
-        challenge: `Companies across Sweden needed a scientifically-backed tool to navigate their complex transition towards net-zero emissions. The challenge was to make cutting-edge climate science accessible and actionable for businesses of varying sizes and industries.`,
+        challenge: `Companies across Sweden needed a scientifically-backed tool to navigate their complex transition towards net-zero emissions. The challenge was to make cutting-edge **climate science accessible and actionable for businesses of varying sizes and industries.**`,
         solution: `TransitionView represents a scientific innovation, born out of a collaborative effort between Another Tomorrow, esteemed professors, and climate scientists. Launched in 2023, this tool is currently undergoing trials by various Swedish companies, providing them with data-driven insights to guide their net-zero transition strategies.`,
-        role: `My responsibilities included researching and exploring various branding elements, ultimately initialising a design system. I also created a set of marketing materials and produced videos trailers to consistently convey the tool's capabilities and value in aiding companies toward their net-zero goals. This foundational work was crucial in establishing TransitionView's brand presence in its initial phase.`,
+        role: `My responsibilities included **researching and exploring various branding elements,** ultimately initialising a design system. **I also created a set of marketing materials and produced videos trailers** to consistently convey the tool's capabilities and value in aiding companies toward their net-zero goals. This foundational work was crucial in establishing TransitionView's brand presence in its initial phase.`,
         year: '2023',
         image: '/uploads/d8131e9b-fecb-42f0-b46b-bdd4589231f8.png',
         link: null,
@@ -65,10 +65,10 @@ export const projects: Project[] = [
     {
         title: 'The Future of Breakfast with Arla',
         description:
-            'A vending machine prototype for healthy breakfasts targeting teenagers',
-        challenge: `Arla needed to explore innovative ways to serve healthy breakfasts to teenagers at reasonable prices. The challenge was to create a solution that would appeal to young consumers while maintaining nutritional standards and cost-effectiveness.`,
-        solution: `During a hackathon with the Area Innovation Team, we developed a winning concept: a vending machine prototype designed specifically for healthy breakfasts targeting teenagers. The prototype was tested at Fryshuset in October 2023, where we collected almost a hundred responses and valuable user interaction data.`,
-        role: `My responsibilities involved researching and exploring all the technical aspects of the prototypes. Once approved by the client, I constructed the vending machine prototype and developed its digital counterpart in Figma. On the test day, the prototype was equipped with tracking analytics, enabling us to collect an extensive dataset about user interactions. This was complemented by qualitative data gathered from interviews.`,
+            'A vending machine **prototype for healthy breakfasts targeting teenagers**',
+        challenge: `Arla needed to explore **innovative ways to serve healthy breakfasts to teenagers at reasonable prices**. The challenge was to create a solution that would appeal to young consumers while maintaining nutritional standards and cost-effectiveness.`,
+        solution: `During a hackathon with Arla's Innovation Team, we developed a winning concept: **a vending machine prototype designed specifically for healthy breakfasts targeting teenagers.** The prototype was tested at Fryshuset in October 2023, where **we collected almost a hundred responses** and valuable user interaction data.`,
+        role: `My responsibilities involved researching and exploring all the technical aspects of the prototypes. Once approved by the client, **I constructed the vending machine prototype and developed its digital counterpart in Figma**. On the test day, the prototype was **equipped with tracking analytics with Maze**, enabling us to collect an extensive dataset about user interactions. This was complemented by qualitative data gathered from interviews.`,
         year: '2024',
         images: [
             '/uploads/arla-breakbot.gif',
@@ -86,10 +86,10 @@ export const projects: Project[] = [
     {
         title: 'Prototyping Sustainable Logistics with DFDS',
         description:
-            "Redefining sustainable logistics routes for Denmark's largest logistics company",
-        challenge: `DFDS, Denmark's largest logistics company, faced the challenge of meeting rising demand for eco-friendly transportation solutions. They needed to create a comprehensive model of logistic routes that incorporated numerous sustainable requirements while maintaining operational efficiency.`,
-        solution: `We developed an innovative approach to redefine sustainable logistics for DFDS clients. The solution involved creating a comprehensive model that integrated various sustainable requirements into logistic route planning, making eco-friendly transportation both viable and efficient.`,
-        role: `My role was to bring clarity and interaction to the sustainable logistics model through proficient prototyping using Figma. I was tasked with translating the complex requirements and data into intuitive, user-friendly prototypes, showcasing the viability of sustainable routes.`,
+            "Redefining **sustainable logistics routes** for Denmark's largest logistics company",
+        challenge: `DFDS, Denmark's largest logistics company, faced the challenge of meeting **rising demand for eco-friendly transportation solutions**. They needed to create a comprehensive model of logistic routes that incorporated numerous sustainable requirements while maintaining operational efficiency.`,
+        solution: `We developed an innovative approach to redefine sustainable logistics for DFDS clients. The solution involved creating a **comprehensive model that integrated various sustainable requirements into logistic route planning**, making eco-friendly transportation both viable and efficient.`,
+        role: `My role was to bring clarity and interaction to the sustainable logistics model through proficient prototyping using Figma. I was tasked with **translating the complex requirements and data into intuitive, user-friendly prototypes**, showcasing the viability of sustainable routes.`,
         year: '2023',
         images: [
             '/uploads/87652519-d152-411b-a621-4a1d56fc71e6.png',
@@ -123,8 +123,8 @@ export const projects: Project[] = [
     {
         title: 'PostNord SWAN Dashboard',
         description:
-            'Real-time analytics dashboard that prevented over 1M failed deliveries',
-        challenge: `PostNord, Sweden's largest logistics operator, faced a critical operational crisis with delivery precision at 73% and declining customer trust. They needed an immediate solution to transform terminal operations and rebuild market confidence while managing one of Sweden's largest distribution networks.`,
+            'Real-time analytics **dashboard that prevented over 1M failed deliveries**',
+        challenge: `PostNord, Sweden's largest logistics operator, **faced a critical operational crisis with delivery precision at 73%** and declining customer trust. They needed an immediate solution to transform terminal operations and rebuild market confidence while managing one of Sweden's largest distribution networks.`,
         solution: `Developed and implemented SWAN Dashboard, a revolutionary React/Redux-based real-time performance management system. The solution provided immediate KPI visibility across all Swedish terminals, enabling data-driven decision-making and instant operational adjustments. This transformative tool became essential in PostNord's operational turnaround.`,
         role: `As Lead Frontend Developer and UX Designer, we refactored the prototype from JQuery to React/Redux, establishing a comprehensive design system that ensured consistency and scalability. Created high-fidelity prototypes in Figma and conducted remote user testing to optimize the interface. Implemented real-time data visualization features that directly contributed to preventing over 1 million failed deliveries. Supported on hardware installation and testing in Stockholm's terminals`,
         image: '/uploads/2e635239-c6ce-4168-ac58-609fd397e61d.png',
@@ -146,7 +146,7 @@ export const projects: Project[] = [
         title: 'Electrolux Scorecard',
         description:
             'Enterprise-scale analytics dashboard integrating complex data infrastructure for real-time business intelligence',
-        challenge: `Electrolux needed to transform their complex data infrastructure into actionable insights for stakeholders. The challenge was creating an enterprise-grade dashboard that could process and visualize real-time KPIs from their extensive Qlik-managed data lake while maintaining performance and usability.`,
+        challenge: `Electrolux needed to transform their complex data infrastructure into actionable insights for stakeholders. The challenge was creating an enterprise-grade dashboard that could process and **visualize real-time KPIs from their extensive Qlik-managed data lake** while maintaining performance and usability.`,
         solution: `Engineered a sophisticated web-based analytics platform in collaboration with Fjord that seamlessly integrated with Electrolux's Qlik Sense framework. The solution provided interactive data exploration capabilities and real-time performance monitoring, enabling data-driven decision-making across the organization.`,
         role: `As Technical Lead, I architected the integration between Qlik's data analytics framework and our custom frontend interface. Implemented advanced data visualization components using vanilla JavaScript for optimal performance, ensuring responsive design and cross-browser compatibility. Created a modular codebase that simplified future maintenance and updates while handling complex real-time data streams.`,
         year: '2019',
