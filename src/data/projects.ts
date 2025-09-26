@@ -46,7 +46,7 @@ export const projects: Project[] = [
             'https://www.figma.com/proto/0PBM6thwi2J4qBwhesBNwa/LookBack-Book?page-id=0%3A1&node-id=100-9185&p=f&viewport=564%2C-866%2C0.13&t=mgwDVMD1L9680Ct6-1&scaling=contain&content-scaling=fixed&starting-point-node-id=100%3A9185',
         moreInfo:
             'https://medium.com/the-real-hero/driving-innovation-from-the-ground-up-accenture-song-case-study-39f1f1d0c863',
-        tags: ['Experience Design'],
+        tags: ['Visual Design, Marketing'],
     },
     {
         title: 'TransitionView',
@@ -60,7 +60,7 @@ export const projects: Project[] = [
         link: null,
         moreInfo: 'https://www.anothertomorrow.com/transition-view',
         videoUrl: 'https://www.youtube.com/watch?v=MecLoA9Y0CI',
-        tags: ['Prototyping'],
+        tags: ['Visual Design, Marketing, Prototyping'],
     },
     {
         title: 'The Future of Breakfast with Arla',
@@ -100,7 +100,7 @@ export const projects: Project[] = [
             'https://www.figma.com/proto/BNpDVxy3wEAWw2BChiCDxs/DFDS?page-id=1319%3A2&node-id=1458-1011&starting-point-node-id=1458%3A1011&show-proto-sidebar=1&t=gaOSikoek3NJmWXP-1',
         moreInfo:
             'https://www.anothertomorrow.com/cases/facilitating-collaboration-transport-supplychain',
-        tags: ['Prototyping'],
+        tags: ['Prototyping', 'Experience Design'],
     },
     {
         title: 'PostNord Last Mile Dashboard',
@@ -178,7 +178,7 @@ export const projects: Project[] = [
         challenge: `Following the KIA Inspirational Lab, we needed to transform abstract educational concepts into a tangible, multilingual learning tool. The key challenge was creating an engaging format that could transcend cultural and language barriers while promoting creative thinking in children.`,
         solution: `Designed and validated a multilingual card deck system that uses strategic word combinations to trigger creative thinking. The proof of concept was successfully tested with diverse groups of children across Europe, demonstrating its effectiveness in fostering curiosity and imagination in educational settings.`,
         role: `Led end-to-end product development from concept to testing, including facilitating cross-cultural user research sessions. Designed an intuitive card system that worked effectively across three languages. Implemented rapid prototyping cycles based on direct user feedback, resulting in a highly engaging educational tool that received positive feedback from both educators and children.`,
-        tags: ['Product Design', 'User Research', 'Cross-cultural Design'],
+        tags: ['User Research', 'Visual Design'],
         year: '2023',
         image: '/uploads/5e2552aa-8497-48c7-bf69-a2a63272a7e3.png',
         images: [
@@ -209,7 +209,7 @@ export const projects: Project[] = [
         moreInfo:
             'https://innovation.helsingborg.se/initiativ/utopia-lab-ungdomarna-hittar-losningarna-pa-framtidens-utmaningar/',
         videoUrl: 'https://www.youtube.com/watch?v=mhb2m8TXc4o',
-        tags: ['Facilitation'],
+        tags: ['Facilitation', 'Visual Design'],
     },
     {
         title: 'Mobility 2039',

@@ -181,12 +181,13 @@ const About = () => {
                         ))}
                     </div>
                 </div>
-                <div className='flex justify-center mt-4'>
-                    <Button asChild size='lg'>
-                        <a
-                            href='https://linkedin.com/in/danieletatasciore'
-                            className='block mt-8 text-center text-lg font-semibold'
-                        >
+                <div className='flex justify-center my-16'>
+                    <Button
+                        asChild
+                        size='lg'
+                        className='text-lg bg-orange-600 hover:bg-orange-800 p-7'
+                    >
+                        <a href='https://linkedin.com/in/danieletatasciore'>
                             See endorsements on LinkedIn &rarr;
                         </a>
                     </Button>
