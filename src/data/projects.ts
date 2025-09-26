@@ -201,14 +201,14 @@ export const projects: Project[] = [
         year: 'June 2022',
         image: '/uploads/e085c25c-8116-436a-a385-c1f6b10e76bb.png',
         images: [
-            '/uploads/utopia-lab-objects.png',
+            '/uploads/e085c25c-8116-436a-a385-c1f6b10e76bb.png',
             '/uploads/teams-logic.png',
             '/uploads/utopia-lab-process.png',
         ],
         link: 'https://www.instagram.com/utopialab_hbg/',
         moreInfo:
             'https://innovation.helsingborg.se/initiativ/utopia-lab-ungdomarna-hittar-losningarna-pa-framtidens-utmaningar/',
-        videoUrl: 'fNCvHkl6XMs',
+        videoUrl: 'https://www.youtube.com/watch?v=mhb2m8TXc4o',
         tags: ['Facilitation'],
     },
     {
