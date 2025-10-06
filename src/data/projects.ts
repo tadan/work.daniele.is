@@ -116,7 +116,7 @@ export const projects: Project[] = [
             '/uploads/postnord_lastmile--screen.png',
         ],
         image: '/uploads/postnord_lastmile--screen.png',
-        link: 'https://www.anothertomorrow.com/cases/prototyping-postnord',
+        link: null,
         moreInfo: 'https://www.anothertomorrow.com/cases/prototyping-postnord',
         tags: ['Prototyping', 'Web Development'],
     },
@@ -133,7 +133,7 @@ export const projects: Project[] = [
             '/uploads/postnord-terminal.png',
         ],
         year: '2020-2022',
-        link: '#',
+        link: null,
         moreInfo: 'https://www.anothertomorrow.com/postnord',
         tags: [
             'React/Redux',
@@ -269,8 +269,8 @@ export const projects: Project[] = [
         image: '/uploads/airmee-skåpbil.jpg',
         images: [
             '/uploads/DelivAR-Demo.gif',
-            '/uploads/airmee-skåpbil.jpg',
             '/uploads/airmee-dashboard.png',
+            '/uploads/airmee-skåpbil.jpg',
         ],
         link: null,
         moreInfo: null,
@@ -287,9 +287,9 @@ export const projects: Project[] = [
     {
         title: 'Stagecast',
         description:
-            'Developed and maintained a sophisticated web platform connecting performers with live event venues',
+            'Developed and maintained a sophisticated web platform connecting artists with live event venues',
         challenge:
-            'Stagecast needed a robust web platform to facilitate seamless connections between performers and venues, requiring real-time interaction capabilities and integration with native mobile applications.',
+            'Stagecast needed a robust web platform to facilitate seamless connections between artists and venues, requiring real-time interaction capabilities and integration with native mobile applications.',
         solution:
             'Built and maintained a comprehensive web platform using Angular, implementing a launchpad feature that enabled seamless interaction between web and native mobile applications. The platform successfully streamlined the event booking process and enhanced user engagement.',
         role:
