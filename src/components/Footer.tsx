@@ -22,7 +22,7 @@ const Footer = () => {
                         Mail
                     </a>
                     <a
-                        href='/cv.html'
+                        href='https://www.dropbox.com/scl/fi/y0e5il9k39r4o1kabx24l/Portfolio_Daniele-IKEA.pdf?rlkey=l930spv0lqzjix1emuvrf2vnk&st=p9sucdak&raw=1'
                         target='_blank'
                         rel='noopener noreferrer'
                         className='text-lg text-muted-foreground hover:text-foreground hover:underline transition-colors'
