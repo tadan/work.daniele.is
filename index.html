@@ -11,6 +11,18 @@
         <meta name="author" content="Daniele T." />
         <meta property="og:image" content="/og-image.jpg" />
         <link rel="icon" href="/logo.svg" type="image/svg+xml">
+
+        <!-- Single Page Apps for GitHub Pages -->
+        <!-- This script checks if a redirect is in sessionStorage and restores the URL -->
+        <script>
+            (function() {
+                var redirect = sessionStorage.redirect;
+                delete sessionStorage.redirect;
+                if (redirect && redirect != location.href) {
+                    history.replaceState(null, null, redirect);
+                }
+            })();
+        </script>
     </head>
 
     <body>
