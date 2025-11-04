@@ -51,8 +51,12 @@ const About = () => {
                 <div className='text-left max-w-2xl '>
                     <h3 className='text-s uppercase font-bold mb-2'>About</h3>
                     <p className='text-xl text-gray-800 leading-relaxed'>
-                        I have over 7 years experience in digital product design
-                        and frontend development, specializing in{' '}
+                        I'm{' '}
+                        <strong className='font-semibold'>
+                            Daniele Tatasciore
+                        </strong>{' '}
+                        and I have over 7 years experience in digital product
+                        design and frontend development, specializing in{' '}
                         <strong>
                             complex technical systems and user-centered design
                             solutions
@@ -74,10 +78,10 @@ const About = () => {
                         </strong>{' '}
                         with stakeholders from engineering to operations teams.{' '}
                         <br />
-                        <br></br> In 2022 I Since 2024 I work as an independent
-                        consultant through GGMR AB, helping companies bridge the
-                        gap between complex technical systems and exceptional
-                        user experiences.{' '}
+                        <br></br>Since 2024 I work as an independent consultant
+                        through GGMR AB, helping companies bridge the gap
+                        between complex technical systems and exceptional user
+                        experiences.{' '}
                         <strong>
                             I'm a hands-on designer who excels at translating
                             business requirements into scalable design solutions
@@ -188,7 +192,7 @@ const About = () => {
                         className='text-lg bg-orange-600 hover:bg-orange-800 p-7'
                     >
                         <a href='https://linkedin.com/in/danieletatasciore'>
-                            See endorsements on LinkedIn &rarr;
+                            See more endorsements on LinkedIn &rarr;
                         </a>
                     </Button>
                 </div>
