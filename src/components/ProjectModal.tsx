@@ -28,9 +28,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             <h2 className='text-3xl font-bold mb-2'>
                                 {project.title}
                             </h2>
-                            <p className='text-neutral-700'>{project.year}</p>
                         </div>
-                        <Button variant='outline' size='lg' onClick={onClose}>
+                        <Button variant='outline' size='lg' onClick={onClose} aria-label='Close project details'>
                             X
                         </Button>
                     </div>
@@ -141,11 +140,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             <h2 className='text-4xl font-bold mb-2'>
                                 {project.title}
                             </h2>
-                            <p className='text-neutral-700 text-lg'>
-                                {project.year}
-                            </p>
                         </div>
-                        <Button variant='ghost' size='lg' onClick={onClose}>
+                        <Button variant='ghost' size='lg' onClick={onClose} aria-label='Close project details'>
                             X
                         </Button>
                     </div>

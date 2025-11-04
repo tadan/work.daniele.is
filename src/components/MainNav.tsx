@@ -14,7 +14,7 @@ const MainNav = () => {
     ]
 
     return (
-        <nav className='bg-transparent sticky top-0 z-50'>
+        <nav className='bg-background/50 backdrop-blur-md sticky top-0 z-50 border-b border-border/40'>
             <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='flex justify-between items-center h-16'>
                     {/* Logo */}
@@ -49,6 +49,8 @@ const MainNav = () => {
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className='text-foreground hover:text-brand transition-colors'
+                            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                            aria-expanded={isMenuOpen}
                         >
                             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
@@ -58,7 +60,7 @@ const MainNav = () => {
 
             {/* Mobile Navigation */}
             {isMenuOpen && (
-                <div className='md:hidden bg-background border-t'>
+                <div className='md:hidden bg-background/95 backdrop-blur-md border-t'>
                     <div className='px-2 pt-2 pb-3 space-y-1'>
                         {links.map((link) => (
                             <Link

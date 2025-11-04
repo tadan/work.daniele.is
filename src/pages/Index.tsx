@@ -50,7 +50,7 @@ const Index = () => {
                     </div>
                     <div className='hero-text-animate'>
                         <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight mb-6'>
-                            I am{' '}
+                            <em>Ciao </em>👋 <br></br>I'm Daniele Tatasciore, a{' '}
                             <Link
                                 to='/about'
                                 className='text-orange-500 hover:text-red-500 transition-colors decoration-brand hover:decoration-brand/80'

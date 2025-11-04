@@ -133,7 +133,7 @@ const Projects = () => {
                         return (
                             <div
                                 key={project.title}
-                                className='grid grid-cols-2 md:grid-cols-4 gap-1 h-24 border-b border-gray-900 hover:bg-blue-100 hover:text-brand cursor-pointer transition-all mx-0 px-4 md:px-8 items-center'
+                                className='grid grid-cols-2 md:grid-cols-3 gap-2 h-24 border-b border-gray-900 hover:bg-blue-100 hover:text-brand cursor-pointer transition-all mx-0 px-4 md:px-8 items-center'
                                 onClick={() => {
                                     if (project.onlyLink && project.link) {
                                         window.open(
@@ -157,9 +157,6 @@ const Projects = () => {
                                         {project.description}
                                     </ReactMarkdown>
                                 </div>
-                                <div className='text-muted-foreground lg:pl-16 text-sm hidden md:block'>
-                                    {project.year}
-                                </div>
                                 <div className='text-muted-foreground italic text-sm'>
                                     {project.tags?.join(', ')}
                                 </div>
@@ -179,10 +176,14 @@ const Projects = () => {
             <section className='py-8 px-8 flex items-center justify-center min-h-[30vh]'>
                 <div className='max-w-6xl mx-auto text-left animate-in'>
                     <h1 className='text-2xl md:text-3xl lg:text-4xl font-light leading-tight'>
-                        I began my career in fast-paced startups before joining
-                        Accenture, collaborating with Fjord and working on
-                        projects with some of Sweden's largest clients. Later,
-                        at Another Tomorrow, I took the lead on design
+                        I'm{' '}
+                        <strong className='font-semibold'>
+                            Daniele Tatasciore
+                        </strong>{' '}
+                        and I began my career in fast-paced startups before
+                        joining Accenture, collaborating with Fjord and working
+                        on projects with some of Sweden's largest clients.
+                        Later, at Another Tomorrow, I took the lead on design
                         initiatives, prototyping bold ideas and driving
                         long-term transformation.
                     </h1>
