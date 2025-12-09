@@ -1,5 +1,6 @@
 export type Project = {
     title: string
+    slug: string
     description: string
     challenge: string
     solution: string
@@ -12,11 +13,23 @@ export type Project = {
     videoUrl?: string
     tags?: string[]
     onlyLink?: boolean
+    keyStudy?: boolean
+    team?: Array<{
+        role: string
+        name?: string
+        count?: number
+    }>
+    outcomes?: string[]
+    keyResults?: Array<{
+        value: string
+        label: string
+    }>
 }
 
 export const projects: Project[] = [
     {
         title: 'Atlas Copco Smart Portal',
+        slug: 'atlas-copco-smart-portal',
         description:
             'First unified B2B e-commerce platform for industrial tools',
         challenge: `Atlas Copco needed their first unified B2B e-commerce platform dedicated to industrial tools. The company required a scalable, user-centric digital experience that could serve their industrial customers efficiently while maintaining the high standards expected from a global leader in industrial solutions.`,
@@ -28,9 +41,32 @@ export const projects: Project[] = [
         moreInfo:
             'https://blog.intershop.com/en/digitalization-manufacturing-atlas-copco-b2b',
         tags: ['Web Development'],
+        keyStudy: true,
+        team: [
+            { role: 'Front-End Lead & Developer', name: 'Daniele Tatasciore' },
+            { role: 'Front-End Developers', count: 2 },
+            { role: 'UX/UI Designers', count: 2 },
+            { role: 'Backend Engineers', count: 3 },
+            { role: 'Product Manager', count: 1 },
+        ],
+        outcomes: [
+            'Delivered Angular-based e-commerce platform integrated with Adobe Experience Manager and Intershop Commerce Suite',
+            'Deployed globally across Atlas Copco corporate website',
+            'Led front-end team in daily development tasks and sprint planning',
+            'Bridged design and development teams ensuring seamless alignment',
+            'Created component-based architecture for scalability across markets',
+            'Implemented responsive design for cross-device compatibility',
+        ],
+        keyResults: [
+            { value: 'Global', label: 'Deployment across corporate site' },
+            { value: '100+', label: 'Reusable Angular components' },
+            { value: '8+', label: 'Cross-functional team members' },
+            { value: '2020', label: 'Successful platform launch' },
+        ],
     },
     {
         title: 'Rogue Bees – Accenture Song',
+        slug: 'rogue-bees-accenture-song',
         description:
             'A global innovation **initiative empowering employees across 125 hubs** to explore emerging trends',
         challenge: `Accenture Song needed to drive grassroots innovation by empowering employees across 125 global hubs to **explore emerging trends and challenge conventional thinking**. The challenge was to create an engaging platform that would foster a thriving creative community and inspire culture change across the organization.`,
@@ -50,6 +86,7 @@ export const projects: Project[] = [
     },
     {
         title: 'TransitionView',
+        slug: 'transition-view',
         description:
             'A scientific innovation for companies transitioning to net-zero emissions',
         challenge: `Companies across Sweden needed a scientifically-backed tool to navigate their complex transition towards net-zero emissions. The challenge was to make cutting-edge **climate science accessible and actionable for businesses of varying sizes and industries.**`,
@@ -64,6 +101,7 @@ export const projects: Project[] = [
     },
     {
         title: 'The Future of Breakfast with Arla',
+        slug: 'future-of-breakfast-arla',
         description:
             'A vending machine **prototype for healthy breakfasts targeting teenagers**',
         challenge: `Arla needed to explore **innovative ways to serve healthy breakfasts to teenagers at reasonable prices**. The challenge was to create a solution that would appeal to young consumers while maintaining nutritional standards and cost-effectiveness.`,
@@ -85,6 +123,7 @@ export const projects: Project[] = [
     },
     {
         title: 'Prototyping Sustainable Logistics with DFDS',
+        slug: 'sustainable-logistics-dfds',
         description:
             "Redefining **sustainable logistics routes** for Denmark's largest logistics company",
         challenge: `DFDS, Denmark's largest logistics company, faced the challenge of meeting **rising demand for eco-friendly transportation solutions**. They needed to create a comprehensive model of logistic routes that incorporated numerous sustainable requirements while maintaining operational efficiency.`,
@@ -104,6 +143,7 @@ export const projects: Project[] = [
     },
     {
         title: 'PostNord Last Mile Dashboard',
+        slug: 'postnord-last-mile-dashboard',
         description:
             "A monitoring dashboard for Sweden's national postal service terminal managers",
         challenge: `PostNord needed a web application that would enable terminal managers to monitor the activities of specific couriers during their shifts. The challenge was to create a complex application that could handle real-time data while being intuitive for daily operational use.`,
@@ -122,11 +162,12 @@ export const projects: Project[] = [
     },
     {
         title: 'PostNord SWAN Dashboard',
+        slug: 'postnord-swan-dashboard',
         description:
             'Real-time analytics **dashboard that prevented over 1M failed deliveries**',
-        challenge: `PostNord, Sweden's largest logistics operator, **faced a critical operational crisis with delivery precision at 73%** and declining customer trust. They needed an immediate solution to transform terminal operations and rebuild market confidence while managing one of Sweden's largest distribution networks.`,
-        solution: `Developed and implemented SWAN Dashboard, a revolutionary React/Redux-based real-time performance management system. The solution provided immediate KPI visibility across all Swedish terminals, enabling data-driven decision-making and instant operational adjustments. This transformative tool became essential in PostNord's operational turnaround.`,
-        role: `As Lead Frontend Developer and UX Designer, we refactored the prototype from JQuery to React/Redux, establishing a comprehensive design system that ensured consistency and scalability. Created high-fidelity prototypes in Figma and conducted remote user testing to optimize the interface. Implemented real-time data visualization features that directly contributed to preventing over 1 million failed deliveries. Supported on hardware installation and testing in Stockholm's terminals`,
+        challenge: `In 2018, PostNord, Sweden's largest logistics operator, **faced a critical moment: delivery errors were rising, customer satisfaction was falling, and brand trust was at risk.** With delivery precision at just 73%, missed deliveries were hurting customer experience and revenue streams were under threat. They needed a cultural and operational shift that started on the ground, inside their terminals—not just another top-down tech solution.`,
+        solution: `Rather than starting with big tech implementations, we embedded ourselves directly in the terminals—listening, observing, and diagnosing the true friction points drivers and terminal staff faced daily. Through rapid prototyping and live installations, we developed SWAN Dashboard, a React/Redux-based real-time performance management system. The solution visualized critical KPIs in real-time, helping drivers and supervisors take immediate action. By working hand-in-hand with PostNord's people on both terminal floors and in board rooms, we built solutions that worked for—and with—the front-line teams, creating a pull-effect rather than pushing change top-down.`,
+        role: `As Lead Frontend Developer and UX Designer, I refactored the initial jQuery prototype to React/Redux, establishing a comprehensive design system that ensured consistency and scalability across terminals. I worked directly on-site in Stockholm terminals, installing hardware and testing solutions side-by-side with drivers and terminal managers. Through participatory observation and constant feedback loops, I created high-fidelity prototypes in Figma and conducted iterative user testing to optimize the interface for real-world use. My real-time data visualization features became critical tools that helped achieve over 1 million fewer failed deliveries, turning front-line teams into advocates for the new ways of working.`,
         image: '/uploads/2e635239-c6ce-4168-ac58-609fd397e61d.png',
         images: [
             '/uploads/2e635239-c6ce-4168-ac58-609fd397e61d.png',
@@ -141,9 +182,35 @@ export const projects: Project[] = [
             'UX Design',
             'Data Visualization',
         ],
+        keyStudy: true,
+        team: [
+            { role: 'Lead Front-End Developer & UX Designer', name: 'Daniele Tatasciore' },
+            { role: 'Backend Engineers', count: 2 },
+            { role: 'Product Manager', count: 1 },
+            { role: 'PostNord Stakeholders', count: 3 },
+        ],
+        outcomes: [
+            'Refactored prototype from jQuery to React/Redux for improved performance and scalability',
+            'Built real-time dashboard with API integration for parcel tracking across Swedish terminals',
+            'Created comprehensive design system in Figma ensuring consistency across products',
+            'Achieved 1 million fewer undelivered parcels after national rollout',
+            'Improved delivery precision from 73% to 99% within just 2 months of pilot',
+            'Reduced missed deliveries by 21% and decreased delayed package rates',
+            'Increased positive customer feedback, outperforming national averages',
+            'Improved driver collaboration and reduced employee turnover',
+            'Worked directly in terminals with hands-on hardware installation and testing',
+            'Created solutions through participatory observation and constant feedback loops',
+        ],
+        keyResults: [
+            { value: '73% → 99%', label: 'Delivery precision in 2 months' },
+            { value: '1M+', label: 'Fewer undelivered parcels' },
+            { value: '21%', label: 'Reduction in missed deliveries' },
+            { value: 'Real-time', label: 'KPI visibility across all terminals' },
+        ],
     },
     {
         title: 'Electrolux Scorecard',
+        slug: 'electrolux-scorecard',
         description:
             'Enterprise-scale analytics dashboard integrating complex data infrastructure for real-time business intelligence',
         challenge: `Electrolux needed to transform their complex data infrastructure into actionable insights for stakeholders. The challenge was creating an enterprise-grade dashboard that could process and **visualize real-time KPIs from their extensive Qlik-managed data lake** while maintaining performance and usability.`,
@@ -158,6 +225,7 @@ export const projects: Project[] = [
     },
     {
         title: 'KIA Inspiration Lab',
+        slug: 'kia-inspiration-lab',
         description:
             'Intensive 2-day global hackathon tackling educational creativity challenges',
         challenge: `The challenge was to tackle one of today's most pressing educational questions: "How can we embed creativity into young people's lives as deeply as we embed literacy?" This required bringing together diverse perspectives and expertise to find innovative solutions.`,
@@ -173,6 +241,7 @@ export const projects: Project[] = [
     },
     {
         title: 'The Curious Question Cards',
+        slug: 'curious-question-cards',
         description:
             'Innovative educational tool tested across European markets, fostering creative thinking in children',
         challenge: `Following the KIA Inspirational Lab, we needed to transform abstract educational concepts into a tangible, multilingual learning tool. The key challenge was creating an engaging format that could transcend cultural and language barriers while promoting creative thinking in children.`,
@@ -193,6 +262,7 @@ export const projects: Project[] = [
     },
     {
         title: 'Utopia Lab',
+        slug: 'utopia-lab',
         description:
             'A 290-participants hackathon in Helsingborg where youth and decision makers solve city challenges',
         challenge: `Helsingborg needed to bring together youth and decision makers to collaboratively solve some of the city's biggest challenges. The challenge was to create a large-scale hackathon that could generate viable solutions around pertinent topics such as environment and sustainability, mental health, democracy and participation, meaningful leisure time and discrimination.`,
@@ -213,6 +283,7 @@ export const projects: Project[] = [
     },
     {
         title: 'Mobility 2039',
+        slug: 'mobility-2039',
         description:
             'An innovative WebGL-based interactive experience that transported users into a 3D vision of future mobility',
         challenge:
@@ -235,6 +306,7 @@ export const projects: Project[] = [
     },
     {
         title: 'Save the Children - Mina Svar',
+        slug: 'save-the-children-mina-svar',
         description:
             'I was responsible for bug fixes and feature improvements using Xcode and TestFlight for deployment and testing cycles',
         challenge:
@@ -257,6 +329,7 @@ export const projects: Project[] = [
     },
     {
         title: 'Airmee - Design & Development',
+        slug: 'airmee-design-development',
         description:
             'Led design of last-mile logistics applications. Built the first company website and produce content for marketing campaigns.',
         challenge:
@@ -286,6 +359,7 @@ export const projects: Project[] = [
     },
     {
         title: 'Stagecast',
+        slug: 'stagecast',
         description:
             'Developed and maintained a sophisticated web platform connecting artists with live event venues',
         challenge:
@@ -303,6 +377,7 @@ export const projects: Project[] = [
     },
     {
         title: 'Freelance Work',
+        slug: 'freelance-work',
         description:
             'Various freelance projects involving web development and design.',
         challenge: `Freelance projects often come with unique challenges, requiring adaptability and a broad skill set to meet diverse client needs. The challenge is to deliver high-quality solutions that align with client goals while managing time and resources effectively.`,

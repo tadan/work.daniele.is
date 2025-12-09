@@ -82,6 +82,60 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                             </h3>
                             <p className='text-neutral-700'>{project.role}</p>
                         </div>
+
+                        {/* Case Study Sections */}
+                        {project.keyStudy && (
+                            <>
+                                {project.keyResults && (
+                                    <div>
+                                        <h3 className='text-xl font-semibold mb-4'>
+                                            Key Results
+                                        </h3>
+                                        <div className='grid grid-cols-2 gap-4'>
+                                            {project.keyResults.map((result, index) => (
+                                                <div key={index} className='bg-white p-4 rounded-lg text-center'>
+                                                    <div className='text-2xl font-bold mb-1 text-brand'>{result.value}</div>
+                                                    <div className='text-sm text-neutral-600'>{result.label}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {project.outcomes && (
+                                    <div>
+                                        <h3 className='text-xl font-semibold mb-2'>
+                                            Outcomes
+                                        </h3>
+                                        <ul className='space-y-2'>
+                                            {project.outcomes.map((outcome, index) => (
+                                                <li key={index} className='text-neutral-700 flex items-start'>
+                                                    <span className='mr-2'>✓</span>
+                                                    <span>{outcome}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {project.team && (
+                                    <div>
+                                        <h3 className='text-xl font-semibold mb-2'>
+                                            The Team
+                                        </h3>
+                                        <ul className='space-y-1'>
+                                            {project.team.map((member, index) => (
+                                                <li key={index} className='text-neutral-700'>
+                                                    <span className='font-semibold'>{member.role}:</span>{' '}
+                                                    {member.name || `${member.count} members`}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </>
+                        )}
+
                         {(project.videoUrl ||
                             project.link ||
                             project.moreInfo) && (
@@ -179,6 +233,60 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                     </ReactMarkdown>
                                 </p>
                             </div>
+
+                            {/* Case Study Sections - Desktop */}
+                            {project.keyStudy && (
+                                <>
+                                    {project.keyResults && (
+                                        <div>
+                                            <h3 className='text-2xl font-semibold mb-4'>
+                                                Key Results
+                                            </h3>
+                                            <div className='grid grid-cols-2 gap-4'>
+                                                {project.keyResults.map((result, index) => (
+                                                    <div key={index} className='bg-white p-6 rounded-lg text-center shadow-sm'>
+                                                        <div className='text-3xl font-bold mb-2 text-brand'>{result.value}</div>
+                                                        <div className='text-sm text-neutral-600'>{result.label}</div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {project.outcomes && (
+                                        <div>
+                                            <h3 className='text-2xl font-semibold mb-4'>
+                                                Outcomes
+                                            </h3>
+                                            <ul className='space-y-3'>
+                                                {project.outcomes.map((outcome, index) => (
+                                                    <li key={index} className='text-neutral-700 text-lg flex items-start'>
+                                                        <span className='mr-3 text-brand font-bold'>✓</span>
+                                                        <span>{outcome}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+
+                                    {project.team && (
+                                        <div>
+                                            <h3 className='text-2xl font-semibold mb-4'>
+                                                The Team
+                                            </h3>
+                                            <ul className='space-y-2'>
+                                                {project.team.map((member, index) => (
+                                                    <li key={index} className='text-neutral-700 text-lg'>
+                                                        <span className='font-semibold'>{member.role}:</span>{' '}
+                                                        {member.name || `${member.count} members`}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+                                </>
+                            )}
+
                             {(project.videoUrl ||
                                 project.link ||
                                 project.moreInfo) && (

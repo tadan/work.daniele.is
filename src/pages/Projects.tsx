@@ -16,6 +16,32 @@ const Projects = () => {
     const [selectedProject, setSelectedProject] = useState<number | null>(null)
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+    // Check URL params on mount to auto-open a project
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search)
+        const projectSlug = urlParams.get('project')
+
+        if (projectSlug) {
+            const projectIndex = projects.findIndex(p => p.slug === projectSlug)
+            if (projectIndex !== -1) {
+                setSelectedProject(projectIndex)
+            }
+        }
+    }, [])
+
+    // Update URL when project is selected
+    useEffect(() => {
+        if (selectedProject !== null) {
+            const project = projects[selectedProject]
+            const newUrl = `${window.location.pathname}?project=${project.slug}`
+            window.history.pushState({}, '', newUrl)
+        } else {
+            // Remove project param when modal is closed
+            const newUrl = window.location.pathname
+            window.history.pushState({}, '', newUrl)
+        }
+    }, [selectedProject])
+
     const closeProject = () => {
         setSelectedProject(null)
         setCurrentImageIndex(0)
@@ -185,7 +211,13 @@ const Projects = () => {
                         on projects with some of Sweden's largest clients.
                         Later, at Another Tomorrow, I took the lead on design
                         initiatives, prototyping bold ideas and driving
-                        long-term transformation.
+                        long-term transformation.{' '}
+                        <strong className='font-semibold'>
+                            Now looking for full-time and freelance
+                            opportunities
+                        </strong>
+                        , discovering AI-driven innovation and crafting the
+                        future of digital experiences.
                     </h1>
                 </div>
             </section>
