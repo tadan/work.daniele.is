@@ -89,7 +89,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                 {project.keyResults && (
                                     <div>
                                         <h3 className='text-xl font-semibold mb-4'>
-                                            Key Results
+                                            Impact
                                         </h3>
                                         <div className='grid grid-cols-2 gap-4'>
                                             {project.keyResults.map((result, index) => (
@@ -240,7 +240,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                     {project.keyResults && (
                                         <div>
                                             <h3 className='text-2xl font-semibold mb-4'>
-                                                Key Results
+                                                Impact
                                             </h3>
                                             <div className='grid grid-cols-2 gap-4'>
                                                 {project.keyResults.map((result, index) => (

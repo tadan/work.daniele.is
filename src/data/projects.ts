@@ -33,8 +33,8 @@ export const projects: Project[] = [
         description:
             'First unified B2B e-commerce platform for industrial tools',
         challenge: `Atlas Copco needed their first unified B2B e-commerce platform dedicated to industrial tools. The company required a scalable, user-centric digital experience that could serve their industrial customers efficiently while maintaining the high standards expected from a global leader in industrial solutions.`,
-        solution: `We developed a progressive web app storefront built with Angular and powered by Intershop Commerce Suite. This agile-driven project brought together client, business, design, and development teams to deliver a first-class digital experience that unified Atlas Copco's industrial tool offerings into a single, cohesive platform.`,
-        role: `I was responsible for front-end development and led the front-end team in their daily tasks, working closely with the design team and business owner to ensure a seamless and user-centric implementation.`,
+        solution: `We developed an open-source Intershop-based Angular PWA storefront powered by Intershop Commerce Suite. The platform integrated Adobe Experience Manager for content management and connected with PIM systems for product data synchronization. This agile-driven project brought together client, business, design, and development teams to deliver a first-class digital experience that unified Atlas Copco's industrial tool offerings into a single, cohesive platform.`,
+        role: `I led the front-end development of the open-source Angular PWA, managing the front-end team in their daily tasks. I worked closely with the design team and business owner to ensure seamless integration with Adobe Experience Manager and PIM systems, delivering a user-centric implementation.`,
         year: '2020',
         image: '/uploads/AtlasCopco-gradient.png',
         link: 'https://www.atlascopco.com/en-uk/itba/products',
@@ -50,12 +50,12 @@ export const projects: Project[] = [
             { role: 'Product Manager', count: 1 },
         ],
         outcomes: [
-            'Delivered Angular-based e-commerce platform integrated with Adobe Experience Manager and Intershop Commerce Suite',
+            'Led development of open-source Intershop-based Angular PWA storefront',
+            'Integrated Adobe Experience Manager for content management across platform',
+            'Connected PIM systems for real-time product data synchronization',
             'Deployed globally across Atlas Copco corporate website',
-            'Led front-end team in daily development tasks and sprint planning',
-            'Bridged design and development teams ensuring seamless alignment',
+            'Managed front-end team in daily development tasks and sprint planning',
             'Created component-based architecture for scalability across markets',
-            'Implemented responsive design for cross-device compatibility',
         ],
         keyResults: [
             { value: 'Global', label: 'Deployment across corporate site' },
