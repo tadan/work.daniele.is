@@ -184,7 +184,10 @@ export const projects: Project[] = [
         ],
         keyStudy: true,
         team: [
-            { role: 'Lead Front-End Developer & UX Designer', name: 'Daniele Tatasciore' },
+            {
+                role: 'Lead Front-End Developer & UX Designer',
+                name: 'Daniele Tatasciore',
+            },
             { role: 'Backend Engineers', count: 2 },
             { role: 'Product Manager', count: 1 },
             { role: 'PostNord Stakeholders', count: 3 },
@@ -205,7 +208,10 @@ export const projects: Project[] = [
             { value: '73% → 99%', label: 'Delivery precision in 2 months' },
             { value: '1M+', label: 'Fewer undelivered parcels' },
             { value: '21%', label: 'Reduction in missed deliveries' },
-            { value: 'Real-time', label: 'KPI visibility across all terminals' },
+            {
+                value: 'Real-time',
+                label: 'KPI visibility across all terminals',
+            },
         ],
     },
     {
@@ -328,7 +334,7 @@ export const projects: Project[] = [
         onlyLink: true,
     },
     {
-        title: 'Airmee - Design & Development',
+        title: 'Airmee',
         slug: 'airmee-design-development',
         description:
             'Led design of last-mile logistics applications. Built the first company website and produce content for marketing campaigns.',
@@ -374,6 +380,67 @@ export const projects: Project[] = [
         moreInfo: null,
         videoUrl: null,
         tags: ['Angular', 'Web Development', 'Cross-Platform Integration'],
+    },
+    {
+        title: 'WellComm',
+        slug: 'wellcomm-communication-hub',
+        description:
+            'Arduino-based communication system providing phone charging and environmental information in remote refugee camps',
+        challenge: `Refugee camps in Jordan and other remote areas lacked reliable communication infrastructure and power access. Displaced populations needed a way to charge their mobile phones—their lifeline to family and emergency services—while receiving vital weather forecasts and risk alerts. The solution had to function in harsh environments with no electrical grid and be maintainable through open-source hardware.`,
+        solution: `WellComm is an open-source hardware solution designed for resource-constrained environments. The system integrates an Arduino microcontroller with a GSM board for connectivity, an LCD screen for displaying weather and emergency information, a flexible solar panel for sustainable power, and a high-current battery pack for energy storage. This self-contained unit enables users to charge phones while accessing critical information, powered entirely by solar energy. The open-source approach ensures the system can be repaired and maintained locally.`,
+        role: `I led the engineering and design of WellComm from 2013 to 2015, collaborating with Giorgio De Felice, Falko Schmid, and Lutz Frommberger at capacitylab.org. My responsibilities included circuit design, Arduino programming in C++, GSM module integration for message retrieval, solar power system configuration, and hardware enclosure design for outdoor deployment. I presented the first prototype at ICTD 2013 conference and developed the refined WellComm 2.0 version in 2015 for field deployment in Jordan refugee camps.`,
+        year: '2013-2015',
+        image: '/uploads/wellcomm.jpg',
+        images: ['/uploads/wellcomm.jpg', '/uploads/wellcomm_2.jpg'],
+        link: null,
+        moreInfo: '',
+        keyStudy: true,
+        videoUrl: 'https://youtu.be/LVTvY5228zA?si=_iruDVFvWtC4b82p',
+        tags: ['Arduino', 'IoT', 'C++'],
+        team: [
+            { role: 'Engineer & Designer', name: 'Daniele Tatasciore' },
+            {
+                role: 'Collaborators',
+                name: 'Giorgio De Felice, Falko Schmid, Lutz Frommberger',
+            },
+        ],
+    },
+    {
+        title: 'Free Spy-Fi',
+        slug: 'free-spyfi-privacy-surveillance',
+        description:
+            'Raspberry Pi-based surveillance installation that captured 76,065 unique devices in one week, revealing WiFi tracking vulnerabilities',
+        challenge: `Most smartphone users keep WiFi activated for convenience, unaware that their devices continuously broadcast probe requests containing unique MAC addresses—even when not connected to a network. This passive data leakage enables location tracking and motion profiling without consent. The challenge was to demonstrate this invisible surveillance threat and spark public conversation about digital privacy vulnerabilities in the mobile communication era.`,
+        solution: `Free Spy-Fi is a Raspberry Pi-based surveillance awareness project that established a network of sniffers (Raspberry Pi + old WiFi routers) across Bremen, Germany to capture WiFi probe requests with time and location stamps. Over one week, the system collected 76,065 unique MAC addresses and derived 25,478 distinct movement patterns. The installation featured a live sniffer capturing ~40 MAC addresses per minute displayed on a ticker, an explanatory video, interactive elements where visitors could check if their device was tracked, and a CCTV camera alternating between surveillance footage and mirroring visitors to create awareness of being personally targeted. A guerrilla marketing campaign with nose-posters (WLAN) placed across Bremen created analogy for a big network and generated media coverage. Exhibited at INTERSPACE 2016 (Bremen), Wilhelm Wagenfeld House 2017, and EMAF (European Media Art Festival) 2018.`,
+        role: `I built the complete technical infrastructure: configured Raspberry Pi sniffers for WiFi monitoring mode, programmed Wireshark to capture MAC addresses and designed the interactive exhibition. The project toured three exhibitions (INTERSPACE 2016, Wilhelm Wagenfeld House 2017, EMAF 2018) and received media coverage on BILD and Bremen. I collaborated with Sver Rose and Jan Sengstake under Prof. Roland Lambrette at HfK Bremen.`,
+        year: '2016',
+        image: '/uploads/free_spyfi--exibithion.jpg',
+        images: [
+            '/uploads/free_spyfi--nose.jpg',
+            '/uploads/free_spyfi--exibithion.jpg',
+            '/uploads/free_spyfi--kvitto.jpg',
+        ],
+        link: null,
+        moreInfo: 'https://drive.proton.me/urls/P0Z72SWKCC#LZoarlvZsf3I',
+        videoUrl: 'https://vimeo.com/272086968',
+        keyStudy: true,
+        tags: [
+            'Raspberry Pi',
+            'Interactive Installation',
+            'Network Security',
+            'Critical Design',
+        ],
+        team: [
+            {
+                role: 'Interaction Designer',
+                name: 'Daniele Tatasciore',
+            },
+            {
+                role: 'Collaborators',
+                name: 'Hubert, Klowkoski, Sver Rose, Jan Sengstake',
+            },
+            { role: 'Advisor', name: 'Prof. Roland Lambrette' },
+        ],
     },
     {
         title: 'Freelance Work',

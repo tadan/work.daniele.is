@@ -22,7 +22,9 @@ const Projects = () => {
         const projectSlug = urlParams.get('project')
 
         if (projectSlug) {
-            const projectIndex = projects.findIndex(p => p.slug === projectSlug)
+            const projectIndex = projects.findIndex(
+                (p) => p.slug === projectSlug,
+            )
             if (projectIndex !== -1) {
                 setSelectedProject(projectIndex)
             }
@@ -59,7 +61,7 @@ const Projects = () => {
             'The Curious Question Cards',
             'TransitionView',
             'Rogue Bees – Accenture Song',
-        ].includes(project.title)
+        ].includes(project.title),
     )
 
     const accentureProjects = projects.filter((project) =>
@@ -68,15 +70,17 @@ const Projects = () => {
             'Electrolux Scorecard',
             'Mobility 2039',
             'Save the Children - Mina Svar',
-        ].includes(project.title)
+        ].includes(project.title),
     )
 
     const otherProjects = projects.filter((project) =>
         [
             'Stagecast',
-            'Airmee - Design & Development',
+            'Airmee',
+            'WellComm',
+            'Free Spy-Fi',
             'Freelance Work',
-        ].includes(project.title)
+        ].includes(project.title),
     )
 
     // Get all images from projects in a company
@@ -100,7 +104,7 @@ const Projects = () => {
         projectList: typeof projects,
         title: string,
         description: string,
-        images: string[]
+        images: string[],
     ) => (
         <div className='mb-20 sm:px-4 '>
             {/* Top section with title, description, and carousel */}
@@ -154,7 +158,7 @@ const Projects = () => {
                 <div className='max-w-7xl mx-auto'>
                     {projectList.map((project, index) => {
                         const globalIndex = projects.findIndex(
-                            (p) => p.title === project.title
+                            (p) => p.title === project.title,
                         )
                         return (
                             <div
@@ -165,7 +169,7 @@ const Projects = () => {
                                         window.open(
                                             project.link,
                                             '_blank',
-                                            'noopener,noreferrer'
+                                            'noopener,noreferrer',
                                         )
                                     } else {
                                         setSelectedProject(globalIndex)
@@ -281,21 +285,21 @@ const Projects = () => {
                         anotherTomorrowProjects,
                         'Another Tomorrow',
                         'At Another Tomorrow, I took the lead on design initiatives, prototyping bold ideas and driving long-term transformation. Working with innovative teams to create sustainable solutions and digital experiences that shape the future.',
-                        anotherTomorrowImages
+                        anotherTomorrowImages,
                     )}
 
                     {renderCompanySection(
                         accentureProjects,
                         'Accenture',
                         "Collaborating with Fjord and working on projects with some of Sweden's largest clients. Building scalable solutions and innovative digital experiences for enterprise-level challenges.",
-                        accentureImages
+                        accentureImages,
                     )}
 
                     {renderCompanySection(
                         otherProjects,
                         'Other Projects',
                         'These projects showcase my versatility and ability to adapt to different challenges and industries.',
-                        otherProjectImages
+                        otherProjectImages,
                     )}
                 </div>
             </section>
