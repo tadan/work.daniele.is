@@ -47,7 +47,7 @@ const About = () => {
     return (
         <div className='bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen w-full'>
             <MainNav />
-            <section className='relative max-w-6xl mx-auto py-20 px-4 flex flex-row '>
+            <section className='relative max-w-6xl mx-auto py-20 px-4 flex flex-col-reverse md:flex-row '>
                 <div className='text-left max-w-2xl '>
                     <h3 className='text-s uppercase font-bold mb-2'>About</h3>
                     <p className='text-xl text-gray-800 leading-relaxed'>
@@ -92,7 +92,7 @@ const About = () => {
                         family farm to Sweden and I can bake tasty pizza.
                     </p>
                 </div>
-                <Avatar className='h-60 mt-2 ml-10'>
+                <Avatar className='h-60 mt-2 mx-auto mb-8 md:mx-0 md:mb-0 md:ml-10'>
                     <AvatarImage
                         src='/uploads/d9aa2c4f-c5ed-4678-aac4-af8454c044ce.png'
                         alt='Profile portrait'
