@@ -108,7 +108,7 @@ const Index = () => {
                                 Prototyping & AI-Powered Development
                             </h3>
                             <ul className='space-y-2 text-muted-foreground'>
-                                <li>AI-Augmented Development</li>
+                                <li>AI-Augmented Prototyping</li>
                                 <li>Rapid Prototyping</li>
                                 <li>Workflow Automation (n8n, APIs)</li>
                                 <li>Design Systems</li>

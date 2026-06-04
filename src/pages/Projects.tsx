@@ -62,19 +62,24 @@ const Projects = () => {
         ].includes(project.title),
     )
 
-    const anotherTomorrowProjects = projects.filter((project) =>
-        [
-            'The Future of Breakfast with Arla',
-            'Prototyping Sustainable Logistics with DFDS',
-            'PostNord Last Mile Dashboard',
-            'PostNord SWAN Dashboard',
-            'Utopia Lab',
-            'KIA Inspiration Lab',
-            'The Curious Question Cards',
-            'TransitionView',
-            'Rogue Bees – Accenture Song',
-        ].includes(project.title),
-    )
+    const anotherTomorrowOrder = [
+        'PostNord SWAN Dashboard',
+        'The Future of Breakfast with Arla',
+        'Prototyping Sustainable Logistics with DFDS',
+        'PostNord Last Mile Dashboard',
+        'Utopia Lab',
+        'KIA Inspiration Lab',
+        'The Curious Question Cards',
+        'TransitionView',
+        'Rogue Bees – Accenture Song',
+    ]
+    const anotherTomorrowProjects = projects
+        .filter((project) => anotherTomorrowOrder.includes(project.title))
+        .sort(
+            (a, b) =>
+                anotherTomorrowOrder.indexOf(a.title) -
+                anotherTomorrowOrder.indexOf(b.title),
+        )
 
     const accentureProjects = projects.filter((project) =>
         [
@@ -328,8 +333,8 @@ const Projects = () => {
 
                     {renderCompanySection(
                         AIdrivenProjects,
-                        'AI-First Development',
-                        'Building production systems faster with Claude Code. From satellite monitoring to e-commerce automation, these projects demonstrate rapid development velocity without sacrificing quality—shipping complete applications in days instead of weeks.',
+                        'AI-Augmented Design & Prototyping',
+                        'Design-led projects accelerated by AI tools. From satellite monitoring to e-commerce automation, these prototypes demonstrate how modern design practice combines creative vision with rapid technical execution—turning ideas into working systems in days.',
                         getCompanyImages(AIdrivenProjects),
                         3, // Show all 3 AI projects initially
                     )}
