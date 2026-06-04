@@ -15,6 +15,9 @@ import Autoplay from 'embla-carousel-autoplay'
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState<number | null>(null)
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
+    const [expandedSections, setExpandedSections] = useState<
+        Record<string, boolean>
+    >({})
 
     // Check URL params on mount to auto-open a project
     useEffect(() => {
@@ -50,6 +53,15 @@ const Projects = () => {
     }
 
     // Organize projects by company
+
+    const AIdrivenProjects = projects.filter((project) =>
+        [
+            'OatFinder for Oatly',
+            'Olive Farm Satellite Monitoring',
+            'Workflow for E-Commerce Operations',
+        ].includes(project.title),
+    )
+
     const anotherTomorrowProjects = projects.filter((project) =>
         [
             'The Future of Breakfast with Arla',
@@ -105,98 +117,132 @@ const Projects = () => {
         title: string,
         description: string,
         images: string[],
-    ) => (
-        <div className='mb-20 sm:px-4 '>
-            {/* Top section with title, description, and carousel */}
-            <div className='mb-12'>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
-                    <div>
-                        <h2 className='text-4xl font-semibold mb-4'>{title}</h2>
-                        <p className='text-muted-foreground text-lg mb-8 leading-relaxed'>
-                            {description}
-                        </p>
-                    </div>
+        initialShowCount: number = 3,
+    ) => {
+        const sectionKey = title.toLowerCase().replace(/\s+/g, '-')
+        const isExpanded = expandedSections[sectionKey] || false
+        const displayedProjects = isExpanded
+            ? projectList
+            : projectList.slice(0, initialShowCount)
+        const hasMore = projectList.length > initialShowCount
 
-                    <div className='w-full'>
-                        <Carousel
-                            plugins={[
-                                Autoplay({
-                                    delay: 1200,
-                                    stopOnInteraction: false,
-                                }),
-                            ]}
-                            opts={{
-                                align: 'start',
-                                loop: true,
-                                skipSnaps: false,
-                                duration: 0,
-                            }}
-                            className='w-full relative'
-                        >
-                            <CarouselContent>
-                                {images.map((image, index) => (
-                                    <CarouselItem key={index}>
-                                        <div className='aspect-video'>
-                                            <img
-                                                src={image}
-                                                alt={`${title} project ${
-                                                    index + 1
-                                                }`}
-                                                className='w-full h-full object-cover rounded-lg'
-                                            />
-                                        </div>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                        </Carousel>
-                    </div>
-                </div>
-            </div>
+        return (
+            <div className='mb-20 sm:px-4 '>
+                {/* Top section with title, description, and carousel */}
+                <div className='mb-12'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
+                        <div>
+                            <h2 className='text-4xl font-semibold mb-4'>
+                                {title}
+                            </h2>
+                            <p className='text-muted-foreground text-lg mb-8 leading-relaxed'>
+                                {description}
+                            </p>
+                        </div>
 
-            {/* Project list below */}
-            <div className='relative w-screen left-1/2 right-1/2 -mx-[50vw] px-2 bg-white'>
-                <div className='max-w-7xl mx-auto'>
-                    {projectList.map((project, index) => {
-                        const globalIndex = projects.findIndex(
-                            (p) => p.title === project.title,
-                        )
-                        return (
-                            <div
-                                key={project.title}
-                                className='grid grid-cols-2 md:grid-cols-3 gap-2 h-24 border-b border-gray-900 hover:bg-blue-100 hover:text-brand cursor-pointer transition-all mx-0 px-4 md:px-8 items-center'
-                                onClick={() => {
-                                    if (project.onlyLink && project.link) {
-                                        window.open(
-                                            project.link,
-                                            '_blank',
-                                            'noopener,noreferrer',
-                                        )
-                                    } else {
-                                        setSelectedProject(globalIndex)
-                                        setCurrentImageIndex(0)
-                                    }
+                        <div className='w-full'>
+                            <Carousel
+                                plugins={[
+                                    Autoplay({
+                                        delay: 1200,
+                                        stopOnInteraction: false,
+                                    }),
+                                ]}
+                                opts={{
+                                    align: 'start',
+                                    loop: true,
+                                    skipSnaps: false,
+                                    duration: 0,
                                 }}
+                                className='w-full relative'
                             >
-                                <div className='text-xl px-2 font-semibold'>
-                                    <ReactMarkdown>
-                                        {project.title}
-                                    </ReactMarkdown>
+                                <CarouselContent>
+                                    {images.map((image, index) => (
+                                        <CarouselItem key={index}>
+                                            <div className='aspect-video'>
+                                                <img
+                                                    src={image}
+                                                    alt={`${title} project ${
+                                                        index + 1
+                                                    }`}
+                                                    className='w-full h-full object-cover rounded-lg'
+                                                />
+                                            </div>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                            </Carousel>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Project list below */}
+                <div className='relative w-screen left-1/2 right-1/2 -mx-[50vw] px-2 bg-white'>
+                    <div className='max-w-7xl mx-auto'>
+                        {displayedProjects.map((project, index) => {
+                            const globalIndex = projects.findIndex(
+                                (p) => p.title === project.title,
+                            )
+                            return (
+                                <div
+                                    key={project.title}
+                                    className='grid grid-cols-2 md:grid-cols-3 gap-2 h-24 border-b border-gray-900 hover:bg-blue-100 hover:text-brand cursor-pointer transition-all mx-0 px-4 md:px-8 items-center'
+                                    onClick={() => {
+                                        if (project.onlyLink && project.link) {
+                                            window.open(
+                                                project.link,
+                                                '_blank',
+                                                'noopener,noreferrer',
+                                            )
+                                        } else {
+                                            setSelectedProject(globalIndex)
+                                            setCurrentImageIndex(0)
+                                        }
+                                    }}
+                                >
+                                    <div className='text-xl px-2 font-semibold'>
+                                        <ReactMarkdown>
+                                            {project.title}
+                                        </ReactMarkdown>
+                                    </div>
+                                    <div className='text-muted-foreground text-sm hidden md:block'>
+                                        <ReactMarkdown>
+                                            {project.description}
+                                        </ReactMarkdown>
+                                    </div>
+                                    <div className='text-muted-foreground italic text-sm'>
+                                        {project.tags?.join(', ')}
+                                    </div>
                                 </div>
-                                <div className='text-muted-foreground text-sm hidden md:block'>
-                                    <ReactMarkdown>
-                                        {project.description}
-                                    </ReactMarkdown>
-                                </div>
-                                <div className='text-muted-foreground italic text-sm'>
-                                    {project.tags?.join(', ')}
-                                </div>
+                            )
+                        })}
+
+                        {/* See More / See Less button */}
+                        {hasMore && (
+                            <div className='py-8 text-center'>
+                                <button
+                                    onClick={() =>
+                                        setExpandedSections((prev) => ({
+                                            ...prev,
+                                            [sectionKey]: !prev[sectionKey],
+                                        }))
+                                    }
+                                    className='text-brand hover:text-blue-700 font-semibold text-lg transition-colors'
+                                >
+                                    {isExpanded
+                                        ? '← See Less'
+                                        : `See More (${
+                                              projectList.length -
+                                              initialShowCount
+                                          } more) →`}
+                                </button>
                             </div>
-                        )
-                    })}
+                        )}
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 
     return (
         <div className='min-h-screen w-full'>
@@ -231,6 +277,19 @@ const Projects = () => {
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                         <div>
                             <h3 className='text-xl font-medium text-brand'>
+                                AI-First Product Development
+                            </h3>
+                            <p className='text-sm mb-4 text-muted-foreground'>
+                                2 years as indipendent consultant in Sweden
+                            </p>
+                            <ul className='text-2xl space-y-2 text-black'>
+                                <li>Oatly</li>
+                                <li>Cuppino</li>
+                                <li>Airmee</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className='text-xl font-medium text-brand'>
                                 Small-Agency Design Lead
                             </h3>
                             <p className='text-sm mb-4 text-muted-foreground'>
@@ -257,20 +316,6 @@ const Projects = () => {
                                 <li>Electrolux</li>
                             </ul>
                         </div>
-
-                        <div>
-                            <h3 className='text-xl font-medium text-brand'>
-                                Startup & Freelancing
-                            </h3>
-                            <p className='text-sm mb-4 text-muted-foreground'>
-                                3 years in Sweden and Germany
-                            </p>
-                            <ul className='text-2xl space-y-2 text-black'>
-                                <li>Airmee</li>
-                                <li>Stagecast</li>
-                                <li>Freelance in Germany</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -282,10 +327,19 @@ const Projects = () => {
                     </h3>
 
                     {renderCompanySection(
+                        AIdrivenProjects,
+                        'AI-First Development',
+                        'Building production systems faster with Claude Code. From satellite monitoring to e-commerce automation, these projects demonstrate rapid development velocity without sacrificing quality—shipping complete applications in days instead of weeks.',
+                        getCompanyImages(AIdrivenProjects),
+                        3, // Show all 3 AI projects initially
+                    )}
+
+                    {renderCompanySection(
                         anotherTomorrowProjects,
                         'Another Tomorrow',
                         'At Another Tomorrow, I took the lead on design initiatives, prototyping bold ideas and driving long-term transformation. Working with innovative teams to create sustainable solutions and digital experiences that shape the future.',
                         anotherTomorrowImages,
+                        4, // Show 4 projects initially
                     )}
 
                     {renderCompanySection(
@@ -293,6 +347,7 @@ const Projects = () => {
                         'Accenture',
                         "Collaborating with Fjord and working on projects with some of Sweden's largest clients. Building scalable solutions and innovative digital experiences for enterprise-level challenges.",
                         accentureImages,
+                        2, // Show 2 projects initially
                     )}
 
                     {renderCompanySection(
@@ -300,6 +355,7 @@ const Projects = () => {
                         'Other Projects',
                         'These projects showcase my versatility and ability to adapt to different challenges and industries.',
                         otherProjectImages,
+                        2, // Show 2 projects initially
                     )}
                 </div>
             </section>

@@ -28,6 +28,61 @@ export type Project = {
 
 export const projects: Project[] = [
     {
+        title: 'OatFinder for Oatly',
+        slug: 'oatfinder-oatly',
+        description:
+            'Store locator with real-time inventory and signature drinks integration, built with Claude Code.',
+        challenge: `Oatly's existing store locator (oatfinder.oatly.com) was outdated, built on legacy WordPress infrastructure, and didn't align with their current tech stack. The company needed a modern solution that would integrate with their Storyblok CMS, showcase their signature cocktail marketing content, and provide a seamless user experience for customers searching for oat milk products across coffee shops, gelato stores, and grocery retailers.`,
+        solution: `Built a complete store locator from scratch using Next.js 14, TypeScript, and Storyblok CMS integration. The application features responsive map-based navigation with custom pin designs for different store types, real-time filtering by category (coffee, gelato, grocery), and seamless integration with Oatly's signature drinks content from their Lookback Book autumn/winter 2025-26 marketing campaign. Deployed on Vercel with full mobile optimization and accessibility standards.`,
+        role: `As sole developer, I architected and implemented the entire application: designed the component structure, integrated Mapbox API with custom styling, built the Storyblok CMS connection for dynamic content management, implemented responsive UI with Tailwind CSS, and optimized performance for fast page loads.`,
+        year: '2025',
+        image: '/uploads/oatfinder-demo.gif',
+        images: ['/uploads/oatfinder-demo.gif'],
+        link: 'https://oatfinder.vercel.app',
+        moreInfo: null,
+        videoUrl: null,
+        tags: ['Claude Code', 'Next.js', 'Storyblok CMS', 'Mapbox API'],
+        keyStudy: false,
+    },
+    {
+        title: 'Olive Farm Satellite Monitoring',
+        slug: 'olive-farm-satellite-monitoring',
+        description:
+            'Automated satellite monitoring system tracking olive grove health using free Sentinel-2 data, built with Claude Code.',
+        challenge: `An Italian olive farm selling premium extra virgin olive oil to Swedish consumers and chefs needed operational optimization and customer transparency. Traditional farm monitoring required manual inspections, making it difficult to detect irrigation issues or disease early. The farm also wanted to differentiate their product through verifiable sustainability practices, but lacked the technology infrastructure to provide satellite-verified transparency to their Swedish B2C and restaurant customers.`,
+        solution: `Built a self-hosted satellite monitoring portal that automatically processes Copernicus Sentinel-2 imagery every 5 days to track olive grove health. The system runs on a Synology NAS in Sweden (remote from the Italian farm) using Docker containers: Python processor for data fetching and NDVI/NDMI calculations, PostgreSQL for time-series storage, FastAPI backend, and React dashboard. The public dashboard (via Cloudflare tunnel) provides transparency to Swedish customers with real-time vegetation indices, health alerts, and historical trends. System cost under €10/month leveraging existing infrastructure and free satellite data.`,
+        role: `Architected and implemented the complete end-to-end system: designed the Docker-based infrastructure, developed Python automation for Copernicus API integration and satellite image processing, built PostgreSQL schema for time-series data, created FastAPI REST endpoints, and developed the React dashboard with data visualization. Deployed on home NAS with automated monitoring, error handling, and public web access through Cloudflare tunnel.`,
+        year: '2025',
+        image:
+            'https://openweather.co.uk/api/media/file/visualisation-ndvi-index-satellite-maps-custom-palettes-agricultural-applications.png',
+        images: [
+            'https://openweather.co.uk/api/media/file/visualisation-ndvi-index-satellite-maps-custom-palettes-agricultural-applications.png',
+            '/uploads/farm-dashboard.png',
+        ],
+        link: 'https://farms.daniele.is',
+        moreInfo: null,
+        videoUrl: null,
+        tags: ['Claude Code', 'Satellite Data', 'Python'],
+        keyStudy: false,
+    },
+    {
+        title: 'Workflow for E-Commerce Operations',
+        slug: 'ai-workflow-ecommerce-automation',
+        description:
+            'n8n automation workflow connecting Shopify orders to delivery service and Bokio accounting',
+        challenge: `Running an Italian food e-commerce business (Cuppino) required manual bookkeeping: every Shopify order needed VAT calculation, revenue categorization across multiple accounts (6% food, 12% old rates, 25% shipping), and manual entry into Bokio accounting system. This consumed hours weekly and introduced human error risk. Additionally, invoices arriving via email needed manual download, upload to accounting, and backup to cloud storage—creating a second time-consuming bottleneck.`,
+        solution: `Built two automated workflows using n8n: (1) Shopify-to-Bokio order automation that fetches paid orders, calculates Swedish VAT breakdown, sends formatted entries to Telegram for approval, creates journal entries in Bokio on acceptance, and updates confirmation messages. The system handles multiple VAT rates (6%, 12%, 25%), shipping calculations, and discount codes automatically. (2) Invoice processor that monitors ProtonMail inbox, extracts PDF attachments, uploads to Bokio API, backs up to Nextcloud organized by year/month, and marks processed. Both run on n8n Cloud with daily schedules, comprehensive error handling, and production use since April 2026.`,
+        role: `Designed and implemented both automation workflows: architected the n8n node structure, integrated Shopify Admin API with OAuth authentication, built Telegram bot interface with interactive approval buttons, created accounting logic for Swedish VAT rules (including 2026 rate changes), integrated Bokio API for journal entry creation, developed ProtonMail IMAP monitoring with ProtonMail Bridge, implemented Nextcloud WebDAV backup system, and deployed to production with cron scheduling and monitoring.`,
+        year: '2026',
+        image: '/uploads/n8n-workflow.png',
+        images: ['/uploads/n8n-workflow.png'],
+        link: null,
+        moreInfo: null,
+        videoUrl: null,
+        tags: ['n8n', 'Shopify API', 'Bokio API'],
+        keyStudy: false,
+    },
+    {
         title: 'Atlas Copco Smart Portal',
         slug: 'atlas-copco-smart-portal',
         description:

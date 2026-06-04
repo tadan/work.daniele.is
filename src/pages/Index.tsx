@@ -20,18 +20,18 @@ const Index = () => {
 
     // Hero slideshow images - selecting 5 representative project images
     const heroImages = [
+        'https://www.sentisight.ai/wp-content/uploads/2025/04/claudecode-scaled.webp', // Sentisight Claudecode
         '/uploads/2e635239-c6ce-4168-ac58-609fd397e61d.png', // PostNord SWAN
-        '/uploads/AtlasCopco-gradient.png', // Atlas Copco
         '/uploads/roguebees_lookbackbook.png', // Rogue Bees
         '/uploads/postnord_lastmile--screen.png', // PostNord Lastime
         '/uploads/87652519-d152-411b-a621-4a1d56fc71e6.png', // DFDS
     ]
 
-    // Show only Atlas Copco and PostNord SWAN projects
+    // Show OatFinder and PostNord SWAN projects
     const filteredProjects = projects.filter(
         (project) =>
-            project.title === 'Atlas Copco Smart Portal' ||
-            project.title === 'PostNord SWAN Dashboard'
+            project.title === 'OatFinder for Oatly' ||
+            project.title === 'PostNord SWAN Dashboard',
     )
 
     return (
@@ -62,11 +62,13 @@ const Index = () => {
                                 to='/projects'
                                 className='text-orange-500 hover:text-red-500 transition-colors decoration-brand/30 hover:decoration-brand/80'
                             >
-                                accelerate innovation
-                            </Link>{' '}
-                            through prototyping. My experience ranges from small
-                            studios to large consultancies, collaborating with
-                            some of Sweden's biggest clients.{' '}
+                                accelerate innovation through AI-augmented
+                                prototyping
+                            </Link>
+                            . From small studios to large consultancies, I've
+                            worked with some of Sweden's biggest clients—now
+                            shipping production systems in days instead of weeks
+                            using Claude Code.{' '}
                             <a
                                 href='mailto:work@daniele.is?subject=Let%27s%20work%20together&body=Hi%20Daniele%2C%0A%0AI%27m%20interested%20in%20working%20with%20you%20on%20a%20project.%20I%27d%20love%20to%20discuss%20how%20we%20can%20collaborate%20to%20bring%20innovative%20ideas%20to%20life%20through%20prototyping%20and%20design.%0A%0ALooking%20forward%20to%20hearing%20from%20you%21%0A%0ABest%20regards'
                                 className='text-orange-500 hover:text-red-500 transition-colors decoration-brand/30 hover:decoration-brand/80'
@@ -103,13 +105,14 @@ const Index = () => {
 
                         <div className='space-y-4'>
                             <h3 className='text-xl font-semibold mb-6'>
-                                Prototyping & Technology
+                                Prototyping & AI-Powered Development
                             </h3>
                             <ul className='space-y-2 text-muted-foreground'>
+                                <li>AI-Augmented Development</li>
                                 <li>Rapid Prototyping</li>
-                                <li>Physical Prototyping</li>
+                                <li>Workflow Automation (n8n, APIs)</li>
                                 <li>Design Systems</li>
-                                <li>Front-End Development</li>
+                                <li>Full-Stack Development</li>
                             </ul>
                         </div>
 
